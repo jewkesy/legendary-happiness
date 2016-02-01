@@ -7,7 +7,7 @@ var bodyParser = require('body-parser');
 var Twitter = require('twitter');
 
 var mongo = require('mongoskin');
-var db = mongo.db("mongodb://192.168.1.55:27017/niteworks", {native_parser:true});
+var db = mongo.db("mongodb://localhost:27017/test", {native_parser:true});
 
 var client = new Twitter({
   consumer_key: '66buihKNfPXGUjFqauGZ5Wd5P',
