@@ -9,7 +9,7 @@ descrips:
 ingests:
   display-text: Loans
   name: loans
-  icon: mutualVision/images/loanicon.png
+  icon: niteworks/images/loanicon.png
   type: network
   default_shaders:
     path:
@@ -42,7 +42,7 @@ ingests:
       value: 1.0
     type: point
     name: coinstack8-1
-    icon: mutualVision/images/coins/coin8/coinstack8-1.png
+    icon: niteworks/images/coins/coin8/coinstack8-1.png
   - color:
       type: SoftColor
       value: [1.0, 1.0, 1.0, 1.0]
@@ -51,7 +51,7 @@ ingests:
       value: 1.0
     type: point
     name: coinstack8-10
-    icon: mutualVision/images/coins/coin8/coinstack8-10.png
+    icon: niteworks/images/coins/coin8/coinstack8-10.png
   - color:
       type: SoftColor
       value: [1.0, 1.0, 1.0, 1.0]
@@ -60,7 +60,7 @@ ingests:
       value: 1.0
     type: point
     name: coinstack8-2
-    icon: mutualVision/images/coins/coin8/coinstack8-2.png
+    icon: niteworks/images/coins/coin8/coinstack8-2.png
   - color:
       type: SoftColor
       value: [1.0, 1.0, 1.0, 1.0]
@@ -69,7 +69,7 @@ ingests:
       value: 1.0
     type: point
     name: coinstack8-3
-    icon: mutualVision/images/coins/coin8/coinstack8-3.png
+    icon: niteworks/images/coins/coin8/coinstack8-3.png
   - color:
       type: SoftColor
       value: [1.0, 1.0, 1.0, 1.0]
@@ -78,7 +78,7 @@ ingests:
       value: 1.0
     type: point
     name: coinstack8-4
-    icon: mutualVision/images/coins/coin8/coinstack8-4.png
+    icon: niteworks/images/coins/coin8/coinstack8-4.png
   - color:
       type: SoftColor
       value: [1.0, 1.0, 1.0, 1.0]
@@ -87,7 +87,7 @@ ingests:
       value: 1.0
     type: point
     name: coinstack8-5
-    icon: mutualVision/images/coins/coin8/coinstack8-5.png
+    icon: niteworks/images/coins/coin8/coinstack8-5.png
   - color:
       type: SoftColor
       value: [1.0, 1.0, 1.0, 1.0]
@@ -96,7 +96,7 @@ ingests:
       value: 1.0
     type: point
     name: coinstack8-6
-    icon: mutualVision/images/coins/coin8/coinstack8-6.png
+    icon: niteworks/images/coins/coin8/coinstack8-6.png
   - color:
       type: SoftColor
       value: [1.0, 1.0, 1.0, 1.0]
@@ -105,7 +105,7 @@ ingests:
       value: 1.0
     type: point
     name: coinstack8-7
-    icon: mutualVision/images/coins/coin8/coinstack8-7.png
+    icon: niteworks/images/coins/coin8/coinstack8-7.png
   - color:
       type: SoftColor
       value: [1.0, 1.0, 1.0, 1.0]
@@ -114,7 +114,7 @@ ingests:
       value: 1.0
     type: point
     name: coinstack8-8
-    icon: mutualVision/images/coins/coin8/coinstack8-8.png
+    icon: niteworks/images/coins/coin8/coinstack8-8.png
   - color:
       type: SoftColor
       value: [1.0, 1.0, 1.0, 1.0]
@@ -123,7 +123,7 @@ ingests:
       value: 1.0
     type: point
     name: coinstack8-9
-    icon: mutualVision/images/coins/coin8/coinstack8-9.png
+    icon: niteworks/images/coins/coin8/coinstack8-9.png
   - color:
       type: SoftColor
       value: [1.0, 1.0, 1.0, 1.0]
@@ -132,7 +132,7 @@ ingests:
       value: 1.0
     type: point
     name: coinstack9-1
-    icon: mutualVision/images/coins/coin9/coinstack9-1.png
+    icon: niteworks/images/coins/coin9/coinstack9-1.png
   - color:
       type: SoftColor
       value: [1.0, 1.0, 1.0, 1.0]
@@ -141,7 +141,7 @@ ingests:
       value: 1.0
     type: point
     name: coinstack9-10
-    icon: mutualVision/images/coins/coin9/coinstack9-10.png
+    icon: niteworks/images/coins/coin9/coinstack9-10.png
   - color:
       type: SoftColor
       value: [1.0, 1.0, 1.0, 1.0]
@@ -150,7 +150,7 @@ ingests:
       value: 1.0
     type: point
     name: coinstack9-2
-    icon: mutualVision/images/coins/coin9/coinstack9-2.png
+    icon: niteworks/images/coins/coin9/coinstack9-2.png
   - color:
       type: SoftColor
       value: [1.0, 1.0, 1.0, 1.0]
@@ -159,7 +159,7 @@ ingests:
       value: 1.0
     type: point
     name: coinstack9-3
-    icon: mutualVision/images/coins/coin9/coinstack9-3.png
+    icon: niteworks/images/coins/coin9/coinstack9-3.png
   - color:
       type: SoftColor
       value: [1.0, 1.0, 1.0, 1.0]
@@ -168,7 +168,7 @@ ingests:
       value: 1.0
     type: point
     name: coinstack9-4
-    icon: mutualVision/images/coins/coin9/coinstack9-4.png
+    icon: niteworks/images/coins/coin9/coinstack9-4.png
   - color:
       type: SoftColor
       value: [1.0, 1.0, 1.0, 1.0]
@@ -177,7 +177,7 @@ ingests:
       value: 1.0
     type: point
     name: coinstack9-5
-    icon: mutualVision/images/coins/coin9/coinstack9-5.png
+    icon: niteworks/images/coins/coin9/coinstack9-5.png
   - color:
       type: SoftColor
       value: [1.0, 1.0, 1.0, 1.0]
@@ -186,7 +186,7 @@ ingests:
       value: 1.0
     type: point
     name: coinstack9-6
-    icon: mutualVision/images/coins/coin9/coinstack9-6.png
+    icon: niteworks/images/coins/coin9/coinstack9-6.png
   - color:
       type: SoftColor
       value: [1.0, 1.0, 1.0, 1.0]
@@ -195,7 +195,7 @@ ingests:
       value: 1.0
     type: point
     name: coinstack9-7
-    icon: mutualVision/images/coins/coin9/coinstack9-7.png
+    icon: niteworks/images/coins/coin9/coinstack9-7.png
   - color:
       type: SoftColor
       value: [1.0, 1.0, 1.0, 1.0]
@@ -204,7 +204,7 @@ ingests:
       value: 1.0
     type: point
     name: coinstack9-8
-    icon: mutualVision/images/coins/coin9/coinstack9-8.png
+    icon: niteworks/images/coins/coin9/coinstack9-8.png
   - color:
       type: SoftColor
       value: [1.0, 1.0, 1.0, 1.0]
@@ -213,7 +213,7 @@ ingests:
       value: 1.0
     type: point
     name: coinstack9-9
-    icon: mutualVision/images/coins/coin9/coinstack9-9.png
+    icon: niteworks/images/coins/coin9/coinstack9-9.png
   - color:
       type: SoftColor
       value: [1.0, 1.0, 1.0, 1.0]
@@ -222,7 +222,7 @@ ingests:
       value: 1.0
     type: point
     name: coinstack1-1
-    icon: mutualVision/images/coins/coin1/coinstack1-1.png
+    icon: niteworks/images/coins/coin1/coinstack1-1.png
   - color:
       type: SoftColor
       value: [1.0, 1.0, 1.0, 1.0]
@@ -231,7 +231,7 @@ ingests:
       value: 1.0
     type: point
     name: coinstack1-10
-    icon: mutualVision/images/coins/coin1/coinstack1-10.png
+    icon: niteworks/images/coins/coin1/coinstack1-10.png
   - color:
       type: SoftColor
       value: [1.0, 1.0, 1.0, 1.0]
@@ -240,7 +240,7 @@ ingests:
       value: 1.0
     type: point
     name: coinstack1-2
-    icon: mutualVision/images/coins/coin1/coinstack1-2.png
+    icon: niteworks/images/coins/coin1/coinstack1-2.png
   - color:
       type: SoftColor
       value: [1.0, 1.0, 1.0, 1.0]
@@ -249,7 +249,7 @@ ingests:
       value: 1.0
     type: point
     name: coinstack1-3
-    icon: mutualVision/images/coins/coin1/coinstack1-3.png
+    icon: niteworks/images/coins/coin1/coinstack1-3.png
   - color:
       type: SoftColor
       value: [1.0, 1.0, 1.0, 1.0]
@@ -258,7 +258,7 @@ ingests:
       value: 1.0
     type: point
     name: coinstack1-4
-    icon: mutualVision/images/coins/coin1/coinstack1-4.png
+    icon: niteworks/images/coins/coin1/coinstack1-4.png
   - color:
       type: SoftColor
       value: [1.0, 1.0, 1.0, 1.0]
@@ -267,7 +267,7 @@ ingests:
       value: 1.0
     type: point
     name: coinstack1-5
-    icon: mutualVision/images/coins/coin1/coinstack1-5.png
+    icon: niteworks/images/coins/coin1/coinstack1-5.png
   - color:
       type: SoftColor
       value: [1.0, 1.0, 1.0, 1.0]
@@ -276,7 +276,7 @@ ingests:
       value: 1.0
     type: point
     name: coinstack1-6
-    icon: mutualVision/images/coins/coin1/coinstack1-6.png
+    icon: niteworks/images/coins/coin1/coinstack1-6.png
   - color:
       type: SoftColor
       value: [1.0, 1.0, 1.0, 1.0]
@@ -285,7 +285,7 @@ ingests:
       value: 1.0
     type: point
     name: coinstack1-7
-    icon: mutualVision/images/coins/coin1/coinstack1-7.png
+    icon: niteworks/images/coins/coin1/coinstack1-7.png
   - color:
       type: SoftColor
       value: [1.0, 1.0, 1.0, 1.0]
@@ -294,7 +294,7 @@ ingests:
       value: 1.0
     type: point
     name: coinstack1-8
-    icon: mutualVision/images/coins/coin1/coinstack1-8.png
+    icon: niteworks/images/coins/coin1/coinstack1-8.png
   - color:
       type: SoftColor
       value: [1.0, 1.0, 1.0, 1.0]
@@ -303,7 +303,7 @@ ingests:
       value: 1.0
     type: point
     name: coinstack1-9
-    icon: mutualVision/images/coins/coin1/coinstack1-9.png
+    icon: niteworks/images/coins/coin1/coinstack1-9.png
   - color:
       type: SoftColor
       value: [1.0, 1.0, 1.0, 1.0]
@@ -312,7 +312,7 @@ ingests:
       value: 1.0
     type: point
     name: coinstack2-1
-    icon: mutualVision/images/coins/coin2/coinstack2-1.png
+    icon: niteworks/images/coins/coin2/coinstack2-1.png
   - color:
       type: SoftColor
       value: [1.0, 1.0, 1.0, 1.0]
@@ -321,7 +321,7 @@ ingests:
       value: 1.0
     type: point
     name: coinstack2-10
-    icon: mutualVision/images/coins/coin2/coinstack2-10.png
+    icon: niteworks/images/coins/coin2/coinstack2-10.png
   - color:
       type: SoftColor
       value: [1.0, 1.0, 1.0, 1.0]
@@ -330,7 +330,7 @@ ingests:
       value: 1.0
     type: point
     name: coinstack2-2
-    icon: mutualVision/images/coins/coin2/coinstack2-2.png
+    icon: niteworks/images/coins/coin2/coinstack2-2.png
   - color:
       type: SoftColor
       value: [1.0, 1.0, 1.0, 1.0]
@@ -339,7 +339,7 @@ ingests:
       value: 1.0
     type: point
     name: coinstack2-3
-    icon: mutualVision/images/coins/coin2/coinstack2-3.png
+    icon: niteworks/images/coins/coin2/coinstack2-3.png
   - color:
       type: SoftColor
       value: [1.0, 1.0, 1.0, 1.0]
@@ -348,7 +348,7 @@ ingests:
       value: 1.0
     type: point
     name: coinstack2-4
-    icon: mutualVision/images/coins/coin2/coinstack2-4.png
+    icon: niteworks/images/coins/coin2/coinstack2-4.png
   - color:
       type: SoftColor
       value: [1.0, 1.0, 1.0, 1.0]
@@ -357,7 +357,7 @@ ingests:
       value: 1.0
     type: point
     name: coinstack2-5
-    icon: mutualVision/images/coins/coin2/coinstack2-5.png
+    icon: niteworks/images/coins/coin2/coinstack2-5.png
   - color:
       type: SoftColor
       value: [1.0, 1.0, 1.0, 1.0]
@@ -366,7 +366,7 @@ ingests:
       value: 1.0
     type: point
     name: coinstack2-6
-    icon: mutualVision/images/coins/coin2/coinstack2-6.png
+    icon: niteworks/images/coins/coin2/coinstack2-6.png
   - color:
       type: SoftColor
       value: [1.0, 1.0, 1.0, 1.0]
@@ -375,7 +375,7 @@ ingests:
       value: 1.0
     type: point
     name: coinstack2-7
-    icon: mutualVision/images/coins/coin2/coinstack2-7.png
+    icon: niteworks/images/coins/coin2/coinstack2-7.png
   - color:
       type: SoftColor
       value: [1.0, 1.0, 1.0, 1.0]
@@ -384,7 +384,7 @@ ingests:
       value: 1.0
     type: point
     name: coinstack2-8
-    icon: mutualVision/images/coins/coin2/coinstack2-8.png
+    icon: niteworks/images/coins/coin2/coinstack2-8.png
   - color:
       type: SoftColor
       value: [1.0, 1.0, 1.0, 1.0]
@@ -393,7 +393,7 @@ ingests:
       value: 1.0
     type: point
     name: coinstack2-9
-    icon: mutualVision/images/coins/coin2/coinstack2-9.png
+    icon: niteworks/images/coins/coin2/coinstack2-9.png
   - color:
       type: SoftColor
       value: [1.0, 1.0, 1.0, 1.0]
@@ -402,7 +402,7 @@ ingests:
       value: 1.0
     type: point
     name: coinstack3-1
-    icon: mutualVision/images/coins/coin3/coinstack3-1.png
+    icon: niteworks/images/coins/coin3/coinstack3-1.png
   - color:
       type: SoftColor
       value: [1.0, 1.0, 1.0, 1.0]
@@ -411,7 +411,7 @@ ingests:
       value: 1.0
     type: point
     name: coinstack3-10
-    icon: mutualVision/images/coins/coin3/coinstack3-10.png
+    icon: niteworks/images/coins/coin3/coinstack3-10.png
   - color:
       type: SoftColor
       value: [1.0, 1.0, 1.0, 1.0]
@@ -420,7 +420,7 @@ ingests:
       value: 1.0
     type: point
     name: coinstack3-2
-    icon: mutualVision/images/coins/coin3/coinstack3-2.png
+    icon: niteworks/images/coins/coin3/coinstack3-2.png
   - color:
       type: SoftColor
       value: [1.0, 1.0, 1.0, 1.0]
@@ -429,7 +429,7 @@ ingests:
       value: 1.0
     type: point
     name: coinstack3-3
-    icon: mutualVision/images/coins/coin3/coinstack3-3.png
+    icon: niteworks/images/coins/coin3/coinstack3-3.png
   - color:
       type: SoftColor
       value: [1.0, 1.0, 1.0, 1.0]
@@ -438,7 +438,7 @@ ingests:
       value: 1.0
     type: point
     name: coinstack3-4
-    icon: mutualVision/images/coins/coin3/coinstack3-4.png
+    icon: niteworks/images/coins/coin3/coinstack3-4.png
   - color:
       type: SoftColor
       value: [1.0, 1.0, 1.0, 1.0]
@@ -447,7 +447,7 @@ ingests:
       value: 1.0
     type: point
     name: coinstack3-5
-    icon: mutualVision/images/coins/coin3/coinstack3-5.png
+    icon: niteworks/images/coins/coin3/coinstack3-5.png
   - color:
       type: SoftColor
       value: [1.0, 1.0, 1.0, 1.0]
@@ -456,7 +456,7 @@ ingests:
       value: 1.0
     type: point
     name: coinstack3-6
-    icon: mutualVision/images/coins/coin3/coinstack3-6.png
+    icon: niteworks/images/coins/coin3/coinstack3-6.png
   - color:
       type: SoftColor
       value: [1.0, 1.0, 1.0, 1.0]
@@ -465,7 +465,7 @@ ingests:
       value: 1.0
     type: point
     name: coinstack3-7
-    icon: mutualVision/images/coins/coin3/coinstack3-7.png
+    icon: niteworks/images/coins/coin3/coinstack3-7.png
   - color:
       type: SoftColor
       value: [1.0, 1.0, 1.0, 1.0]
@@ -474,7 +474,7 @@ ingests:
       value: 1.0
     type: point
     name: coinstack3-8
-    icon: mutualVision/images/coins/coin3/coinstack3-8.png
+    icon: niteworks/images/coins/coin3/coinstack3-8.png
   - color:
       type: SoftColor
       value: [1.0, 1.0, 1.0, 1.0]
@@ -483,7 +483,7 @@ ingests:
       value: 1.0
     type: point
     name: coinstack3-9
-    icon: mutualVision/images/coins/coin3/coinstack3-9.png
+    icon: niteworks/images/coins/coin3/coinstack3-9.png
   - color:
       type: SoftColor
       value: [1.0, 1.0, 1.0, 1.0]
@@ -492,7 +492,7 @@ ingests:
       value: 1.0
     type: point
     name: coinstack4-1
-    icon: mutualVision/images/coins/coin4/coinstack4-1.png
+    icon: niteworks/images/coins/coin4/coinstack4-1.png
   - color:
       type: SoftColor
       value: [1.0, 1.0, 1.0, 1.0]
@@ -501,7 +501,7 @@ ingests:
       value: 1.0
     type: point
     name: coinstack4-10
-    icon: mutualVision/images/coins/coin4/coinstack4-10.png
+    icon: niteworks/images/coins/coin4/coinstack4-10.png
   - color:
       type: SoftColor
       value: [1.0, 1.0, 1.0, 1.0]
@@ -510,7 +510,7 @@ ingests:
       value: 1.0
     type: point
     name: coinstack4-2
-    icon: mutualVision/images/coins/coin4/coinstack4-2.png
+    icon: niteworks/images/coins/coin4/coinstack4-2.png
   - color:
       type: SoftColor
       value: [1.0, 1.0, 1.0, 1.0]
@@ -519,7 +519,7 @@ ingests:
       value: 1.0
     type: point
     name: coinstack4-3
-    icon: mutualVision/images/coins/coin4/coinstack4-3.png
+    icon: niteworks/images/coins/coin4/coinstack4-3.png
   - color:
       type: SoftColor
       value: [1.0, 1.0, 1.0, 1.0]
@@ -528,7 +528,7 @@ ingests:
       value: 1.0
     type: point
     name: coinstack4-4
-    icon: mutualVision/images/coins/coin4/coinstack4-4.png
+    icon: niteworks/images/coins/coin4/coinstack4-4.png
   - color:
       type: SoftColor
       value: [1.0, 1.0, 1.0, 1.0]
@@ -537,7 +537,7 @@ ingests:
       value: 1.0
     type: point
     name: coinstack4-5
-    icon: mutualVision/images/coins/coin4/coinstack4-5.png
+    icon: niteworks/images/coins/coin4/coinstack4-5.png
   - color:
       type: SoftColor
       value: [1.0, 1.0, 1.0, 1.0]
@@ -546,7 +546,7 @@ ingests:
       value: 1.0
     type: point
     name: coinstack4-6
-    icon: mutualVision/images/coins/coin4/coinstack4-6.png
+    icon: niteworks/images/coins/coin4/coinstack4-6.png
   - color:
       type: SoftColor
       value: [1.0, 1.0, 1.0, 1.0]
@@ -555,7 +555,7 @@ ingests:
       value: 1.0
     type: point
     name: coinstack4-7
-    icon: mutualVision/images/coins/coin4/coinstack4-7.png
+    icon: niteworks/images/coins/coin4/coinstack4-7.png
   - color:
       type: SoftColor
       value: [1.0, 1.0, 1.0, 1.0]
@@ -564,7 +564,7 @@ ingests:
       value: 1.0
     type: point
     name: coinstack4-8
-    icon: mutualVision/images/coins/coin4/coinstack4-8.png
+    icon: niteworks/images/coins/coin4/coinstack4-8.png
   - color:
       type: SoftColor
       value: [1.0, 1.0, 1.0, 1.0]
@@ -573,7 +573,7 @@ ingests:
       value: 1.0
     type: point
     name: coinstack4-9
-    icon: mutualVision/images/coins/coin4/coinstack4-9.png
+    icon: niteworks/images/coins/coin4/coinstack4-9.png
   - color:
       type: SoftColor
       value: [1.0, 1.0, 1.0, 1.0]
@@ -582,7 +582,7 @@ ingests:
       value: 1.0
     type: point
     name: coinstack5-1
-    icon: mutualVision/images/coins/coin5/coinstack5-1.png
+    icon: niteworks/images/coins/coin5/coinstack5-1.png
   - color:
       type: SoftColor
       value: [1.0, 1.0, 1.0, 1.0]
@@ -591,7 +591,7 @@ ingests:
       value: 1.0
     type: point
     name: coinstack5-10
-    icon: mutualVision/images/coins/coin5/coinstack5-10.png
+    icon: niteworks/images/coins/coin5/coinstack5-10.png
   - color:
       type: SoftColor
       value: [1.0, 1.0, 1.0, 1.0]
@@ -600,7 +600,7 @@ ingests:
       value: 1.0
     type: point
     name: coinstack5-2
-    icon: mutualVision/images/coins/coin5/coinstack5-2.png
+    icon: niteworks/images/coins/coin5/coinstack5-2.png
   - color:
       type: SoftColor
       value: [1.0, 1.0, 1.0, 1.0]
@@ -609,7 +609,7 @@ ingests:
       value: 1.0
     type: point
     name: coinstack5-3
-    icon: mutualVision/images/coins/coin5/coinstack5-3.png
+    icon: niteworks/images/coins/coin5/coinstack5-3.png
   - color:
       type: SoftColor
       value: [1.0, 1.0, 1.0, 1.0]
@@ -618,7 +618,7 @@ ingests:
       value: 1.0
     type: point
     name: coinstack5-4
-    icon: mutualVision/images/coins/coin5/coinstack5-4.png
+    icon: niteworks/images/coins/coin5/coinstack5-4.png
   - color:
       type: SoftColor
       value: [1.0, 1.0, 1.0, 1.0]
@@ -627,7 +627,7 @@ ingests:
       value: 1.0
     type: point
     name: coinstack5-5
-    icon: mutualVision/images/coins/coin5/coinstack5-5.png
+    icon: niteworks/images/coins/coin5/coinstack5-5.png
   - color:
       type: SoftColor
       value: [1.0, 1.0, 1.0, 1.0]
@@ -636,7 +636,7 @@ ingests:
       value: 1.0
     type: point
     name: coinstack5-6
-    icon: mutualVision/images/coins/coin5/coinstack5-6.png
+    icon: niteworks/images/coins/coin5/coinstack5-6.png
   - color:
       type: SoftColor
       value: [1.0, 1.0, 1.0, 1.0]
@@ -645,7 +645,7 @@ ingests:
       value: 1.0
     type: point
     name: coinstack5-7
-    icon: mutualVision/images/coins/coin5/coinstack5-7.png
+    icon: niteworks/images/coins/coin5/coinstack5-7.png
   - color:
       type: SoftColor
       value: [1.0, 1.0, 1.0, 1.0]
@@ -654,7 +654,7 @@ ingests:
       value: 1.0
     type: point
     name: coinstack5-8
-    icon: mutualVision/images/coins/coin5/coinstack5-8.png
+    icon: niteworks/images/coins/coin5/coinstack5-8.png
   - color:
       type: SoftColor
       value: [1.0, 1.0, 1.0, 1.0]
@@ -663,7 +663,7 @@ ingests:
       value: 1.0
     type: point
     name: coinstack5-9
-    icon: mutualVision/images/coins/coin5/coinstack5-9.png
+    icon: niteworks/images/coins/coin5/coinstack5-9.png
   - color:
       type: SoftColor
       value: [1.0, 1.0, 1.0, 1.0]
@@ -672,7 +672,7 @@ ingests:
       value: 1.0
     type: point
     name: coinstack6-1
-    icon: mutualVision/images/coins/coin6/coinstack6-1.png
+    icon: niteworks/images/coins/coin6/coinstack6-1.png
   - color:
       type: SoftColor
       value: [1.0, 1.0, 1.0, 1.0]
@@ -681,7 +681,7 @@ ingests:
       value: 1.0
     type: point
     name: coinstack6-10
-    icon: mutualVision/images/coins/coin6/coinstack6-10.png
+    icon: niteworks/images/coins/coin6/coinstack6-10.png
   - color:
       type: SoftColor
       value: [1.0, 1.0, 1.0, 1.0]
@@ -690,7 +690,7 @@ ingests:
       value: 1.0
     type: point
     name: coinstack6-2
-    icon: mutualVision/images/coins/coin6/coinstack6-2.png
+    icon: niteworks/images/coins/coin6/coinstack6-2.png
   - color:
       type: SoftColor
       value: [1.0, 1.0, 1.0, 1.0]
@@ -699,7 +699,7 @@ ingests:
       value: 1.0
     type: point
     name: coinstack6-3
-    icon: mutualVision/images/coins/coin6/coinstack6-3.png
+    icon: niteworks/images/coins/coin6/coinstack6-3.png
   - color:
       type: SoftColor
       value: [1.0, 1.0, 1.0, 1.0]
@@ -708,7 +708,7 @@ ingests:
       value: 1.0
     type: point
     name: coinstack6-4
-    icon: mutualVision/images/coins/coin6/coinstack6-4.png
+    icon: niteworks/images/coins/coin6/coinstack6-4.png
   - color:
       type: SoftColor
       value: [1.0, 1.0, 1.0, 1.0]
@@ -717,7 +717,7 @@ ingests:
       value: 1.0
     type: point
     name: coinstack6-5
-    icon: mutualVision/images/coins/coin6/coinstack6-5.png
+    icon: niteworks/images/coins/coin6/coinstack6-5.png
   - color:
       type: SoftColor
       value: [1.0, 1.0, 1.0, 1.0]
@@ -726,7 +726,7 @@ ingests:
       value: 1.0
     type: point
     name: coinstack6-6
-    icon: mutualVision/images/coins/coin6/coinstack6-6.png
+    icon: niteworks/images/coins/coin6/coinstack6-6.png
   - color:
       type: SoftColor
       value: [1.0, 1.0, 1.0, 1.0]
@@ -735,7 +735,7 @@ ingests:
       value: 1.0
     type: point
     name: coinstack6-7
-    icon: mutualVision/images/coins/coin6/coinstack6-7.png
+    icon: niteworks/images/coins/coin6/coinstack6-7.png
   - color:
       type: SoftColor
       value: [1.0, 1.0, 1.0, 1.0]
@@ -744,7 +744,7 @@ ingests:
       value: 1.0
     type: point
     name: coinstack6-8
-    icon: mutualVision/images/coins/coin6/coinstack6-8.png
+    icon: niteworks/images/coins/coin6/coinstack6-8.png
   - color:
       type: SoftColor
       value: [1.0, 1.0, 1.0, 1.0]
@@ -753,7 +753,7 @@ ingests:
       value: 1.0
     type: point
     name: coinstack6-9
-    icon: mutualVision/images/coins/coin6/coinstack6-9.png
+    icon: niteworks/images/coins/coin6/coinstack6-9.png
   - color:
       type: SoftColor
       value: [1.0, 1.0, 1.0, 1.0]
@@ -762,7 +762,7 @@ ingests:
       value: 1.0
     type: point
     name: coinstack7-1
-    icon: mutualVision/images/coins/coin7/coinstack7-1.png
+    icon: niteworks/images/coins/coin7/coinstack7-1.png
   - color:
       type: SoftColor
       value: [1.0, 1.0, 1.0, 1.0]
@@ -771,7 +771,7 @@ ingests:
       value: 1.0
     type: point
     name: coinstack7-10
-    icon: mutualVision/images/coins/coin7/coinstack7-10.png
+    icon: niteworks/images/coins/coin7/coinstack7-10.png
   - color:
       type: SoftColor
       value: [1.0, 1.0, 1.0, 1.0]
@@ -780,7 +780,7 @@ ingests:
       value: 1.0
     type: point
     name: coinstack7-2
-    icon: mutualVision/images/coins/coin7/coinstack7-2.png
+    icon: niteworks/images/coins/coin7/coinstack7-2.png
   - color:
       type: SoftColor
       value: [1.0, 1.0, 1.0, 1.0]
@@ -789,7 +789,7 @@ ingests:
       value: 1.0
     type: point
     name: coinstack7-3
-    icon: mutualVision/images/coins/coin7/coinstack7-3.png
+    icon: niteworks/images/coins/coin7/coinstack7-3.png
   - color:
       type: SoftColor
       value: [1.0, 1.0, 1.0, 1.0]
@@ -798,7 +798,7 @@ ingests:
       value: 1.0
     type: point
     name: coinstack7-4
-    icon: mutualVision/images/coins/coin7/coinstack7-4.png
+    icon: niteworks/images/coins/coin7/coinstack7-4.png
   - color:
       type: SoftColor
       value: [1.0, 1.0, 1.0, 1.0]
@@ -807,7 +807,7 @@ ingests:
       value: 1.0
     type: point
     name: coinstack7-5
-    icon: mutualVision/images/coins/coin7/coinstack7-5.png
+    icon: niteworks/images/coins/coin7/coinstack7-5.png
   - color:
       type: SoftColor
       value: [1.0, 1.0, 1.0, 1.0]
@@ -816,7 +816,7 @@ ingests:
       value: 1.0
     type: point
     name: coinstack7-6
-    icon: mutualVision/images/coins/coin7/coinstack7-6.png
+    icon: niteworks/images/coins/coin7/coinstack7-6.png
   - color:
       type: SoftColor
       value: [1.0, 1.0, 1.0, 1.0]
@@ -825,7 +825,7 @@ ingests:
       value: 1.0
     type: point
     name: coinstack7-7
-    icon: mutualVision/images/coins/coin7/coinstack7-7.png
+    icon: niteworks/images/coins/coin7/coinstack7-7.png
   - color:
       type: SoftColor
       value: [1.0, 1.0, 1.0, 1.0]
@@ -834,7 +834,7 @@ ingests:
       value: 1.0
     type: point
     name: coinstack7-8
-    icon: mutualVision/images/coins/coin7/coinstack7-8.png
+    icon: niteworks/images/coins/coin7/coinstack7-8.png
   - color:
       type: SoftColor
       value: [1.0, 1.0, 1.0, 1.0]
@@ -843,7 +843,7 @@ ingests:
       value: 1.0
     type: point
     name: coinstack7-9
-    icon: mutualVision/images/coins/coin7/coinstack7-9.png
+    icon: niteworks/images/coins/coin7/coinstack7-9.png
   - color:
       type: SoftColor
       value: [1.0, 1.0, 1.0, 1.0]
@@ -852,7 +852,7 @@ ingests:
       value: 1.0
     type: point
     name: coinstack10-1
-    icon: mutualVision/images/coins/coin10/coinstack10-1.png
+    icon: niteworks/images/coins/coin10/coinstack10-1.png
   - color:
       type: SoftColor
       value: [1.0, 1.0, 1.0, 1.0]
@@ -861,7 +861,7 @@ ingests:
       value: 1.0
     type: point
     name: coinstack10-10
-    icon: mutualVision/images/coins/coin10/coinstack10-10.png
+    icon: niteworks/images/coins/coin10/coinstack10-10.png
   - color:
       type: SoftColor
       value: [1.0, 1.0, 1.0, 1.0]
@@ -870,7 +870,7 @@ ingests:
       value: 1.0
     type: point
     name: coinstack10-2
-    icon: mutualVision/images/coins/coin10/coinstack10-2.png
+    icon: niteworks/images/coins/coin10/coinstack10-2.png
   - color:
       type: SoftColor
       value: [1.0, 1.0, 1.0, 1.0]
@@ -879,7 +879,7 @@ ingests:
       value: 1.0
     type: point
     name: coinstack10-3
-    icon: mutualVision/images/coins/coin10/coinstack10-3.png
+    icon: niteworks/images/coins/coin10/coinstack10-3.png
   - color:
       type: SoftColor
       value: [1.0, 1.0, 1.0, 1.0]
@@ -888,7 +888,7 @@ ingests:
       value: 1.0
     type: point
     name: coinstack10-4
-    icon: mutualVision/images/coins/coin10/coinstack10-4.png
+    icon: niteworks/images/coins/coin10/coinstack10-4.png
   - color:
       type: SoftColor
       value: [1.0, 1.0, 1.0, 1.0]
@@ -897,7 +897,7 @@ ingests:
       value: 1.0
     type: point
     name: coinstack10-5
-    icon: mutualVision/images/coins/coin10/coinstack10-5.png
+    icon: niteworks/images/coins/coin10/coinstack10-5.png
   - color:
       type: SoftColor
       value: [1.0, 1.0, 1.0, 1.0]
@@ -906,7 +906,7 @@ ingests:
       value: 1.0
     type: point
     name: coinstack10-6
-    icon: mutualVision/images/coins/coin10/coinstack10-6.png
+    icon: niteworks/images/coins/coin10/coinstack10-6.png
   - color:
       type: SoftColor
       value: [1.0, 1.0, 1.0, 1.0]
@@ -915,7 +915,7 @@ ingests:
       value: 1.0
     type: point
     name: coinstack10-7
-    icon: mutualVision/images/coins/coin10/coinstack10-7.png
+    icon: niteworks/images/coins/coin10/coinstack10-7.png
   - color:
       type: SoftColor
       value: [1.0, 1.0, 1.0, 1.0]
@@ -924,7 +924,7 @@ ingests:
       value: 1.0
     type: point
     name: coinstack10-8
-    icon: mutualVision/images/coins/coin10/coinstack10-8.png
+    icon: niteworks/images/coins/coin10/coinstack10-8.png
   - color:
       type: SoftColor
       value: [1.0, 1.0, 1.0, 1.0]
@@ -933,7 +933,7 @@ ingests:
       value: 1.0
     type: point
     name: coinstack10-9
-    icon: mutualVision/images/coins/coin10/coinstack10-9.png
+    icon: niteworks/images/coins/coin10/coinstack10-9.png
   attributes:
   - name: enable-menu
     contents:

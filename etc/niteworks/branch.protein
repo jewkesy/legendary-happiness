@@ -7,10 +7,10 @@ descrips:
 - request
 - new-fluoro-template
 ingests:
-  name: Introducer
-  icon: mutualVision/images/introducericon.png
+  name: Branch
+  icon: niteworks/images/branchicon.png
   type: network
-  display-text: 'Introducer'
+  display-text: 'Branches'
   attributes:
   - name: enable-menu
     selection-type: exclusive
@@ -24,10 +24,10 @@ ingests:
   - name: enabled-kinds
     display-text: 'Filter Options'
     contents:
-    - name: introducer
-      display-text: "introducer"
+    - name: branch
+      display-text: "Branch"
       selected: true
-      icon: introducer.png
+      icon: branch.png
     selection-type: inclusive
   default_shaders:
     path:
@@ -37,16 +37,16 @@ ingests:
       fragment: network.frag
       vertex: network.vert
   kinds:
-  - introducer
+  - branch
   pigments:
-  - name: introducer
-    icon: mutualVision/images/introducer.png
+  - name: branch
+    icon: niteworks/images/branch.png
     size:
       type: SoftFloat
       value: 1.5
     type: point
   hover:
     max-found: 256
-    min_zoom: 5000
+    min-zoom: 5000
     glyph: "sluice/sharkmouth.png"
 ...

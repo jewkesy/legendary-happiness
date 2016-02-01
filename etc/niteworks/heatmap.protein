@@ -9,7 +9,7 @@ descrips:
 ingests:
   name: Heatmap
   display-text: "Rates Heatmap"
-  icon: mutualVision/images/ratesicon.png
+  icon: niteworks/images/ratesicon.png
   type: texture
   daemon: Analysis
   include-data: true
@@ -57,28 +57,28 @@ ingests:
   - name: style
     selection-type: exclusive
     contents:
-    - name: mutualVision/heatmap/red.png
+    - name: niteworks/heatmap/red.png
       display-text: red
       selected: 0
-    - name: mutualVision/heatmap/green.png
+    - name: niteworks/heatmap/green.png
       display-text: green
       selected: 0
-    - name: mutualVision/heatmap/blue.png
+    - name: niteworks/heatmap/blue.png
       display-text: blue
       selected: 0
-    - name: mutualVision/heatmap/indigo-blue.png
+    - name: niteworks/heatmap/indigo-blue.png
       display-text: indigo-blue
       selected: 0
-    - name: mutualVision/heatmap/red-yellow.png
+    - name: niteworks/heatmap/red-yellow.png
       display-text: red-yellow
       selected: 0
-    - name: mutualVision/heatmap/yellow-green.png
+    - name: niteworks/heatmap/yellow-green.png
       display-text: yellow-green
       selected: 0
-    - name: mutualVision/heatmap/colors.png
+    - name: niteworks/heatmap/colors.png
       display-text: colors
       selected: 1
-    - name: mutualVision/heatmap/greyscale.png
+    - name: niteworks/heatmap/greyscale.png
       display-text: greyscale
       selected: 0
   - name: entity-kinds

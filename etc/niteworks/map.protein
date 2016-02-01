@@ -9,7 +9,7 @@ descrips:
 ingests:
   name: Map
   type: atlas
-  layers-path: "mutualVision/static_layers.protein"
+  layers-path: "niteworks/static_layers.protein"
   attributes:
   - name: alpha-per-second
     selection-type: exclusive

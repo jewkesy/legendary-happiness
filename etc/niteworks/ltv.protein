@@ -8,7 +8,7 @@ descrips:
 - new-fluoro-template
 ingests:
   name: LTV
-  icon: mutualVision/images/arrearsicon.png
+  icon: niteworks/images/arrearsicon.png
   type: network
   display-text: 'LTV'
   attributes:
@@ -100,7 +100,7 @@ ingests:
   - coin10
   pigments:
   - name: ltv_10
-    icon: mutualVision/images/arcLeft.png
+    icon: niteworks/images/arcLeft.png
     size:
       type: SoftFloat
       value: 2.0
@@ -113,7 +113,7 @@ ingests:
       - 1.0
     type: point
   - name: ltv_20
-    icon: mutualVision/images/arcLeft.png
+    icon: niteworks/images/arcLeft.png
     size:
       type: SoftFloat
       value: 2.0
@@ -126,7 +126,7 @@ ingests:
       - 1.0
     type: point
   - name: ltv_30
-    icon: mutualVision/images/arcLeft.png
+    icon: niteworks/images/arcLeft.png
     size:
       type: SoftFloat
       value: 2.0
@@ -139,7 +139,7 @@ ingests:
       - 1.0
     type: point
   - name: ltv_40
-    icon: mutualVision/images/arcLeft.png
+    icon: niteworks/images/arcLeft.png
     size:
       type: SoftFloat
       value: 2.0
@@ -152,7 +152,7 @@ ingests:
       - 1.0
     type: point
   - name: ltv_50
-    icon: mutualVision/images/arcLeft.png
+    icon: niteworks/images/arcLeft.png
     size:
       type: SoftFloat
       value: 2.0
@@ -165,7 +165,7 @@ ingests:
       - 1.0
     type: point
   - name: ltv_60
-    icon: mutualVision/images/arcLeft.png
+    icon: niteworks/images/arcLeft.png
     size:
       type: SoftFloat
       value: 2.0
@@ -178,7 +178,7 @@ ingests:
       - 1.0
     type: point
   - name: ltv_70
-    icon: mutualVision/images/arcLeft.png
+    icon: niteworks/images/arcLeft.png
     size:
       type: SoftFloat
       value: 2.0
@@ -191,7 +191,7 @@ ingests:
       - 1.0
     type: point
   - name: ltv_80
-    icon: mutualVision/images/arcLeft.png
+    icon: niteworks/images/arcLeft.png
     size:
       type: SoftFloat
       value: 2.0
@@ -204,7 +204,7 @@ ingests:
       - 1.0
     type: point
   - name: ltv_90
-    icon: mutualVision/images/arcLeft.png
+    icon: niteworks/images/arcLeft.png
     size:
       type: SoftFloat
       value: 2.0
@@ -217,7 +217,7 @@ ingests:
       - 1.0
     type: point
   - name: ltv_100
-    icon: mutualVision/images/arcLeft.png
+    icon: niteworks/images/arcLeft.png
     size:
       type: SoftFloat
       value: 2.0
@@ -230,7 +230,7 @@ ingests:
       - 1.0
     type: point
   - name: ltv_stress_10
-    icon: mutualVision/images/arcRight.png
+    icon: niteworks/images/arcRight.png
     size:
       type: SoftFloat
       value: 2.0
@@ -243,7 +243,7 @@ ingests:
       - 1.0
     type: point
   - name: ltv_stress_20
-    icon: mutualVision/images/arcRight.png
+    icon: niteworks/images/arcRight.png
     size:
       type: SoftFloat
       value: 2.0
@@ -256,7 +256,7 @@ ingests:
       - 1.0
     type: point
   - name: ltv_stress_30
-    icon: mutualVision/images/arcRight.png
+    icon: niteworks/images/arcRight.png
     size:
       type: SoftFloat
       value: 2.0
@@ -269,7 +269,7 @@ ingests:
       - 1.0
     type: point
   - name: ltv_stress_40
-    icon: mutualVision/images/arcRight.png
+    icon: niteworks/images/arcRight.png
     size:
       type: SoftFloat
       value: 2.0
@@ -282,7 +282,7 @@ ingests:
       - 1.0
     type: point
   - name: ltv_stress_50
-    icon: mutualVision/images/arcRight.png
+    icon: niteworks/images/arcRight.png
     size:
       type: SoftFloat
       value: 2.0
@@ -295,7 +295,7 @@ ingests:
       - 1.0
     type: point
   - name: ltv_stress_60
-    icon: mutualVision/images/arcRight.png
+    icon: niteworks/images/arcRight.png
     size:
       type: SoftFloat
       value: 2.0
@@ -308,7 +308,7 @@ ingests:
       - 1.0
     type: point
   - name: ltv_stress_70
-    icon: mutualVision/images/arcRight.png
+    icon: niteworks/images/arcRight.png
     size:
       type: SoftFloat
       value: 2.0
@@ -321,7 +321,7 @@ ingests:
       - 1.0
     type: point
   - name: ltv_stress_80
-    icon: mutualVision/images/arcRight.png
+    icon: niteworks/images/arcRight.png
     size:
       type: SoftFloat
       value: 2.0
@@ -334,7 +334,7 @@ ingests:
       - 1.0
     type: point
   - name: ltv_stress_90
-    icon: mutualVision/images/arcRight.png
+    icon: niteworks/images/arcRight.png
     size:
       type: SoftFloat
       value: 2.0
@@ -347,7 +347,7 @@ ingests:
       - 1.0
     type: point
   - name: ltv_stress_100
-    icon: mutualVision/images/arcRight.png
+    icon: niteworks/images/arcRight.png
     size:
       type: SoftFloat
       value: 2.0

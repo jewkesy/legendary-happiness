@@ -8,7 +8,7 @@ descrips:
 - new-fluoro-template
 ingests:
   name: BlankCustomer
-  icon: mutualVision/images/customericon.png
+  icon: niteworks/images/customericon.png
   type: network
   display-text: 'Blank Customers'
   attributes:
@@ -45,45 +45,45 @@ ingests:
     - name: customer_f_0
       display-text: "Customer, Female 0-16"
       selected: false
-      icon: mutualVision/images/demographics/girl.png
+      icon: niteworks/images/demographics/girl.png
     - name: customer_m_0
       display-text: "Customer, Male 0-16"
       selected: false
-      icon: mutualVision/images/demographics/boy.png
+      icon: niteworks/images/demographics/boy.png
 
     - name: customer_f_16
       display-text: "Customer, Female 16-25"
       selected: false
-      icon: mutualVision/images/demographics/woman-16-24.png
+      icon: niteworks/images/demographics/woman-16-24.png
     - name: customer_m_16
       display-text: "Customer, Male 16-25"
       selected: false
-      icon: mutualVision/images/demographics/man-16-24.png
+      icon: niteworks/images/demographics/man-16-24.png
 
     - name: customer_f_25
       display-text: "Customer, Female 25-55"
       selected: false
-      icon: mutualVision/images/demographics/woman-25-55.png
+      icon: niteworks/images/demographics/woman-25-55.png
 
 
 
     - name: customer_m_25
       display-text: "Customer, Male 25-55"
       selected: false
-      icon: mutualVision/images/demographics/man-25-55.png
+      icon: niteworks/images/demographics/man-25-55.png
     - name: customer_f_55
       display-text: "Customer, Female 55+"
       selected: false
-      icon: mutualVision/images/demographics/woman-55+.png
+      icon: niteworks/images/demographics/woman-55+.png
     - name: customer_m_55
       display-text: "Customer, Male 55+"
       selected: false
-      icon: mutualVision/images/demographics/man-55+.png
+      icon: niteworks/images/demographics/man-55+.png
       
     - name: customer_business
       display-text: "Business Owner"
       selected: false
-      icon: mutualVision/images/demographics/business.png
+      icon: niteworks/images/demographics/business.png
     selection-type: inclusive
   default_shaders:
     path:
@@ -104,55 +104,55 @@ ingests:
   - customer_business
   pigments:
   - name: customer_f_0
-    icon: mutualVision/images/demographics/girl.png
+    icon: niteworks/images/demographics/girl.png
     size:
       type: SoftFloat
       value: 1
     type: point
   - name: customer_f_16
-    icon: mutualVision/images/demographics/woman-16-24.png
+    icon: niteworks/images/demographics/woman-16-24.png
     size:
       type: SoftFloat
       value: 1
     type: point
   - name: customer_f_25
-    icon: mutualVision/images/demographics/woman-25-55.png
+    icon: niteworks/images/demographics/woman-25-55.png
     size:
       type: SoftFloat
       value: 1
     type: point
   - name: customer_f_55
-    icon: mutualVision/images/demographics/woman-55+.png
+    icon: niteworks/images/demographics/woman-55+.png
     size:
       type: SoftFloat
       value: 1
     type: point
   - name: customer_m_0
-    icon: mutualVision/images/demographics/boy.png
+    icon: niteworks/images/demographics/boy.png
     size:
       type: SoftFloat
       value: 1
     type: point
   - name: customer_m_16
-    icon: mutualVision/images/demographics/man-16-24.png
+    icon: niteworks/images/demographics/man-16-24.png
     size:
       type: SoftFloat
       value: 1
     type: point
   - name: customer_m_25
-    icon: mutualVision/images/demographics/man-25-55.png
+    icon: niteworks/images/demographics/man-25-55.png
     size:
       type: SoftFloat
       value: 1
     type: point
   - name: customer_m_55
-    icon: mutualVision/images/demographics/man-55+.png
+    icon: niteworks/images/demographics/man-55+.png
     size:
       type: SoftFloat
       value: 1
     type: point
   - name: customer_business
-    icon: mutualVision/images/demographics/business.png
+    icon: niteworks/images/demographics/business.png
     size:
       type: SoftFloat
       value: 1

@@ -9,7 +9,7 @@ descrips:
 ingests:
   name: Demographics
   display-text: "{ Counties }"
-  icon: mutualVision/icons/demographics.png
+  icon: niteworks/icons/demographics.png
   type: texture
   daemon: Financials
   attributes:
@@ -31,10 +31,10 @@ ingests:
   - name: style
     selection-type: exclusive
     contents:
-    - name: mutualVision/zippy/uk-county-pops
+    - name: niteworks/zippy/uk-county-pops
       display-text: County Populations
       selected: 0
-    - name: mutualVision/zippy/British_postcode_areas_map
+    - name: niteworks/zippy/British_postcode_areas_map
       display-text: Postcode Areas
       selected: 1
 ...

@@ -7,10 +7,10 @@ descrips:
 - request
 - new-fluoro-template
 ingests:
-  name: Branch
-  icon: mutualVision/images/branchicon.png
+  name: BuildSoc
+  icon: niteworks/images/buildsocicon.png
   type: network
-  display-text: 'Branches'
+  display-text: 'Building Society HQs'
   attributes:
   - name: enable-menu
     selection-type: exclusive
@@ -24,10 +24,10 @@ ingests:
   - name: enabled-kinds
     display-text: 'Filter Options'
     contents:
-    - name: branch
-      display-text: "Branch"
+    - name: buildsoc
+      display-text: "Building Society HQs"
       selected: true
-      icon: branch.png
+      icon: buildsoc.png
     selection-type: inclusive
   default_shaders:
     path:
@@ -39,14 +39,14 @@ ingests:
   kinds:
   - branch
   pigments:
-  - name: branch
-    icon: mutualVision/images/branch.png
+  - name: buildsoc
+    icon: niteworks/images/buildsoc.png
     size:
       type: SoftFloat
       value: 1.5
     type: point
   hover:
     max-found: 256
-    min-zoom: 5000
+    min_zoom: 5000
     glyph: "sluice/sharkmouth.png"
 ...

@@ -7,11 +7,29 @@ descrips:
 - request
 - new-fluoro-template
 ingests:
-  name: BuildSoc
-  icon: mutualVision/images/buildsocicon.png
+  name: Business
+  icon: niteworks/images/businessicon.png
   type: network
-  display-text: 'Building Society HQs'
+  display-text: 'Businesses'
   attributes:
+  - name: opacity
+    selection-type: exclusive
+    contents:
+    - name: '0.25'
+      display-text: 25%
+      selected: 0
+    - name: '0.50'
+      display-text: 50%
+      selected: 0
+    - name: '0.75'
+      display-text: 75%
+      selected: 0
+    - name: '0.95'
+      display-text: 95%
+      selected: 1
+    - name: '1.00'
+      display-text: 100%
+      selected: 0
   - name: enable-menu
     selection-type: exclusive
     contents:
@@ -24,10 +42,10 @@ ingests:
   - name: enabled-kinds
     display-text: 'Filter Options'
     contents:
-    - name: buildsoc
-      display-text: "Building Society HQs"
+    - name: customer_business
+      display-text: "Business Owner"
       selected: true
-      icon: buildsoc.png
+      icon: niteworks/images/demographics/business.png
     selection-type: inclusive
   default_shaders:
     path:
@@ -37,13 +55,13 @@ ingests:
       fragment: network.frag
       vertex: network.vert
   kinds:
-  - branch
+  - customer_business
   pigments:
-  - name: buildsoc
-    icon: mutualVision/images/buildsoc.png
+  - name: customer_business
+    icon: niteworks/images/demographics/business.png
     size:
       type: SoftFloat
-      value: 1.5
+      value: 1
     type: point
   hover:
     max-found: 256

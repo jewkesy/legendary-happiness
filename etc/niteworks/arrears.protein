@@ -7,73 +7,62 @@ descrips:
 - request
 - new-fluoro-template
 ingests:
-  name: Ratings
-  icon: mutualVision/images/arrearsicon.png
+  name: Arrears
+  icon: niteworks/images/arrearsicon.png
   type: network
-  display-text: 'Ratings'
+  display-text: 'Arrears'
   attributes:
   - name: enable-menu
     selection-type: exclusive
     contents:
     - name: true
       display-text: Enable
-      selected: false
+      selected: true
     - name: false
       display-text: Disable
-      selected: true
-  - name: opacity
-    selection-type: exclusive
-    contents:
-    - name: '0.25'
-      display-text: 25%
-      selected: 0
-    - name: '0.50'
-      display-text: 50%
-      selected: 0
-    - name: '0.75'
-      display-text: 75%
-      selected: 0
-    - name: '1.00'
-      display-text: 100%
-      selected: 1
+      selected: false
   - name: enabled-kinds
     display-text: 'Filter Options'
     contents:
-    - name: customer_f_0
-      display-text: "Rate customer_f_0"
+    - name: coin1
+      display-text: "Loan Banding 1"
       selected: true
       icon: sluice/symbols/circle.png
-    - name: customer_f_16
-      display-text: "Rate customer_f_16"
+    - name: coin2
+      display-text: "Loan Banding 2"
       selected: true
       icon: sluice/symbols/circle.png
-    - name: customer_f_25
-      display-text: "Rate customer_f_25"
+    - name: coin3
+      display-text: "Loan Banding 3"
       selected: true
       icon: sluice/symbols/circle.png
-    - name: customer_f_55
-      display-text: "Rate customer_f_55"
+    - name: coin4
+      display-text: "Loan Banding 4"
       selected: true
       icon: sluice/symbols/circle.png
-    - name: customer_m_0
-      display-text: "Rate customer_m_0"
+    - name: coin5
+      display-text: "Loan Banding 5"
       selected: true
       icon: sluice/symbols/circle.png
-    - name: customer_m_16
-      display-text: "Rate customer_m_16"
+    - name: coin6
+      display-text: "Loan Banding 6"
       selected: true
       icon: sluice/symbols/circle.png
-    - name: customer_m_25
-      display-text: "Rate customer_m_25"
+    - name: coin7
+      display-text: "Loan Banding 7"
       selected: true
       icon: sluice/symbols/circle.png
-    - name: customer_m_55
-      display-text: "Rate customer_m_55"
+    - name: coin8
+      display-text: "Loan Banding 8"
       selected: true
       icon: sluice/symbols/circle.png
-    - name: customer_business
-      display-text: "Rate customer_business"
-      selected: false
+    - name: coin9
+      display-text: "Loan Banding 9"
+      selected: true
+      icon: sluice/symbols/circle.png
+    - name: coin10
+      display-text: "Loan Banding 10"
+      selected: true
       icon: sluice/symbols/circle.png
     selection-type: inclusive
   default_shaders:
@@ -84,96 +73,97 @@ ingests:
       fragment: network.frag
       vertex: network.vert
   kinds:
-  - customer_f_0
-  - customer_f_16
-  - customer_f_25
-  - customer_f_55
-  - customer_m_0
-  - customer_m_16
-  - customer_m_25
-  - customer_m_55
-  - customer_business
+  - coin1
+  - coin2
+  - coin3
+  - coin4
+  - coin5
+  - coin6
+  - coin7
+  - coin8
+  - coin9
+  - coin10
   pigments:
-  - name: ratings_1
-    icon: sluice/symbols/ring.png
+  - name: arrears_1
+    icon: sluice/symbols/circle.png
     size:
       type: SoftFloat
-      value: 2.0
+      value: 1.5
     color:
       type: SoftColor
       value:
+      - 1.0
+      - 0.8
+      - 0.8
+      - 1.0
+    type: point
+  - name: arrears_2
+    icon: sluice/symbols/circle.png
+    size:
+      type: SoftFloat
+      value: 1.5
+    color:
+      type: SoftColor
+      value:
+      - 1.0
+      - 0.6
+      - 0.6
+      - 1.0
+    type: point
+  - name: arrears_3
+    icon: sluice/symbols/circle.png
+    size:
+      type: SoftFloat
+      value: 1.5
+    color:
+      type: SoftColor
+      value:
+      - 1.0
+      - 0.4
       - 0.4
       - 1.0
+    type: point
+  - name: arrears_4
+    icon: sluice/symbols/circle.png
+    size:
+      type: SoftFloat
+      value: 1.5
+    color:
+      type: SoftColor
+      value:
+      - 1.0
+      - 0.2
       - 0.2
       - 1.0
     type: point
-  - name: ratings_2
-    icon: sluice/symbols/ring.png
+  - name: arrears_5
+    icon: sluice/symbols/circle.png
     size:
       type: SoftFloat
-      value: 2.0
-    color:
-      type: SoftColor
-      value:
-      - 0.8
-      - 1.0
-      - 0.4
-      - 1.0
-    type: point
-  - name: ratings_3
-    icon: sluice/symbols/ring.png
-    size:
-      type: SoftFloat
-      value: 2.0
+      value: 1.5
     color:
       type: SoftColor
       value:
       - 1.0
-      - 0.8
-      - 0.4
-      - 1.0
-    type: point
-  - name: ratings_4
-    icon: sluice/symbols/ring.png
-    size:
-      type: SoftFloat
-      value: 2.0
-    color:
-      type: SoftColor
-      value:
-      - 1.0
-      - 0.4
+      - 0.0
       - 0.0
       - 1.0
     type: point
-  - name: ratings_5
-    icon: sluice/symbols/ring.png
+  - name: arrears_6
+    icon: sluice/symbols/circle.png
     size:
       type: SoftFloat
-      value: 2.0
+      value: 1.5
     color:
       type: SoftColor
       value:
-      - 0.8
-      - 0.4
-      - 0.0
       - 1.0
-    type: point
-  - name: ratings_6
-    icon: sluice/symbols/ring.png
-    size:
-      type: SoftFloat
-      value: 2.0
-    color:
-      type: SoftColor
-      value:
-      - 0.0
       - 0.0
       - 0.0
       - 1.0
     type: point
   hover:
     max-found: 256
-    min_zoom: 5000
+    min-zoom: 5000
     glyph: "sluice/sharkmouth.png"
 ...

@@ -1,8 +1,8 @@
-{   "id": "mutualVision",
-    "name": "MUTUALVISION",
+{   "id": "niteworks",
+    "name": "NiteWorks",
     "etc": "etc",
     "share": "share",
-    "settings": "mutualVision/sluice-settings.protein",
+    "settings": "niteworks/sluice-settings.protein",
     "jsplasma-apps": {
         "launchpad": {
             "path": "web/modules/showrunner/server.py",
@@ -10,20 +10,20 @@
         }
     },
     "sluice-tabs": {
-        "Mutual Vision": {
-            "path": "mutualvision"
+        "NiteWorks": {
+            "path": "niteworks"
         }
     },
     "daemons": {
         "mvClick": {
             "name": "MV Click",
             "default": true,
-            "script": "mutualVision/mvClick.sh"
+            "script": "niteworks/mvClick.sh"
         },
         "mvLoad": {
             "name": "MV Load",
             "default": true,
-            "script": "mutualVision/mvDataLoad.sh"
+            "script": "niteworks/mvDataLoad.sh"
         },
         "heatmap": {
             "name": "Heatmap",
@@ -38,23 +38,12 @@
         "zoomTo": {
             "name": "Zoom To",
             "default": true,
-            "script": "mutualVision/zoomTo.sh"
+            "script": "niteworks/zoomTo.sh"
         },
         "showIntro": {
             "name": "Show Introduction",
             "default": true,
-            "script": "mutualVision/showIntro.sh"
-        }
-    },
-    "menuDetails": {
-    		"id": "mutualVision",
-        "navIcon": "",
-        "mainTitle": "MUTUALVISION",
-        "switcherUrl": "http://192.168.25.13:4567/?treatment=",
-        "treatmentLocation": "~/home/demo/mutualvision",
-        "article": {
-          "headerImage": "./img/branch.png",
-          "summary": "Mutualvision demo"
+            "script": "niteworks/showIntro.sh"
         }
     }
 }

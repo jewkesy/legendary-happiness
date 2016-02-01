@@ -7,29 +7,11 @@ descrips:
 - request
 - new-fluoro-template
 ingests:
-  name: Business
-  icon: mutualVision/images/businessicon.png
+  name: Introducer
+  icon: niteworks/images/introducericon.png
   type: network
-  display-text: 'Businesses'
+  display-text: 'Introducer'
   attributes:
-  - name: opacity
-    selection-type: exclusive
-    contents:
-    - name: '0.25'
-      display-text: 25%
-      selected: 0
-    - name: '0.50'
-      display-text: 50%
-      selected: 0
-    - name: '0.75'
-      display-text: 75%
-      selected: 0
-    - name: '0.95'
-      display-text: 95%
-      selected: 1
-    - name: '1.00'
-      display-text: 100%
-      selected: 0
   - name: enable-menu
     selection-type: exclusive
     contents:
@@ -42,10 +24,10 @@ ingests:
   - name: enabled-kinds
     display-text: 'Filter Options'
     contents:
-    - name: customer_business
-      display-text: "Business Owner"
+    - name: introducer
+      display-text: "introducer"
       selected: true
-      icon: mutualVision/images/demographics/business.png
+      icon: introducer.png
     selection-type: inclusive
   default_shaders:
     path:
@@ -55,13 +37,13 @@ ingests:
       fragment: network.frag
       vertex: network.vert
   kinds:
-  - customer_business
+  - introducer
   pigments:
-  - name: customer_business
-    icon: mutualVision/images/demographics/business.png
+  - name: introducer
+    icon: niteworks/images/introducer.png
     size:
       type: SoftFloat
-      value: 1
+      value: 1.5
     type: point
   hover:
     max-found: 256
