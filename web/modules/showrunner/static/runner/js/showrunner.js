@@ -284,9 +284,12 @@ function load_runner_config(runner) {
         showLtvLegend();
     }
 
-    function showVideo(url){
+    function showVideo(url, id){
         console.log('showing video', url)
-        open_webpage(url, 'video', [0, 0.25], 'right', [0.25, 0.75]);
+
+        var theVid = 'https://www.youtube.com/embed/' + url + '?autoplay=1'
+
+        open_webpage(theVid, 'video', [0, 0], 'right', [0.25, 0.75]);
     }
     function showCustomersLegend(){
         open_webpage('/customers', 'customersLegend', [0, -0.25], 'right', [0.25, 0.75]);
@@ -322,12 +325,15 @@ function load_runner_config(runner) {
     }
     function scene02() {
         lePetitCambodge();
+        setTimeout(function () {
+            showVideo('Lsel-jck6BE', 'scene02')
+        })
     }
     function scene03() {
         clear();
         stadeDeFrance();
         setTimeout(function(){
-           
+           showVideo('3h0NYk8pweg', 'scene03')
         }, 500);        
 
     }
@@ -357,7 +363,7 @@ function load_runner_config(runner) {
         bataclan();
 
         setTimeout(function(){
-            showVideo('https://www.youtube.com/embed/LSAFcnryoEw?autoplay=1')
+            showVideo('LSAFcnryoEw', 'scene07')
         }, 500);
 
     }
@@ -371,24 +377,12 @@ function load_runner_config(runner) {
     function scene09() {
         clear();
         bataclan();
-        setTimeout(function(){
 
+        setTimeout(function(){
+            showVideo('c0nP9xGJiYk', 'scene09')
         }, 500);   
     }
 
-
-    function scene10() {
-        clear();
-       
-
-    }
-
-    function scene11() {
-
-    }
-    function scene12() {
-        
-    }
 
     function vernonStory(clearThings) {
         if (!clearThings) { if (clearThings != false) clear() };
@@ -402,41 +396,7 @@ function load_runner_config(runner) {
         }, 2200);
     }
 
-    function clusterStory() {
-        clear();
-        runner.bookmark(53.428461938553234, -2.2391374673299191, 5000, 2)
-        setTimeout(function(){
-            buildsocs();
-            branches();
-            introducers();
-            customers();
-            businesses();
-            loans();
-            arrears();
-            rates();
-        }, 2200);
-    }
 
-    function goodBadStory() {
-        clear();
-        runner.bookmark(53.380415079712478, -2.1141502833177306, 40000, 2)
-        setTimeout(function(){
-            customers();
-            ratings();
-            showRatingsLegend();
-        }, 2200);
-    }
-
-    function stressTest() {
-        clear();
-        withington();
-        setTimeout(function(){
-            loans();
-            ltv();
-            showLoansLegend();
-            showLtvLegend();
-        }, 2200);
-    }
 
     function clearVernonWebPanels() {
         open_webpage('', 'buildsoc', [-10, -10], 'left', [0.5, 1.0]);
@@ -672,9 +632,9 @@ function load_runner_config(runner) {
         'a0scene7': ['9:40 p.m.', scene07],
         'a0scene8': ['9:53 p.m.', scene08],
         'a0scene9': ['12:20 a.m. ', scene09],
-        'a0scene10': ['', scene10],
-        'a0scene11': ['', scene11],
-        'a0scene12': ['', scene12],
+        'a0scene10': ['', null],
+        'a0scene11': ['', null],
+        'a0scene12': ['', null],
 
         'act1': ['Zooms', national],
         'a1scene1': ['Stade de France', stadeDeFrance],
