@@ -1,3 +1,5 @@
+var nodes = [];
+
 $( document ).ready(function() {
   var data = {
     "nodes": [
@@ -57,21 +59,45 @@ function populateUserTable()
 {
   var tableContent = ''
 
-  $.getJSON('/twitter/getuser/NoGarlicNoOnion', function(data) {
+  $.getJSON('/mongo/gettweet/' + $('#tweetid').val(), function(data) {
+    console.log(data[0]);
+
+    $('#profilebackground').css('background-color', '#' + data[0].twitter.user.profile_background_color)
+    $('#userimage').attr("src", data[0].twitter.user.profile_image_url);
+    $('#username').html(data[0].twitter.user.name);
+    $('#screenname').html('@' + data[0].twitter.user.screen_name);
+    $('#location').html(data[0].twitter.user.location);
+    $('#description').html(data[0].twitter.user.description);
+    $('#tweets').html(data[0].twitter.user.statuses_count);
+    $('#followers').html(data[0].twitter.user.followers_count);
+    $('#following').html(data[0].twitter.user.friends_count);
+    $('#tweetuser').html(data[0].twitter.user.name + ' ');
+    $('#tweetscreenname').html('@' + data[0].twitter.user.screen_name + ' . ');
+
+    var date = new Date(parseInt(data[0].twitter.timestamp_ms));
+
+    $('#tweetdate').html(date.toString("MMM dd"));
+    $('#tweet').html(data[0].twitter.text)
+
+    populateNetwork(data[0].twitter.user.screen_name);
+
+  });
+}
+
+function populateNetwork(screenname)
+{
+  $.getJSON('/twitter/getuserfriends/' + screenname, function(data) {
     console.log(data);
 
-    $('#userimage').attr("src", data.profile_image_url);
+    $.each(data.ids, function() {
+      var tweetuserid = parseInt(this);
+      $.getJSON('/mongo/gettweetuser/' + tweetuserid, function(data) {
+        if(data.length !=0)
+        {
+          console.log(data);
+        }
+      });
+    });
 
-    tableContent += '<tr>';
-    
-    tableContent += '<td>' + data.name + '</td>'
-    tableContent += '<td>' + data.screen_name + '</td>';
-    tableContent += '<td>' + data.location + '</td>';
-    tableContent += '<td>' + data.description + '</td>';
-    tableContent += '<td>' + data.entities.url.urls[0].expanded_url + '</td>';
-
-    tableContent += '</tr>';
-
-    $('#userList tbody').html(tableContent);
   });
 }

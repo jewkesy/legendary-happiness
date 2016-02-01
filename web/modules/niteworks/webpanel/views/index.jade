@@ -2,16 +2,40 @@ extends layout
 
 block content
 	div.container-fluid
-		div.col-md-12
-			div.row
-				div.col-md-12#profilebackground
-					div.col-md-4
-						img#userimage
-					div.col-md-8
-						div#userinfo
-							table#userList
-								tbody
-			div.row
-				div.col-md-12
-					div#container
-	input(value=id, type=hidden)
+		div.row
+			div.col-sm-12
+				div.row
+					div.col-sm-12#profilebackground
+						div.col-sm-6
+							div.col-sm-3
+								div.userimagecontainer
+									img#userimage
+							div.col-sm-9
+								div#username
+						div.col-sm-6
+							div#screenname user
+							div#location location
+							div#description description
+				div.row
+					div.col-sm-4.infocolleft
+						h3#tweets 53
+						h3.infotitle tweets
+					div.col-sm-4.infocolmiddle
+						h3#followers 53
+						h3.infotitle followers
+					div.col-sm-4.infocolright
+						h3#following 53
+						h3.infotitle following
+				div.row
+					div.col-sm-12.tweetcontainer
+						div.row
+							div.col-sm-12 
+								span#tweetuser user 
+								span#tweetscreenname @screenname . 
+								span#tweetdate date
+						div.row
+							div.col-sm-12#tweet This is the main twett
+				div.row
+					div.col-sm-12
+						div#container
+	input#tweetid(type='hidden', value=id)

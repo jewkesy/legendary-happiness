@@ -8,7 +8,15 @@ router.get('/', function(req, res, next) {
 
 router.get('/mongo/gettweet/:id', function(req, res) {
 	var db = req.db;
-	db.collection('people').find({tweetid: req.params.id}).toArray(function (err, items) {
+	db.collection('tweets').find({"twitter.id": parseInt(req.params.id)}).toArray(function (err, items) {
+		if (err) console.log(err)
+		res.json(items);
+	});
+});
+
+router.get('/mongo/gettweetuser/:id', function(req, res) {
+	var db = req.db;
+	db.collection('tweets').find({"twitter.user.id": parseInt(req.params.id)}).toArray(function (err, items) {
 		if (err) console.log(err)
 		res.json(items);
 	});
