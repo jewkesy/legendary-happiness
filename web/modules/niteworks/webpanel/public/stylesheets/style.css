@@ -1,0 +1,18 @@
+body {
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+
+a {
+  color: #00B7FF;
+}
+
+#container {
+	max-width: 600px;
+	height: 400px;
+	margin: auto;
+}
+
+#profilebackground
+{
+	background-color: red;
+}
