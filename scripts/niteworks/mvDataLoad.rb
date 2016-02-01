@@ -57,6 +57,59 @@ class Hearty < Metabolizer
     exit 1
   end
 
+
+  def LoadTweets()
+    uniqueItems = Set.new
+    arrItems = []
+    progress = 0
+    filter = {}   #   { 'LAT' => { '$exists' => true } }
+
+    @db.collection("tweets").find(filter).each do |row|
+# puts row['twitter']
+
+      
+
+  
+      tweet = row['twitter']
+
+      if (tweet['coordinates'].nil?)
+puts 'no geo, skipping'        
+        next
+      end  
+
+# puts tweet
+      kind = 'tweet'
+puts tweet['id_str']
+      uniqueId = kind + tweet['id_str']
+      if (uniqueItems.include?(uniqueId))
+        next
+      end
+      uniqueItems.add(uniqueId)
+puts uniqueId
+      attrs = {
+        'tweetId' => tweet['id'].to_s,
+        'Text' => tweet['text'].to_s,
+        'MongoId' => tweet['_id'].to_s,
+        'user' => tweet['user']['screen_name'].to_s
+      }
+puts attrs
+      ing = BuildIngest(kind + '_' + tweet['id_str'], tweet['coordinates']['coordinates'][0], tweet['coordinates']['coordinates'][1], kind, attrs);
+puts ing
+      arrItems.push(ing) 
+      progress += 1
+      # puts progress.to_s + ' vs ' + @@chunks.to_s
+      if (progress >= @@chunks.to_i)
+        # puts "1 - arrItems size: " + arrItems.size.to_s
+        PokeProtein(Protein.new(['sluice', 'prot-spec v1.0', 'topology', 'add' ], { 'topology' => arrItems }))
+        progress = 0
+        arrItems = []
+        # puts "2 - arrItems size: " + arrItems.size.to_s
+      end
+    end
+    PokeProtein(Protein.new(['sluice', 'prot-spec v1.0', 'topology', 'add' ], { 'topology' => arrItems }))
+    puts 'Tweets loaded: ' + uniqueItems.size.to_s        
+  end
+
   def LoadBranches()
     uniqueItems = Set.new
     kind = 'branch'
@@ -250,19 +303,22 @@ class Hearty < Metabolizer
     puts "Start time: " + Time.now.inspect
     @hose = Plasma::Pool.participate 'tcp://' + @@sluiceHost + '/topo-to-sluice'
   	mongo_client = MongoClient.new(@@mongoDB, 27017, :pool_size => 5)
-  	@db = mongo_client.db("mutualVision")
+  	@db = mongo_client.db("niteworks")
 
-    t1 = Thread.new{ LoadBranches() }
-    t2 = Thread.new{ LoadBuildingSocs() }
-    t3 = Thread.new{ LoadIntroducers() }
-    t4 = Thread.new{ LoadCustomers() }
-    t5 = Thread.new{ LoadLoans() }
+    # t1 = Thread.new{ LoadBranches() }
+    # t2 = Thread.new{ LoadBuildingSocs() }
+    # t3 = Thread.new{ LoadIntroducers() }
+    # t4 = Thread.new{ LoadCustomers() }
+    # t5 = Thread.new{ LoadLoans() }
 
-    t1.join
-    t2.join
-    t3.join
-    t4.join
-    t5.join
+    t6 = Thread.new{LoadTweets()}
+    t6.join
+
+    # t1.join
+    # t2.join
+    # t3.join
+    # t4.join
+    # t5.join
 
     @hose.withdraw()
     puts "End time: " + Time.now.inspect

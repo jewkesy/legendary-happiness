@@ -25,7 +25,8 @@ class Hearty < Metabolizer
     end
 
     # zoomTo(51.279121, -0.769756, 22000)  #Farnborough
-    zoomTo(54.711976144614532, -2.792778845872681, 20.5, 10)  #UK
+    # zoomTo(54.711976144614532, -2.792778845872681, 20.5, 10)  #UK
+    zoomTo(48.9267902, 2.3308999, 20, 10) # Paris Attacks
 
     puts "Zoom To applied, I'm outta here"
     exit 1

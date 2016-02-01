@@ -1,6 +1,6 @@
-# Mutual Vision Conduce Demonstrator
+# NiteWorks Conduce Demonstrator
 
-/opt/mct/sluice/bin/sluice-run -w -D  ~/Documents/conduce/treatments/mutualvision
+rm -rf .sluice/var/logs/*; /opt/mct/sluice/bin/sluice-run -w -D  ~/Documents/conduce/treatments/niteworks/
 
 ## Data
 All Mutual Vision data was supplied via CSV from the Vernon Building Society.  All names and address details are scrambled.  
