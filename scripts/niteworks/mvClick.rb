@@ -33,8 +33,8 @@ class Clicky < Metabolizer
         ingests = {'windshield' => [{
           'name' => 'dashboard',
           'feld' => 'left',
-          'loc' => [0,0.25],
-          'size' => [0.5, 1.0],
+          'loc' => [0,0],
+          'size' => [1.0, 1.0],
           'url' =>  'http://192.168.1.54:3000/?id=' + ing['attrs']['tweetId']
           }]}
 

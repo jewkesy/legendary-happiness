@@ -97,7 +97,7 @@ class Hearty < Metabolizer
         'timestamp' => tweet['timestamp_ms'].to_i
       }
 # puts attrs
-      ing = BuildIngest(kind + '_' + tweet['id_str'], tweet['coordinates']['coordinates'][0], tweet['coordinates']['coordinates'][1], kind, attrs);
+      ing = BuildIngest(kind + '_' + tweet['id_str'], tweet['coordinates']['coordinates'][1], tweet['coordinates']['coordinates'][0], kind, attrs);
 # puts ing
       arrItems.push(ing) 
       progress += 1
