@@ -1,0 +1,307 @@
+/*MAIN STYLES*/
+
+* {
+	font-family: Arial, Helvetica;
+}
+
+body, html {
+	width: 100%;
+	height: 100%;
+	margin: 0;
+	padding: 0;
+}
+
+.container {
+	width: 100%;
+	margin: 0 auto;
+}
+
+.header {
+	width: 98%;
+	display: inline-block;
+	background: #3f3f4e;
+	margin: 1% 1% 0 1%;
+	position: relative;
+	-moz-border-top-left-radius: 10px;
+	-webkit-border-top-left-radius: 10px;
+	border-top-left-radius: 10px;
+	-moz-border-top-right-radius: 10px;
+	-webkit-border-top-right-radius: 10px;
+	border-top-right-radius: 10px;
+}
+
+.footer {
+	width: 98%;
+	display: inline-block;
+	background: #3f3f4e;
+	margin: 0% 1% 0 1%;
+	position: relative;
+	-moz-border-bottom-left-radius: 5px;
+	-webkit-border-bottom-left-radius: 5px;
+	border-bottom-left-radius: 5px;
+	-moz-border-bottom-right-radius: 5px;
+	-webkit-border-bottom-right-radius: 5px;
+	border-bottom-right-radius: 5px;
+}
+
+.box {
+	background: #f6f6f6;
+	width: 98%;
+	margin: 0.25%;
+	padding: 0px 0;
+	display: none;
+}
+
+.box img {
+	float: left;
+	margin: 5px 35px 0px 5px;
+    width: 35px;
+}
+
+.box p {
+	float: left;
+	margin: 10px;
+	padding: 5px;
+}
+
+.box img.coin {
+	height: 35px;
+	width: 20px;
+	padding-left: 10px;
+}
+
+h1 {
+	color: #fff;
+	margin: 0;
+	padding: 5px 0;
+	text-align: center;
+	font-size: 1em;
+}
+
+p {
+	color: #3f3f4e;
+	font-size: 1em;
+}
+
+/*CIRCLE STYLES*/
+
+.circle {
+	width: 35px;
+	height: 35px;
+	float: left;
+	-moz-border-radius: 25px;
+	-webkit-border-radius: 25px;
+	border-radius: 25px;
+	margin: 5px 35px 0px 10px;
+
+}
+
+.arrear1 {
+	background-color: #FFCCCC;
+}
+
+.arrear2 {
+	background-color: #FF9999;
+}
+
+.arrear3 {
+	background-color: #FF6666;
+}
+
+.arrear4 {
+	background-color: #FF3333;
+}
+
+.arrear5 {
+	background-color: #FF0000;
+}
+
+.arrear6 {
+	background-color: #000000;
+}
+
+.centerMe {
+	width: 80%;
+	margin: 0 auto;
+	vertical-align:middle; 
+	text-align:center;
+}
+
+.centerMe td {
+	width: 33%;
+}
+
+.centerMe td p {
+	width: 100%;
+}
+
+.centerMe td div {
+	width: 35px;
+	display:block; 
+	margin:0 auto;
+}
+
+.centerMe td img {
+	margin:0 auto;
+}
+
+.ratings {
+	width: 100%;
+	text-align: center;
+}
+
+.ratings img {
+	padding: 0px;
+	margin: 5px;
+	width: 25px;
+}
+
+.ratings p {
+	width: 100%;
+}
+
+.rating1 {
+	color: #66FF33;
+}
+
+.rating2 {
+	color: #CCFF66;
+}
+
+.rating3 {
+	color: #FFCC66;
+}
+
+.rating4 {
+	color: #FF6600;
+}
+
+.rating5 {
+	color: #CC0000;
+}
+
+.rating6 {
+	color: #000000;
+}
+
+.ring {
+	border-width: 5px;
+	border-style: solid;
+	z-index: 1;
+	width: 34px;
+    height: 34px;
+    -moz-border-radius: 100%;
+    -webkit-border-radius: 100%;
+    border-radius: 100%;
+    background: transparent;
+    box-shadow: 2px 2px 4px rgba(0,0,0,0.5), inset 2px 2px 4px rgba(0,0,0,.5);
+    -webkit-box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5), inset 2px 2px 4px rgba(0,0,0,.5);  
+    -moz-box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5), inset 2px 2px 4px rgba(0,0,0,.5);
+}
+
+.ltv {
+	margin: 0;
+}
+
+.desc p {
+	width: 100%;
+}
+
+.leanRight {
+	text-align: right;
+}
+
+.grade {
+	padding: 5px;
+	margin: 0;
+	background-color: white;
+}
+
+.ltv_icon img {
+	padding:0 !important;
+	margin: 30px !important;
+}
+
+.ltv p {
+	margin: 0px !important;
+}
+
+.ltv_norm ._100 {
+	background-color: #000F05;
+}
+
+.ltv_norm ._90 {
+	background-color: #002E0F;
+}
+
+.ltv_norm ._80 {
+	background-color: #004C1F;
+}
+
+.ltv_norm ._70 {
+	background-color: #006B24;
+}
+
+.ltv_norm ._60 {
+	background-color: #008A2E;
+}
+
+.ltv_norm ._50 {
+	background-color: #19A347;
+}
+
+.ltv_norm ._40 {
+	background-color: #4DB870;
+}
+
+.ltv_norm ._30 {
+	background-color: #80CC99;
+}
+
+.ltv_norm ._20 {
+	background-color: #B2E0C2;
+}
+
+.ltv_norm ._10 {
+	background-color: #E6F5EB;
+}
+
+.ltv_stress ._100 {
+	background-color: #1A0000;
+}
+
+.ltv_stress ._90 {
+	background-color: #4C0000;
+}
+
+.ltv_stress ._80 {
+	background-color: #800000;
+}
+
+.ltv_stress ._70 {
+	background-color: #B20000;
+}
+
+.ltv_stress ._60 {
+	background-color: #E60000;
+}
+
+.ltv_stress ._50 {
+	background-color: #FF1919;
+}
+
+.ltv_stress ._40 {
+	background-color: #FF4D4D;
+}
+
+.ltv_stress ._30 {
+	background-color: #FF8080;
+}
+
+.ltv_stress ._20 {
+	background-color: #FFB2B2;
+}
+
+.ltv_stress ._10 {
+	background-color: #FFE6E6;
+}

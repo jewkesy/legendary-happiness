@@ -1,0 +1,366 @@
+%YAML 1.1
+%TAG ! tag:oblong.com,2009:slaw/
+--- !protein
+descrips:
+- sluice
+- prot-spec v1.0
+- request
+- new-fluoro-template
+ingests:
+  name: LTV
+  icon: mutualVision/images/arrearsicon.png
+  type: network
+  display-text: 'LTV'
+  attributes:
+  - name: enable-menu
+    selection-type: exclusive
+    contents:
+    - name: true
+      display-text: Enable
+      selected: false
+    - name: false
+      display-text: Disable
+      selected: true
+  - name: opacity
+    selection-type: exclusive
+    contents:
+    - name: '0.25'
+      display-text: 25%
+      selected: 0
+    - name: '0.50'
+      display-text: 50%
+      selected: 0
+    - name: '0.75'
+      display-text: 75%
+      selected: 0
+    - name: '1.00'
+      display-text: 100%
+      selected: 1
+  - name: enabled-kinds
+    display-text: 'Filter Options'
+    contents:
+    - name: coin1
+      display-text: "LTV 0 - 10%"
+      selected: true
+      icon: sluice/symbols/circle.png
+    - name: coin2
+      display-text: "LTV 10 - 20%"
+      selected: true
+      icon: sluice/symbols/circle.png
+    - name: coin3
+      display-text: "LTV 20 - 30%"
+      selected: true
+      icon: sluice/symbols/circle.png
+    - name: coin4
+      display-text: "LTV 30 - 40%"
+      selected: true
+      icon: sluice/symbols/circle.png
+    - name: coin5
+      display-text: "LTV 40 - 50%"
+      selected: true
+      icon: sluice/symbols/circle.png
+    - name: coin6
+      display-text: "LTV 50 - 60%"
+      selected: true
+      icon: sluice/symbols/circle.png
+    - name: coin7
+      display-text: "LTV 60 - 70%"
+      selected: true
+      icon: sluice/symbols/circle.png
+    - name: coin8
+      display-text: "LTV 70 - 80%"
+      selected: true
+      icon: sluice/symbols/circle.png
+    - name: coin9
+      display-text: "LTV 80 - 90%"
+      selected: true
+      icon: sluice/symbols/circle.png
+    - name: coin10
+      display-text: "LTV 90 - 100%"
+      selected: true
+      icon: sluice/symbols/circle.png
+    selection-type: inclusive
+  default_shaders:
+    path:
+      fragment: ribbons.frag
+      vertex: marching_ribbons.vert
+    point:
+      fragment: network.frag
+      vertex: network.vert
+  kinds:
+  - coin1
+  - coin2
+  - coin3
+  - coin4
+  - coin5
+  - coin6
+  - coin7
+  - coin8
+  - coin9
+  - coin10
+  pigments:
+  - name: ltv_10
+    icon: mutualVision/images/arcLeft.png
+    size:
+      type: SoftFloat
+      value: 2.0
+    color:
+      type: SoftColor
+      value:
+      - 0.9
+      - 0.96
+      - 0.92
+      - 1.0
+    type: point
+  - name: ltv_20
+    icon: mutualVision/images/arcLeft.png
+    size:
+      type: SoftFloat
+      value: 2.0
+    color:
+      type: SoftColor
+      value:
+      - 0.698
+      - 0.878
+      - 0.76
+      - 1.0
+    type: point
+  - name: ltv_30
+    icon: mutualVision/images/arcLeft.png
+    size:
+      type: SoftFloat
+      value: 2.0
+    color:
+      type: SoftColor
+      value:
+      - 0.5
+      - 0.8
+      - 0.6
+      - 1.0
+    type: point
+  - name: ltv_40
+    icon: mutualVision/images/arcLeft.png
+    size:
+      type: SoftFloat
+      value: 2.0
+    color:
+      type: SoftColor
+      value:
+      - 0.302
+      - 0.721
+      - 0.439
+      - 1.0
+    type: point
+  - name: ltv_50
+    icon: mutualVision/images/arcLeft.png
+    size:
+      type: SoftFloat
+      value: 2.0
+    color:
+      type: SoftColor
+      value:
+      - 0.098
+      - 0.639
+      - 0.278
+      - 1.0
+    type: point
+  - name: ltv_60
+    icon: mutualVision/images/arcLeft.png
+    size:
+      type: SoftFloat
+      value: 2.0
+    color:
+      type: SoftColor
+      value:
+      - 0.0
+      - 0.541
+      - 0.18
+      - 1.0
+    type: point
+  - name: ltv_70
+    icon: mutualVision/images/arcLeft.png
+    size:
+      type: SoftFloat
+      value: 2.0
+    color:
+      type: SoftColor
+      value:
+      - 0.0
+      - 0.4196
+      - 0.14
+      - 1.0
+    type: point
+  - name: ltv_80
+    icon: mutualVision/images/arcLeft.png
+    size:
+      type: SoftFloat
+      value: 2.0
+    color:
+      type: SoftColor
+      value:
+      - 0.0
+      - 0.298
+      - 0.121
+      - 1.0
+    type: point
+  - name: ltv_90
+    icon: mutualVision/images/arcLeft.png
+    size:
+      type: SoftFloat
+      value: 2.0
+    color:
+      type: SoftColor
+      value:
+      - 0.0
+      - 0.18
+      - 0.0588
+      - 1.0
+    type: point
+  - name: ltv_100
+    icon: mutualVision/images/arcLeft.png
+    size:
+      type: SoftFloat
+      value: 2.0
+    color:
+      type: SoftColor
+      value:
+      - 0.0
+      - 0.0588
+      - 0.0196
+      - 1.0
+    type: point
+  - name: ltv_stress_10
+    icon: mutualVision/images/arcRight.png
+    size:
+      type: SoftFloat
+      value: 2.0
+    color:
+      type: SoftColor
+      value:
+      - 1.0
+      - 0.9
+      - 0.9
+      - 1.0
+    type: point
+  - name: ltv_stress_20
+    icon: mutualVision/images/arcRight.png
+    size:
+      type: SoftFloat
+      value: 2.0
+    color:
+      type: SoftColor
+      value:
+      - 1.0
+      - 0.698
+      - 0.698
+      - 1.0
+    type: point
+  - name: ltv_stress_30
+    icon: mutualVision/images/arcRight.png
+    size:
+      type: SoftFloat
+      value: 2.0
+    color:
+      type: SoftColor
+      value:
+      - 1.0
+      - 0.5
+      - 0.5
+      - 1.0
+    type: point
+  - name: ltv_stress_40
+    icon: mutualVision/images/arcRight.png
+    size:
+      type: SoftFloat
+      value: 2.0
+    color:
+      type: SoftColor
+      value:
+      - 1.0
+      - 0.302
+      - 0.302
+      - 1.0
+    type: point
+  - name: ltv_stress_50
+    icon: mutualVision/images/arcRight.png
+    size:
+      type: SoftFloat
+      value: 2.0
+    color:
+      type: SoftColor
+      value:
+      - 1.0
+      - 0.098
+      - 0.098
+      - 1.0
+    type: point
+  - name: ltv_stress_60
+    icon: mutualVision/images/arcRight.png
+    size:
+      type: SoftFloat
+      value: 2.0
+    color:
+      type: SoftColor
+      value:
+      - 0.9
+      - 0.0
+      - 0.0
+      - 1.0
+    type: point
+  - name: ltv_stress_70
+    icon: mutualVision/images/arcRight.png
+    size:
+      type: SoftFloat
+      value: 2.0
+    color:
+      type: SoftColor
+      value:
+      - 0.698
+      - 0.0
+      - 0.0
+      - 1.0
+    type: point
+  - name: ltv_stress_80
+    icon: mutualVision/images/arcRight.png
+    size:
+      type: SoftFloat
+      value: 2.0
+    color:
+      type: SoftColor
+      value:
+      - 0.5
+      - 0.0
+      - 0.0
+      - 1.0
+    type: point
+  - name: ltv_stress_90
+    icon: mutualVision/images/arcRight.png
+    size:
+      type: SoftFloat
+      value: 2.0
+    color:
+      type: SoftColor
+      value:
+      - 0.298
+      - 0.0
+      - 0.0
+      - 1.0
+    type: point
+  - name: ltv_stress_100
+    icon: mutualVision/images/arcRight.png
+    size:
+      type: SoftFloat
+      value: 2.0
+    color:
+      type: SoftColor
+      value:
+      - 0.102
+      - 0.0
+      - 0.0
+      - 1.0
+    type: point
+  hover:
+    max-found: 256
+    min_zoom: 5000
+    glyph: "sluice/sharkmouth.png"
+...

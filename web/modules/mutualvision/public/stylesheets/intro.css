@@ -1,0 +1,107 @@
+/* Sticky footer styles
+-------------------------------------------------- */
+
+html,
+body {
+  height: 100%;
+  font-family: 'Roboto Condensed', sans-serif;
+  /* The html and body elements cannot have any padding or margin. */
+  background-image: url('../images/background-1.jpg');
+}
+
+/* Wrapper for page content to push down footer */
+#wrap {
+  min-height: 100%;
+  height: auto;
+  /* Negative indent footer by its height */
+  margin: 0 auto -50px;
+  /* Pad bottom by footer height */
+  padding: 0 0 50px;
+
+}
+
+h1 {
+  font-size: 3em;
+  text-align: right;
+  padding-bottom: 10px;
+}
+
+p {
+  font-size: 2em;
+  padding: 5px;
+}
+
+img {
+  margin: 0 auto;
+}
+
+#box {
+  display:none;
+}
+
+#step1, #step2, #step3, #step4, #step5, #step6, #step7, #step8, #step9, #step10 {
+  margin: 0 auto;
+  display: none;
+  height: 100% !important;
+  float:left;
+}
+
+.conduceMock {
+  text-align: center;
+  background-image: url('../images/map.jpg');
+  width: 66%;
+}
+
+
+/* Set the fixed height of the footer here */
+#footer {
+  height: 50px;
+  background-image: url('../images/background-0.png');
+  text-align: center;
+  vertical-align: middle;
+  color: white;
+}
+
+.emphasis {
+  font-weight: bold;
+  font-style: italic;
+}
+
+.rating1 {
+  color: #66FF33;
+}
+
+.rating2 {
+  color: #CCFF66;
+}
+
+.rating3 {
+  color: #FFCC66;
+}
+
+.rating4 {
+  color: #FF6600;
+}
+
+.rating5 {
+  color: #CC0000;
+}
+
+.rating6 {
+  color: #000000;
+}
+
+.ring {
+  border-width: 5px;
+  border-style: solid;
+  z-index: 1;
+  width: 60px;
+  height: 60px;
+  -moz-border-radius: 100%;
+  -webkit-border-radius: 100%;
+  border-radius: 100%;
+  background: transparent;
+  box-shadow: 2px 2px 4px rgba(0,0,0,0.5), inset 2px 2px 4px rgba(0,0,0,.5);
+  -webkit-box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5), inset 2px 2px 4px rgba(0,0,0,.5);  
+  -moz-box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5), inset 2px 2px 4px rgba(0,0,0,.5);
+}

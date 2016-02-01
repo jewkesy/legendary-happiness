@@ -1,0 +1,12 @@
+{
+    "start_time"   : 1415127600.0,
+    "monthly_end"  : 1417806000.0,
+
+    "daily_start"  : 1417719600.0,
+    "hourly_start" : 1417719600.0,
+    "hourly_end"   : 1417723200.0,
+    "daily_end"    : 1417806000.0,
+
+    "_comment":"any changes here should also be made in cisco-web's demo_time.json"
+}
+

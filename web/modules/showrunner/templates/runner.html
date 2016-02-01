@@ -1,0 +1,178 @@
+<html>
+  <head>
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="viewport" content="width=device-width, user-scalable=yes, initial-scale=1">
+
+    <title>Conduce Launchpad</title>
+
+    <script type="text/javascript" src="/sluice/javascript/vendor/jquery-1.7.1.min.js"></script>
+    <script type="text/javascript" src="/sluice/javascript/vendor/jquery-ui-1.8.16.min.js"></script>
+    <script type="text/javascript" src="/sluice/javascript/vendor/jquery.ui.touch-punch.min.js"></script>
+    <script type="text/javascript" src="/sluice/javascript/vendor/underscore.js"></script>
+
+    {{ jsplasma | safe }}
+
+    <script src="{{url_for('runner.static',filename='runner/js/showrunner.js')}}"></script>
+    <script src="{{url_for('runner.static',filename='runner/js/runner.js')}}"></script>
+    <script src="{{url_for('runner.static',filename='runner/js//jquery.switchButton.js')}}"></script> -->
+
+    <link rel="stylesheet" type="text/css" href="{{url_for('runner.static', filename='runner/css/runner.css')}}"/>
+    <link rel="stylesheet" type="text/css" href="{{url_for('runner.static', filename='runner/css/jquery.switchButton.css')}}"/>
+  </head>
+  <body>
+
+    <div>
+      <span id="MCTlaunch"></span>
+<!--       <span id="zoomplay">
+          <a class="button" id="fzout" href="#"></a>
+          <a class="button" id="fzin" href="#"></a>
+      </span> -->
+    </div>
+
+    <!-- Demo Runner UI -->
+    <table class="play">
+
+      <tr>
+        <td class="act">
+          <a id="act0" href="#"></a>
+        </td>
+        <td class="scene">
+          <a id="a0scene1" href="#"></a>
+          <a id="a0scene2" href="#"></a>
+          <a id="a0scene3" href="#"></a>
+          <a id="a0scene4" href="#"></a>
+          <a id="a0scene5" href="#"></a>
+          <a id="a0scene6" href="#"></a>
+          <a id="a0scene7" href="#"></a>
+          <a id="a0scene8" href="#"></a>
+          <a id="a0scene9" href="#"></a>
+          <a id="a0scene10" href="#"></a>
+          <a id="a0scene11" href="#"></a>
+          <a id="a0scene12" href="#"></a>
+        </td>
+      </tr>
+
+      <tr>
+        <td class="act">
+          <a id="act1" href="#"></a>
+        </td>
+        <td class="scene">
+          <a id="a1scene1" href="#"></a>
+          <a id="a1scene2" href="#"></a>
+          <a id="a1scene3" href="#"></a>
+          <a id="a1scene4" href="#"></a>
+          <a id="a1scene5" href="#"></a>
+          <a id="a1scene6" href="#"></a>
+          <a id="a1scene7" href="#"></a>
+          <a id="a1scene8" href="#"></a>
+          <a id="a1scene9" href="#"></a>
+          <a id="a1scene10" href="#"></a>
+          <a id="a1scene11" href="#"></a>
+          <a id="a1scene12" href="#"></a>
+        </td>
+      </tr>
+
+      <tr>
+        <td class="act">
+          <a id="act2" href="#"></a>
+        </td>
+        <td class="scene">
+          <a id="a2scene1" href="#"></a>
+          <a id="a2scene2" href="#"></a>
+          <a id="a2scene3" href="#"></a>
+          <a id="a2scene4" href="#"></a>
+          <a id="a2scene5" href="#"></a>
+          <a id="a2scene6" href="#"></a>
+          <a id="a2scene7" href="#"></a>
+          <a id="a2scene8" href="#"></a>
+          <a id="a2scene9" href="#"></a>
+          <a id="a2scene10" href="#"></a>
+          <a id="a2scene11" href="#"></a>
+          <a id="a2scene12" href="#"></a>
+        </td>
+      </tr>
+
+      <tr>
+        <td class="act">
+          <a id="act3" href="#"></a>
+        </td>
+        <td class="scene">
+          <a id="a3scene1" href="#"></a>
+          <a id="a3scene2" href="#"></a>
+          <a id="a3scene3" href="#"></a>
+          <a id="a3scene4" href="#"></a>
+          <a id="a3scene5" href="#"></a>
+          <a id="a3scene6" href="#"></a>
+          <a id="a3scene7" href="#"></a>
+        </td>
+      </tr>
+
+      <tr>
+        <td class="act">
+          <a id="act4" href="#"></a>
+        </td>
+        <td class="scene">
+          <a id="a4scene1" href="#"></a>
+          <a id="a4scene2" href="#"></a>
+          <a id="a4scene3" href="#"></a>
+          <a id="a4scene4" href="#"></a>
+          <a id="a4scene5" href="#"></a>
+          <a id="a4scene6" href="#"></a>
+          <a id="a4scene7" href="#"></a>
+        </td>
+      </tr>
+
+      <tr>
+        <td class="act">
+          <a id="act5" href="#"></a>
+        </td>
+        <td class="scene">
+          <a id="a5scene1" href="#"></a>
+          <a id="a5scene2" href="#"></a>
+          <a id="a5scene3" href="#"></a>
+          <a id="a5scene4" href="#"></a>
+          <a id="a5scene5" href="#"></a>
+          <a id="a5scene6" href="#"></a>
+          <a id="a5scene7" href="#"></a>
+        </td>
+      </tr>
+
+    </table>
+
+    <div id="labels">
+      Unique Fluoros
+      <div class="switch-wrapper">
+        <input id="uniqueFluoros" type="checkbox" value="1" checked>
+      </div>
+    </div>
+
+      <!-- Sluice Timeline Controls -->
+<!--       <div id="timetitle"></div>
+      <table id="timestate">
+        <tbody id="timecontrols">
+        <td class="mintime">
+        <div></div>
+        <div id="time-minimum">Unknown</div>
+        </td>
+
+        <td class="settime">
+        <form id="set-time" action="#Set Time">
+        <div class='sliderleft'></div>
+        <input type="range" id="range-set" min="0" max="0" value="0" class="range"/>
+        <div class='sliderright'></div>
+        </form>
+        </td>
+
+        <td class="maxtime">
+        <div></div>
+        <div id="time-maximum">Unknown</div>
+        </td>
+
+        <td id="time-screen">Current Time<div id="time-current">Unknown</div></td>
+
+        </tbody>
+      </table> -->
+
+
+  </body>
+</html>

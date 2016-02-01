@@ -1,0 +1,16 @@
+{
+  "name": "utils",
+  "version": "1.0.0",
+  "description": "Tools to fill missing data and data cleanse",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Daryl Jewkes",
+  "license": "ISC",
+  "dependencies": {
+    "lorem-ipsum": "^1.0.1",
+    "mongoose": "^3.8.23",
+    "simple-statistics": "^0.9.1"
+  }
+}

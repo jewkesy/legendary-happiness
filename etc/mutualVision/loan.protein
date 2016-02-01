@@ -1,0 +1,995 @@
+%YAML 1.1
+%TAG ! tag:oblong.com,2009:slaw/
+--- !protein
+descrips:
+- sluice
+- prot-spec v1.0
+- request
+- new-fluoro-template
+ingests:
+  display-text: Loans
+  name: loans
+  icon: mutualVision/images/loanicon.png
+  type: network
+  default_shaders:
+    path:
+      fragment: ribbons.frag
+      vertex: ribbons.vert
+    point:
+      fragment: network.frag
+      vertex: network.vert
+  hover:
+    max-found: 256
+    min_zoom: 5000
+    glyph: sluice/sharkmouth.png
+  kinds:
+  - coin1
+  - coin2
+  - coin3
+  - coin4
+  - coin5
+  - coin6
+  - coin7
+  - coin8
+  - coin9
+  - coin10
+  pigments:
+  - color:
+      type: SoftColor
+      value: [1.0, 1.0, 1.0, 1.0]
+    size:
+      type: SoftFloat
+      value: 1.0
+    type: point
+    name: coinstack8-1
+    icon: mutualVision/images/coins/coin8/coinstack8-1.png
+  - color:
+      type: SoftColor
+      value: [1.0, 1.0, 1.0, 1.0]
+    size:
+      type: SoftFloat
+      value: 1.0
+    type: point
+    name: coinstack8-10
+    icon: mutualVision/images/coins/coin8/coinstack8-10.png
+  - color:
+      type: SoftColor
+      value: [1.0, 1.0, 1.0, 1.0]
+    size:
+      type: SoftFloat
+      value: 1.0
+    type: point
+    name: coinstack8-2
+    icon: mutualVision/images/coins/coin8/coinstack8-2.png
+  - color:
+      type: SoftColor
+      value: [1.0, 1.0, 1.0, 1.0]
+    size:
+      type: SoftFloat
+      value: 1.0
+    type: point
+    name: coinstack8-3
+    icon: mutualVision/images/coins/coin8/coinstack8-3.png
+  - color:
+      type: SoftColor
+      value: [1.0, 1.0, 1.0, 1.0]
+    size:
+      type: SoftFloat
+      value: 1.0
+    type: point
+    name: coinstack8-4
+    icon: mutualVision/images/coins/coin8/coinstack8-4.png
+  - color:
+      type: SoftColor
+      value: [1.0, 1.0, 1.0, 1.0]
+    size:
+      type: SoftFloat
+      value: 1.0
+    type: point
+    name: coinstack8-5
+    icon: mutualVision/images/coins/coin8/coinstack8-5.png
+  - color:
+      type: SoftColor
+      value: [1.0, 1.0, 1.0, 1.0]
+    size:
+      type: SoftFloat
+      value: 1.0
+    type: point
+    name: coinstack8-6
+    icon: mutualVision/images/coins/coin8/coinstack8-6.png
+  - color:
+      type: SoftColor
+      value: [1.0, 1.0, 1.0, 1.0]
+    size:
+      type: SoftFloat
+      value: 1.0
+    type: point
+    name: coinstack8-7
+    icon: mutualVision/images/coins/coin8/coinstack8-7.png
+  - color:
+      type: SoftColor
+      value: [1.0, 1.0, 1.0, 1.0]
+    size:
+      type: SoftFloat
+      value: 1.0
+    type: point
+    name: coinstack8-8
+    icon: mutualVision/images/coins/coin8/coinstack8-8.png
+  - color:
+      type: SoftColor
+      value: [1.0, 1.0, 1.0, 1.0]
+    size:
+      type: SoftFloat
+      value: 1.0
+    type: point
+    name: coinstack8-9
+    icon: mutualVision/images/coins/coin8/coinstack8-9.png
+  - color:
+      type: SoftColor
+      value: [1.0, 1.0, 1.0, 1.0]
+    size:
+      type: SoftFloat
+      value: 1.0
+    type: point
+    name: coinstack9-1
+    icon: mutualVision/images/coins/coin9/coinstack9-1.png
+  - color:
+      type: SoftColor
+      value: [1.0, 1.0, 1.0, 1.0]
+    size:
+      type: SoftFloat
+      value: 1.0
+    type: point
+    name: coinstack9-10
+    icon: mutualVision/images/coins/coin9/coinstack9-10.png
+  - color:
+      type: SoftColor
+      value: [1.0, 1.0, 1.0, 1.0]
+    size:
+      type: SoftFloat
+      value: 1.0
+    type: point
+    name: coinstack9-2
+    icon: mutualVision/images/coins/coin9/coinstack9-2.png
+  - color:
+      type: SoftColor
+      value: [1.0, 1.0, 1.0, 1.0]
+    size:
+      type: SoftFloat
+      value: 1.0
+    type: point
+    name: coinstack9-3
+    icon: mutualVision/images/coins/coin9/coinstack9-3.png
+  - color:
+      type: SoftColor
+      value: [1.0, 1.0, 1.0, 1.0]
+    size:
+      type: SoftFloat
+      value: 1.0
+    type: point
+    name: coinstack9-4
+    icon: mutualVision/images/coins/coin9/coinstack9-4.png
+  - color:
+      type: SoftColor
+      value: [1.0, 1.0, 1.0, 1.0]
+    size:
+      type: SoftFloat
+      value: 1.0
+    type: point
+    name: coinstack9-5
+    icon: mutualVision/images/coins/coin9/coinstack9-5.png
+  - color:
+      type: SoftColor
+      value: [1.0, 1.0, 1.0, 1.0]
+    size:
+      type: SoftFloat
+      value: 1.0
+    type: point
+    name: coinstack9-6
+    icon: mutualVision/images/coins/coin9/coinstack9-6.png
+  - color:
+      type: SoftColor
+      value: [1.0, 1.0, 1.0, 1.0]
+    size:
+      type: SoftFloat
+      value: 1.0
+    type: point
+    name: coinstack9-7
+    icon: mutualVision/images/coins/coin9/coinstack9-7.png
+  - color:
+      type: SoftColor
+      value: [1.0, 1.0, 1.0, 1.0]
+    size:
+      type: SoftFloat
+      value: 1.0
+    type: point
+    name: coinstack9-8
+    icon: mutualVision/images/coins/coin9/coinstack9-8.png
+  - color:
+      type: SoftColor
+      value: [1.0, 1.0, 1.0, 1.0]
+    size:
+      type: SoftFloat
+      value: 1.0
+    type: point
+    name: coinstack9-9
+    icon: mutualVision/images/coins/coin9/coinstack9-9.png
+  - color:
+      type: SoftColor
+      value: [1.0, 1.0, 1.0, 1.0]
+    size:
+      type: SoftFloat
+      value: 1.0
+    type: point
+    name: coinstack1-1
+    icon: mutualVision/images/coins/coin1/coinstack1-1.png
+  - color:
+      type: SoftColor
+      value: [1.0, 1.0, 1.0, 1.0]
+    size:
+      type: SoftFloat
+      value: 1.0
+    type: point
+    name: coinstack1-10
+    icon: mutualVision/images/coins/coin1/coinstack1-10.png
+  - color:
+      type: SoftColor
+      value: [1.0, 1.0, 1.0, 1.0]
+    size:
+      type: SoftFloat
+      value: 1.0
+    type: point
+    name: coinstack1-2
+    icon: mutualVision/images/coins/coin1/coinstack1-2.png
+  - color:
+      type: SoftColor
+      value: [1.0, 1.0, 1.0, 1.0]
+    size:
+      type: SoftFloat
+      value: 1.0
+    type: point
+    name: coinstack1-3
+    icon: mutualVision/images/coins/coin1/coinstack1-3.png
+  - color:
+      type: SoftColor
+      value: [1.0, 1.0, 1.0, 1.0]
+    size:
+      type: SoftFloat
+      value: 1.0
+    type: point
+    name: coinstack1-4
+    icon: mutualVision/images/coins/coin1/coinstack1-4.png
+  - color:
+      type: SoftColor
+      value: [1.0, 1.0, 1.0, 1.0]
+    size:
+      type: SoftFloat
+      value: 1.0
+    type: point
+    name: coinstack1-5
+    icon: mutualVision/images/coins/coin1/coinstack1-5.png
+  - color:
+      type: SoftColor
+      value: [1.0, 1.0, 1.0, 1.0]
+    size:
+      type: SoftFloat
+      value: 1.0
+    type: point
+    name: coinstack1-6
+    icon: mutualVision/images/coins/coin1/coinstack1-6.png
+  - color:
+      type: SoftColor
+      value: [1.0, 1.0, 1.0, 1.0]
+    size:
+      type: SoftFloat
+      value: 1.0
+    type: point
+    name: coinstack1-7
+    icon: mutualVision/images/coins/coin1/coinstack1-7.png
+  - color:
+      type: SoftColor
+      value: [1.0, 1.0, 1.0, 1.0]
+    size:
+      type: SoftFloat
+      value: 1.0
+    type: point
+    name: coinstack1-8
+    icon: mutualVision/images/coins/coin1/coinstack1-8.png
+  - color:
+      type: SoftColor
+      value: [1.0, 1.0, 1.0, 1.0]
+    size:
+      type: SoftFloat
+      value: 1.0
+    type: point
+    name: coinstack1-9
+    icon: mutualVision/images/coins/coin1/coinstack1-9.png
+  - color:
+      type: SoftColor
+      value: [1.0, 1.0, 1.0, 1.0]
+    size:
+      type: SoftFloat
+      value: 1.0
+    type: point
+    name: coinstack2-1
+    icon: mutualVision/images/coins/coin2/coinstack2-1.png
+  - color:
+      type: SoftColor
+      value: [1.0, 1.0, 1.0, 1.0]
+    size:
+      type: SoftFloat
+      value: 1.0
+    type: point
+    name: coinstack2-10
+    icon: mutualVision/images/coins/coin2/coinstack2-10.png
+  - color:
+      type: SoftColor
+      value: [1.0, 1.0, 1.0, 1.0]
+    size:
+      type: SoftFloat
+      value: 1.0
+    type: point
+    name: coinstack2-2
+    icon: mutualVision/images/coins/coin2/coinstack2-2.png
+  - color:
+      type: SoftColor
+      value: [1.0, 1.0, 1.0, 1.0]
+    size:
+      type: SoftFloat
+      value: 1.0
+    type: point
+    name: coinstack2-3
+    icon: mutualVision/images/coins/coin2/coinstack2-3.png
+  - color:
+      type: SoftColor
+      value: [1.0, 1.0, 1.0, 1.0]
+    size:
+      type: SoftFloat
+      value: 1.0
+    type: point
+    name: coinstack2-4
+    icon: mutualVision/images/coins/coin2/coinstack2-4.png
+  - color:
+      type: SoftColor
+      value: [1.0, 1.0, 1.0, 1.0]
+    size:
+      type: SoftFloat
+      value: 1.0
+    type: point
+    name: coinstack2-5
+    icon: mutualVision/images/coins/coin2/coinstack2-5.png
+  - color:
+      type: SoftColor
+      value: [1.0, 1.0, 1.0, 1.0]
+    size:
+      type: SoftFloat
+      value: 1.0
+    type: point
+    name: coinstack2-6
+    icon: mutualVision/images/coins/coin2/coinstack2-6.png
+  - color:
+      type: SoftColor
+      value: [1.0, 1.0, 1.0, 1.0]
+    size:
+      type: SoftFloat
+      value: 1.0
+    type: point
+    name: coinstack2-7
+    icon: mutualVision/images/coins/coin2/coinstack2-7.png
+  - color:
+      type: SoftColor
+      value: [1.0, 1.0, 1.0, 1.0]
+    size:
+      type: SoftFloat
+      value: 1.0
+    type: point
+    name: coinstack2-8
+    icon: mutualVision/images/coins/coin2/coinstack2-8.png
+  - color:
+      type: SoftColor
+      value: [1.0, 1.0, 1.0, 1.0]
+    size:
+      type: SoftFloat
+      value: 1.0
+    type: point
+    name: coinstack2-9
+    icon: mutualVision/images/coins/coin2/coinstack2-9.png
+  - color:
+      type: SoftColor
+      value: [1.0, 1.0, 1.0, 1.0]
+    size:
+      type: SoftFloat
+      value: 1.0
+    type: point
+    name: coinstack3-1
+    icon: mutualVision/images/coins/coin3/coinstack3-1.png
+  - color:
+      type: SoftColor
+      value: [1.0, 1.0, 1.0, 1.0]
+    size:
+      type: SoftFloat
+      value: 1.0
+    type: point
+    name: coinstack3-10
+    icon: mutualVision/images/coins/coin3/coinstack3-10.png
+  - color:
+      type: SoftColor
+      value: [1.0, 1.0, 1.0, 1.0]
+    size:
+      type: SoftFloat
+      value: 1.0
+    type: point
+    name: coinstack3-2
+    icon: mutualVision/images/coins/coin3/coinstack3-2.png
+  - color:
+      type: SoftColor
+      value: [1.0, 1.0, 1.0, 1.0]
+    size:
+      type: SoftFloat
+      value: 1.0
+    type: point
+    name: coinstack3-3
+    icon: mutualVision/images/coins/coin3/coinstack3-3.png
+  - color:
+      type: SoftColor
+      value: [1.0, 1.0, 1.0, 1.0]
+    size:
+      type: SoftFloat
+      value: 1.0
+    type: point
+    name: coinstack3-4
+    icon: mutualVision/images/coins/coin3/coinstack3-4.png
+  - color:
+      type: SoftColor
+      value: [1.0, 1.0, 1.0, 1.0]
+    size:
+      type: SoftFloat
+      value: 1.0
+    type: point
+    name: coinstack3-5
+    icon: mutualVision/images/coins/coin3/coinstack3-5.png
+  - color:
+      type: SoftColor
+      value: [1.0, 1.0, 1.0, 1.0]
+    size:
+      type: SoftFloat
+      value: 1.0
+    type: point
+    name: coinstack3-6
+    icon: mutualVision/images/coins/coin3/coinstack3-6.png
+  - color:
+      type: SoftColor
+      value: [1.0, 1.0, 1.0, 1.0]
+    size:
+      type: SoftFloat
+      value: 1.0
+    type: point
+    name: coinstack3-7
+    icon: mutualVision/images/coins/coin3/coinstack3-7.png
+  - color:
+      type: SoftColor
+      value: [1.0, 1.0, 1.0, 1.0]
+    size:
+      type: SoftFloat
+      value: 1.0
+    type: point
+    name: coinstack3-8
+    icon: mutualVision/images/coins/coin3/coinstack3-8.png
+  - color:
+      type: SoftColor
+      value: [1.0, 1.0, 1.0, 1.0]
+    size:
+      type: SoftFloat
+      value: 1.0
+    type: point
+    name: coinstack3-9
+    icon: mutualVision/images/coins/coin3/coinstack3-9.png
+  - color:
+      type: SoftColor
+      value: [1.0, 1.0, 1.0, 1.0]
+    size:
+      type: SoftFloat
+      value: 1.0
+    type: point
+    name: coinstack4-1
+    icon: mutualVision/images/coins/coin4/coinstack4-1.png
+  - color:
+      type: SoftColor
+      value: [1.0, 1.0, 1.0, 1.0]
+    size:
+      type: SoftFloat
+      value: 1.0
+    type: point
+    name: coinstack4-10
+    icon: mutualVision/images/coins/coin4/coinstack4-10.png
+  - color:
+      type: SoftColor
+      value: [1.0, 1.0, 1.0, 1.0]
+    size:
+      type: SoftFloat
+      value: 1.0
+    type: point
+    name: coinstack4-2
+    icon: mutualVision/images/coins/coin4/coinstack4-2.png
+  - color:
+      type: SoftColor
+      value: [1.0, 1.0, 1.0, 1.0]
+    size:
+      type: SoftFloat
+      value: 1.0
+    type: point
+    name: coinstack4-3
+    icon: mutualVision/images/coins/coin4/coinstack4-3.png
+  - color:
+      type: SoftColor
+      value: [1.0, 1.0, 1.0, 1.0]
+    size:
+      type: SoftFloat
+      value: 1.0
+    type: point
+    name: coinstack4-4
+    icon: mutualVision/images/coins/coin4/coinstack4-4.png
+  - color:
+      type: SoftColor
+      value: [1.0, 1.0, 1.0, 1.0]
+    size:
+      type: SoftFloat
+      value: 1.0
+    type: point
+    name: coinstack4-5
+    icon: mutualVision/images/coins/coin4/coinstack4-5.png
+  - color:
+      type: SoftColor
+      value: [1.0, 1.0, 1.0, 1.0]
+    size:
+      type: SoftFloat
+      value: 1.0
+    type: point
+    name: coinstack4-6
+    icon: mutualVision/images/coins/coin4/coinstack4-6.png
+  - color:
+      type: SoftColor
+      value: [1.0, 1.0, 1.0, 1.0]
+    size:
+      type: SoftFloat
+      value: 1.0
+    type: point
+    name: coinstack4-7
+    icon: mutualVision/images/coins/coin4/coinstack4-7.png
+  - color:
+      type: SoftColor
+      value: [1.0, 1.0, 1.0, 1.0]
+    size:
+      type: SoftFloat
+      value: 1.0
+    type: point
+    name: coinstack4-8
+    icon: mutualVision/images/coins/coin4/coinstack4-8.png
+  - color:
+      type: SoftColor
+      value: [1.0, 1.0, 1.0, 1.0]
+    size:
+      type: SoftFloat
+      value: 1.0
+    type: point
+    name: coinstack4-9
+    icon: mutualVision/images/coins/coin4/coinstack4-9.png
+  - color:
+      type: SoftColor
+      value: [1.0, 1.0, 1.0, 1.0]
+    size:
+      type: SoftFloat
+      value: 1.0
+    type: point
+    name: coinstack5-1
+    icon: mutualVision/images/coins/coin5/coinstack5-1.png
+  - color:
+      type: SoftColor
+      value: [1.0, 1.0, 1.0, 1.0]
+    size:
+      type: SoftFloat
+      value: 1.0
+    type: point
+    name: coinstack5-10
+    icon: mutualVision/images/coins/coin5/coinstack5-10.png
+  - color:
+      type: SoftColor
+      value: [1.0, 1.0, 1.0, 1.0]
+    size:
+      type: SoftFloat
+      value: 1.0
+    type: point
+    name: coinstack5-2
+    icon: mutualVision/images/coins/coin5/coinstack5-2.png
+  - color:
+      type: SoftColor
+      value: [1.0, 1.0, 1.0, 1.0]
+    size:
+      type: SoftFloat
+      value: 1.0
+    type: point
+    name: coinstack5-3
+    icon: mutualVision/images/coins/coin5/coinstack5-3.png
+  - color:
+      type: SoftColor
+      value: [1.0, 1.0, 1.0, 1.0]
+    size:
+      type: SoftFloat
+      value: 1.0
+    type: point
+    name: coinstack5-4
+    icon: mutualVision/images/coins/coin5/coinstack5-4.png
+  - color:
+      type: SoftColor
+      value: [1.0, 1.0, 1.0, 1.0]
+    size:
+      type: SoftFloat
+      value: 1.0
+    type: point
+    name: coinstack5-5
+    icon: mutualVision/images/coins/coin5/coinstack5-5.png
+  - color:
+      type: SoftColor
+      value: [1.0, 1.0, 1.0, 1.0]
+    size:
+      type: SoftFloat
+      value: 1.0
+    type: point
+    name: coinstack5-6
+    icon: mutualVision/images/coins/coin5/coinstack5-6.png
+  - color:
+      type: SoftColor
+      value: [1.0, 1.0, 1.0, 1.0]
+    size:
+      type: SoftFloat
+      value: 1.0
+    type: point
+    name: coinstack5-7
+    icon: mutualVision/images/coins/coin5/coinstack5-7.png
+  - color:
+      type: SoftColor
+      value: [1.0, 1.0, 1.0, 1.0]
+    size:
+      type: SoftFloat
+      value: 1.0
+    type: point
+    name: coinstack5-8
+    icon: mutualVision/images/coins/coin5/coinstack5-8.png
+  - color:
+      type: SoftColor
+      value: [1.0, 1.0, 1.0, 1.0]
+    size:
+      type: SoftFloat
+      value: 1.0
+    type: point
+    name: coinstack5-9
+    icon: mutualVision/images/coins/coin5/coinstack5-9.png
+  - color:
+      type: SoftColor
+      value: [1.0, 1.0, 1.0, 1.0]
+    size:
+      type: SoftFloat
+      value: 1.0
+    type: point
+    name: coinstack6-1
+    icon: mutualVision/images/coins/coin6/coinstack6-1.png
+  - color:
+      type: SoftColor
+      value: [1.0, 1.0, 1.0, 1.0]
+    size:
+      type: SoftFloat
+      value: 1.0
+    type: point
+    name: coinstack6-10
+    icon: mutualVision/images/coins/coin6/coinstack6-10.png
+  - color:
+      type: SoftColor
+      value: [1.0, 1.0, 1.0, 1.0]
+    size:
+      type: SoftFloat
+      value: 1.0
+    type: point
+    name: coinstack6-2
+    icon: mutualVision/images/coins/coin6/coinstack6-2.png
+  - color:
+      type: SoftColor
+      value: [1.0, 1.0, 1.0, 1.0]
+    size:
+      type: SoftFloat
+      value: 1.0
+    type: point
+    name: coinstack6-3
+    icon: mutualVision/images/coins/coin6/coinstack6-3.png
+  - color:
+      type: SoftColor
+      value: [1.0, 1.0, 1.0, 1.0]
+    size:
+      type: SoftFloat
+      value: 1.0
+    type: point
+    name: coinstack6-4
+    icon: mutualVision/images/coins/coin6/coinstack6-4.png
+  - color:
+      type: SoftColor
+      value: [1.0, 1.0, 1.0, 1.0]
+    size:
+      type: SoftFloat
+      value: 1.0
+    type: point
+    name: coinstack6-5
+    icon: mutualVision/images/coins/coin6/coinstack6-5.png
+  - color:
+      type: SoftColor
+      value: [1.0, 1.0, 1.0, 1.0]
+    size:
+      type: SoftFloat
+      value: 1.0
+    type: point
+    name: coinstack6-6
+    icon: mutualVision/images/coins/coin6/coinstack6-6.png
+  - color:
+      type: SoftColor
+      value: [1.0, 1.0, 1.0, 1.0]
+    size:
+      type: SoftFloat
+      value: 1.0
+    type: point
+    name: coinstack6-7
+    icon: mutualVision/images/coins/coin6/coinstack6-7.png
+  - color:
+      type: SoftColor
+      value: [1.0, 1.0, 1.0, 1.0]
+    size:
+      type: SoftFloat
+      value: 1.0
+    type: point
+    name: coinstack6-8
+    icon: mutualVision/images/coins/coin6/coinstack6-8.png
+  - color:
+      type: SoftColor
+      value: [1.0, 1.0, 1.0, 1.0]
+    size:
+      type: SoftFloat
+      value: 1.0
+    type: point
+    name: coinstack6-9
+    icon: mutualVision/images/coins/coin6/coinstack6-9.png
+  - color:
+      type: SoftColor
+      value: [1.0, 1.0, 1.0, 1.0]
+    size:
+      type: SoftFloat
+      value: 1.0
+    type: point
+    name: coinstack7-1
+    icon: mutualVision/images/coins/coin7/coinstack7-1.png
+  - color:
+      type: SoftColor
+      value: [1.0, 1.0, 1.0, 1.0]
+    size:
+      type: SoftFloat
+      value: 1.0
+    type: point
+    name: coinstack7-10
+    icon: mutualVision/images/coins/coin7/coinstack7-10.png
+  - color:
+      type: SoftColor
+      value: [1.0, 1.0, 1.0, 1.0]
+    size:
+      type: SoftFloat
+      value: 1.0
+    type: point
+    name: coinstack7-2
+    icon: mutualVision/images/coins/coin7/coinstack7-2.png
+  - color:
+      type: SoftColor
+      value: [1.0, 1.0, 1.0, 1.0]
+    size:
+      type: SoftFloat
+      value: 1.0
+    type: point
+    name: coinstack7-3
+    icon: mutualVision/images/coins/coin7/coinstack7-3.png
+  - color:
+      type: SoftColor
+      value: [1.0, 1.0, 1.0, 1.0]
+    size:
+      type: SoftFloat
+      value: 1.0
+    type: point
+    name: coinstack7-4
+    icon: mutualVision/images/coins/coin7/coinstack7-4.png
+  - color:
+      type: SoftColor
+      value: [1.0, 1.0, 1.0, 1.0]
+    size:
+      type: SoftFloat
+      value: 1.0
+    type: point
+    name: coinstack7-5
+    icon: mutualVision/images/coins/coin7/coinstack7-5.png
+  - color:
+      type: SoftColor
+      value: [1.0, 1.0, 1.0, 1.0]
+    size:
+      type: SoftFloat
+      value: 1.0
+    type: point
+    name: coinstack7-6
+    icon: mutualVision/images/coins/coin7/coinstack7-6.png
+  - color:
+      type: SoftColor
+      value: [1.0, 1.0, 1.0, 1.0]
+    size:
+      type: SoftFloat
+      value: 1.0
+    type: point
+    name: coinstack7-7
+    icon: mutualVision/images/coins/coin7/coinstack7-7.png
+  - color:
+      type: SoftColor
+      value: [1.0, 1.0, 1.0, 1.0]
+    size:
+      type: SoftFloat
+      value: 1.0
+    type: point
+    name: coinstack7-8
+    icon: mutualVision/images/coins/coin7/coinstack7-8.png
+  - color:
+      type: SoftColor
+      value: [1.0, 1.0, 1.0, 1.0]
+    size:
+      type: SoftFloat
+      value: 1.0
+    type: point
+    name: coinstack7-9
+    icon: mutualVision/images/coins/coin7/coinstack7-9.png
+  - color:
+      type: SoftColor
+      value: [1.0, 1.0, 1.0, 1.0]
+    size:
+      type: SoftFloat
+      value: 1.0
+    type: point
+    name: coinstack10-1
+    icon: mutualVision/images/coins/coin10/coinstack10-1.png
+  - color:
+      type: SoftColor
+      value: [1.0, 1.0, 1.0, 1.0]
+    size:
+      type: SoftFloat
+      value: 1.0
+    type: point
+    name: coinstack10-10
+    icon: mutualVision/images/coins/coin10/coinstack10-10.png
+  - color:
+      type: SoftColor
+      value: [1.0, 1.0, 1.0, 1.0]
+    size:
+      type: SoftFloat
+      value: 1.0
+    type: point
+    name: coinstack10-2
+    icon: mutualVision/images/coins/coin10/coinstack10-2.png
+  - color:
+      type: SoftColor
+      value: [1.0, 1.0, 1.0, 1.0]
+    size:
+      type: SoftFloat
+      value: 1.0
+    type: point
+    name: coinstack10-3
+    icon: mutualVision/images/coins/coin10/coinstack10-3.png
+  - color:
+      type: SoftColor
+      value: [1.0, 1.0, 1.0, 1.0]
+    size:
+      type: SoftFloat
+      value: 1.0
+    type: point
+    name: coinstack10-4
+    icon: mutualVision/images/coins/coin10/coinstack10-4.png
+  - color:
+      type: SoftColor
+      value: [1.0, 1.0, 1.0, 1.0]
+    size:
+      type: SoftFloat
+      value: 1.0
+    type: point
+    name: coinstack10-5
+    icon: mutualVision/images/coins/coin10/coinstack10-5.png
+  - color:
+      type: SoftColor
+      value: [1.0, 1.0, 1.0, 1.0]
+    size:
+      type: SoftFloat
+      value: 1.0
+    type: point
+    name: coinstack10-6
+    icon: mutualVision/images/coins/coin10/coinstack10-6.png
+  - color:
+      type: SoftColor
+      value: [1.0, 1.0, 1.0, 1.0]
+    size:
+      type: SoftFloat
+      value: 1.0
+    type: point
+    name: coinstack10-7
+    icon: mutualVision/images/coins/coin10/coinstack10-7.png
+  - color:
+      type: SoftColor
+      value: [1.0, 1.0, 1.0, 1.0]
+    size:
+      type: SoftFloat
+      value: 1.0
+    type: point
+    name: coinstack10-8
+    icon: mutualVision/images/coins/coin10/coinstack10-8.png
+  - color:
+      type: SoftColor
+      value: [1.0, 1.0, 1.0, 1.0]
+    size:
+      type: SoftFloat
+      value: 1.0
+    type: point
+    name: coinstack10-9
+    icon: mutualVision/images/coins/coin10/coinstack10-9.png
+  attributes:
+  - name: enable-menu
+    contents:
+    - display-text: Enable
+      selected: true
+      name: true
+    - display-text: Disable
+      selected: false
+      name: false
+    selection-type: exclusive
+  - name: opacity
+    contents:
+    - display-text: 25%
+      selected: !u8 '0'
+      name: '0.25'
+    - display-text: 50%
+      selected: !u8 '0'
+      name: '0.50'
+    - display-text: 75%
+      selected: !u8 '0'
+      name: '0.75'
+    - display-text: 100%
+      selected: !u8 '1'
+      name: '1.00'
+    selection-type: exclusive
+  - display-text: Filter Options
+    name: enabled-kinds
+    contents:
+    - display-text: coin1
+      selected: true
+      name: coin1
+    - display-text: coin2
+      selected: true
+      name: coin2
+    - display-text: coin3
+      selected: true
+      name: coin3
+    - display-text: coin4
+      selected: true
+      name: coin4
+    - display-text: coin5
+      selected: true
+      name: coin5
+    - display-text: coin6
+      selected: true
+      name: coin6
+    - display-text: coin7
+      selected: true
+      name: coin7
+    - display-text: coin8
+      selected: true
+      name: coin8
+    - display-text: coin9
+      selected: true
+      name: coin9
+    - display-text: coin10
+      selected: true
+      name: coin10
+    selection-type: inclusive

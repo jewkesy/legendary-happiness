@@ -1,0 +1,1020 @@
+%YAML 1.1
+%TAG ! tag:oblong.com,2009:slaw/
+--- !protein
+descrips:
+- sluice
+- prot-spec v1.0
+- inculcators
+- change
+ingests:
+  inculcators:
+  - kinds:
+    - branch
+    name: branch
+    pigment: branch
+  - kinds:
+    - buildsoc
+    name: buildsoc
+    pigment: buildsoc
+  - kinds:
+    - introducer
+    name: introducer
+    pigment: introducer
+  - jstest: parseFloat(observation(n, 'Arrears', t)) > 0 && parseFloat(observation(n,
+      'Arrears', t)) <= 1000
+    kinds:
+    - coin1
+    - coin2
+    - coin3
+    - coin4
+    - coin5
+    - coin6
+    - coin7
+    - coin8
+    - coin9
+    - coin10
+    name: arrear_1
+    pigment: arrears_1
+  - jstest: parseFloat(observation(n, 'Arrears', t)) > 1000 && parseFloat(observation(n,
+      'Arrears', t)) <= 2000
+    kinds:
+    - coin1
+    - coin2
+    - coin3
+    - coin4
+    - coin5
+    - coin6
+    - coin7
+    - coin8
+    - coin9
+    - coin10
+    name: arrear_2
+    pigment: arrears_2
+  - jstest: parseFloat(observation(n, 'Arrears', t)) > 2000 && parseFloat(observation(n,
+      'Arrears', t)) <= 5000
+    kinds:
+    - coin1
+    - coin2
+    - coin3
+    - coin4
+    - coin5
+    - coin6
+    - coin7
+    - coin8
+    - coin9
+    - coin10
+    name: arrear_3
+    pigment: arrears_3
+  - jstest: parseFloat(observation(n, 'Arrears', t)) > 5000 && parseFloat(observation(n,
+      'Arrears', t)) <= 10000
+    kinds:
+    - coin1
+    - coin2
+    - coin3
+    - coin4
+    - coin5
+    - coin6
+    - coin7
+    - coin8
+    - coin9
+    - coin10
+    name: arrear_4
+    pigment: arrears_4
+  - jstest: parseFloat(observation(n, 'Arrears', t)) > 10000 && parseFloat(observation(n,
+      'Arrears', t)) <= 25000
+    kinds:
+    - coin1
+    - coin2
+    - coin3
+    - coin4
+    - coin5
+    - coin6
+    - coin7
+    - coin8
+    - coin9
+    - coin10
+    name: arrear_5
+    pigment: arrears_5
+  - jstest: parseFloat(observation(n, 'Arrears', t)) > 25000
+    kinds:
+    - coin1
+    - coin2
+    - coin3
+    - coin4
+    - coin5
+    - coin6
+    - coin7
+    - coin8
+    - coin9
+    - coin10
+    name: arrear_6
+    pigment: arrears_6
+
+#   START OF LOAN TO VALUE SECTION
+    
+  - jstest: parseFloat(observation(n, 'LTV', t)) >= 0 && parseFloat(observation(n, 'LTV', t)) <= 10  
+    kinds:
+    - coin1
+    - coin2
+    - coin3
+    - coin4
+    - coin5
+    - coin6
+    - coin7
+    - coin8
+    - coin9
+    - coin10
+    name: ltv_10
+    pigment: ltv_10
+  - jstest: parseFloat(observation(n, 'LTV_40', t)) >= 0 && parseFloat(observation(n, 'LTV_40', t)) <= 10  
+    kinds:
+    - coin1
+    - coin2
+    - coin3
+    - coin4
+    - coin5
+    - coin6
+    - coin7
+    - coin8
+    - coin9
+    - coin10
+    name: ltv_stress_10
+    pigment: ltv_stress_10
+
+  - jstest: parseFloat(observation(n, 'LTV', t)) > 10 && parseFloat(observation(n, 'LTV', t)) <= 20  
+    kinds:
+    - coin1
+    - coin2
+    - coin3
+    - coin4
+    - coin5
+    - coin6
+    - coin7
+    - coin8
+    - coin9
+    - coin10
+    name: ltv_20
+    pigment: ltv_20
+  - jstest: parseFloat(observation(n, 'LTV_40', t)) > 10 && parseFloat(observation(n, 'LTV_40', t)) <= 20  
+    kinds:
+    - coin1
+    - coin2
+    - coin3
+    - coin4
+    - coin5
+    - coin6
+    - coin7
+    - coin8
+    - coin9
+    - coin10
+    name: ltv_stress_20
+    pigment: ltv_stress_20
+
+  - jstest: parseFloat(observation(n, 'LTV', t)) > 20 && parseFloat(observation(n, 'LTV', t)) <= 30  
+    kinds:
+    - coin1
+    - coin2
+    - coin3
+    - coin4
+    - coin5
+    - coin6
+    - coin7
+    - coin8
+    - coin9
+    - coin10
+    name: ltv_30
+    pigment: ltv_30
+  - jstest: parseFloat(observation(n, 'LTV_40', t)) > 20 && parseFloat(observation(n, 'LTV_40', t)) <= 30  
+    kinds:
+    - coin1
+    - coin2
+    - coin3
+    - coin4
+    - coin5
+    - coin6
+    - coin7
+    - coin8
+    - coin9
+    - coin10
+    name: ltv_stress_30
+    pigment: ltv_stress_30
+
+  - jstest: parseFloat(observation(n, 'LTV', t)) > 30 && parseFloat(observation(n, 'LTV', t)) <= 40  
+    kinds:
+    - coin1
+    - coin2
+    - coin3
+    - coin4
+    - coin5
+    - coin6
+    - coin7
+    - coin8
+    - coin9
+    - coin10
+    name: ltv_40
+    pigment: ltv_40
+  - jstest: parseFloat(observation(n, 'LTV_40', t)) > 30 && parseFloat(observation(n, 'LTV_40', t)) <= 40  
+    kinds:
+    - coin1
+    - coin2
+    - coin3
+    - coin4
+    - coin5
+    - coin6
+    - coin7
+    - coin8
+    - coin9
+    - coin10
+    name: ltv_stress_40
+    pigment: ltv_stress_40
+
+  - jstest: parseFloat(observation(n, 'LTV', t)) > 40 && parseFloat(observation(n, 'LTV', t)) <= 50  
+    kinds:
+    - coin1
+    - coin2
+    - coin3
+    - coin4
+    - coin5
+    - coin6
+    - coin7
+    - coin8
+    - coin9
+    - coin10
+    name: ltv_50
+    pigment: ltv_50
+  - jstest: parseFloat(observation(n, 'LTV_40', t)) > 40 && parseFloat(observation(n, 'LTV_40', t)) <= 50  
+    kinds:
+    - coin1
+    - coin2
+    - coin3
+    - coin4
+    - coin5
+    - coin6
+    - coin7
+    - coin8
+    - coin9
+    - coin10
+    name: ltv_stress_50
+    pigment: ltv_stress_50
+
+  - jstest: parseFloat(observation(n, 'LTV', t)) > 50 && parseFloat(observation(n, 'LTV', t)) <= 60  
+    kinds:
+    - coin1
+    - coin2
+    - coin3
+    - coin4
+    - coin5
+    - coin6
+    - coin7
+    - coin8
+    - coin9
+    - coin10
+    name: ltv_60
+    pigment: ltv_60
+  - jstest: parseFloat(observation(n, 'LTV_40', t)) > 50 && parseFloat(observation(n, 'LTV_40', t)) <= 60  
+    kinds:
+    - coin1
+    - coin2
+    - coin3
+    - coin4
+    - coin5
+    - coin6
+    - coin7
+    - coin8
+    - coin9
+    - coin10
+    name: ltv_stress_60
+    pigment: ltv_stress_60
+
+  - jstest: parseFloat(observation(n, 'LTV', t)) > 60 && parseFloat(observation(n, 'LTV', t)) <= 70  
+    kinds:
+    - coin1
+    - coin2
+    - coin3
+    - coin4
+    - coin5
+    - coin6
+    - coin7
+    - coin8
+    - coin9
+    - coin10
+    name: ltv_70
+    pigment: ltv_70
+  - jstest: parseFloat(observation(n, 'LTV_40', t)) > 60 && parseFloat(observation(n, 'LTV_40', t)) <= 70  
+    kinds:
+    - coin1
+    - coin2
+    - coin3
+    - coin4
+    - coin5
+    - coin6
+    - coin7
+    - coin8
+    - coin9
+    - coin10
+    name: ltv_stress_70
+    pigment: ltv_stress_70
+
+  - jstest: parseFloat(observation(n, 'LTV', t)) > 70 && parseFloat(observation(n, 'LTV', t)) <= 80  
+    kinds:
+    - coin1
+    - coin2
+    - coin3
+    - coin4
+    - coin5
+    - coin6
+    - coin7
+    - coin8
+    - coin9
+    - coin10
+    name: ltv_80
+    pigment: ltv_80
+  - jstest: parseFloat(observation(n, 'LTV_40', t)) > 70 && parseFloat(observation(n, 'LTV_40', t)) <= 80  
+    kinds:
+    - coin1
+    - coin2
+    - coin3
+    - coin4
+    - coin5
+    - coin6
+    - coin7
+    - coin8
+    - coin9
+    - coin10
+    name: ltv_stress_80
+    pigment: ltv_stress_80
+
+  - jstest: parseFloat(observation(n, 'LTV', t)) > 80 && parseFloat(observation(n, 'LTV', t)) <= 90  
+    kinds:
+    - coin1
+    - coin2
+    - coin3
+    - coin4
+    - coin5
+    - coin6
+    - coin7
+    - coin8
+    - coin9
+    - coin10
+    name: ltv_90
+    pigment: ltv_90
+  - jstest: parseFloat(observation(n, 'LTV_40', t)) > 80 && parseFloat(observation(n, 'LTV_40', t)) <= 90  
+    kinds:
+    - coin1
+    - coin2
+    - coin3
+    - coin4
+    - coin5
+    - coin6
+    - coin7
+    - coin8
+    - coin9
+    - coin10
+    name: ltv_stress_90
+    pigment: ltv_stress_90
+
+  - jstest: parseFloat(observation(n, 'LTV', t)) > 90  
+    kinds:
+    - coin1
+    - coin2
+    - coin3
+    - coin4
+    - coin5
+    - coin6
+    - coin7
+    - coin8
+    - coin9
+    - coin10
+    name: ltv_100
+    pigment: ltv_100
+  - jstest: parseFloat(observation(n, 'LTV_40', t)) > 90 
+    kinds:
+    - coin1
+    - coin2
+    - coin3
+    - coin4
+    - coin5
+    - coin6
+    - coin7
+    - coin8
+    - coin9
+    - coin10
+    name: ltv_stress_100
+    pigment: ltv_stress_100    
+
+#   END OF LOAN TO VALUE SECTION
+
+  - jstest: parseFloat(observation(n, 'TransCount', t)) < 10
+    kinds:
+    - customer_f_0
+    - customer_f_16
+    - customer_f_25
+    - customer_f_55
+    - customer_m_0
+    - customer_m_16
+    - customer_m_25
+    - customer_m_55
+    - customer_business
+    name: rating_1
+    pigment: ratings_1
+  - jstest: parseFloat(observation(n, 'TransCount', t)) >= 10 && parseFloat(observation(n, 'TransCount', t)) < 38
+    kinds:
+    - customer_f_0
+    - customer_f_16
+    - customer_f_25
+    - customer_f_55
+    - customer_m_0
+    - customer_m_16
+    - customer_m_25
+    - customer_m_55
+    - customer_business
+    name: rating_2
+    pigment: ratings_2
+  - jstest: parseFloat(observation(n, 'TransCount', t)) >= 38 && parseFloat(observation(n, 'TransCount', t)) < 89 
+    kinds:
+    - customer_f_0
+    - customer_f_16
+    - customer_f_25
+    - customer_f_55
+    - customer_m_0
+    - customer_m_16
+    - customer_m_25
+    - customer_m_55
+    - customer_business
+    name: rating_3
+    pigment: ratings_3
+  - jstest: parseFloat(observation(n, 'TransCount', t)) >= 89 && parseFloat(observation(n, 'TransCount', t)) < 179 
+    kinds:
+    - customer_f_0
+    - customer_f_16
+    - customer_f_25
+    - customer_f_55
+    - customer_m_0
+    - customer_m_16
+    - customer_m_25
+    - customer_m_55
+    - customer_business
+    name: rating_4
+    pigment: ratings_4
+  - jstest: parseFloat(observation(n, 'TransCount', t)) >= 179 && parseFloat(observation(n, 'TransCount', t)) < 431
+    kinds:
+    - customer_f_0
+    - customer_f_16
+    - customer_f_25
+    - customer_f_55
+    - customer_m_0
+    - customer_m_16
+    - customer_m_25
+    - customer_m_55
+    - customer_business
+    name: rating_5
+    pigment: ratings_5
+  - jstest: parseFloat(observation(n, 'TransCount', t)) >= 431
+    kinds:
+    - customer_f_0
+    - customer_f_16
+    - customer_f_25
+    - customer_f_55
+    - customer_m_0
+    - customer_m_16
+    - customer_m_25
+    - customer_m_55
+    - customer_business
+    name: rating_6
+    pigment: ratings_6
+  - kinds:
+    - customer_f_0
+    name: customer_f_0
+    pigment: customer_f_0
+  - kinds:
+    - customer_f_16
+    name: customer_f_16
+    pigment: customer_f_16
+  - kinds:
+    - customer_f_25
+    name: customer_f_25
+    pigment: customer_f_25
+  - kinds:
+    - customer_f_55
+    name: customer_f_55
+    pigment: customer_f_55
+  - kinds:
+    - customer_m_0
+    name: customer_m_0
+    pigment: customer_m_0
+  - kinds:
+    - customer_m_16
+    name: customer_m_16
+    pigment: customer_m_16
+  - kinds:
+    - customer_m_25
+    name: customer_m_25
+    pigment: customer_m_25
+  - kinds:
+    - customer_m_55
+    name: customer_m_55
+    pigment: customer_m_55
+  - kinds:
+    - customer_business
+    name: customer_business
+    pigment: customer_business
+  - jstest: parseInt(observation(n, 'Coins', t)) <= 1
+    kinds:
+    - coin8
+    name: coinstack8-1_inc
+    pigment: coinstack8-1
+  - jstest: parseInt(observation(n, 'Coins', t)) == 10
+    kinds:
+    - coin8
+    name: coinstack8-10_inc
+    pigment: coinstack8-10
+  - jstest: parseInt(observation(n, 'Coins', t)) == 2
+    kinds:
+    - coin8
+    name: coinstack8-2_inc
+    pigment: coinstack8-2
+  - jstest: parseInt(observation(n, 'Coins', t)) == 3
+    kinds:
+    - coin8
+    name: coinstack8-3_inc
+    pigment: coinstack8-3
+  - jstest: parseInt(observation(n, 'Coins', t)) == 4
+    kinds:
+    - coin8
+    name: coinstack8-4_inc
+    pigment: coinstack8-4
+  - jstest: parseInt(observation(n, 'Coins', t)) == 5
+    kinds:
+    - coin8
+    name: coinstack8-5_inc
+    pigment: coinstack8-5
+  - jstest: parseInt(observation(n, 'Coins', t)) == 6
+    kinds:
+    - coin8
+    name: coinstack8-6_inc
+    pigment: coinstack8-6
+  - jstest: parseInt(observation(n, 'Coins', t)) == 7
+    kinds:
+    - coin8
+    name: coinstack8-7_inc
+    pigment: coinstack8-7
+  - jstest: parseInt(observation(n, 'Coins', t)) == 8
+    kinds:
+    - coin8
+    name: coinstack8-8_inc
+    pigment: coinstack8-8
+  - jstest: parseInt(observation(n, 'Coins', t)) == 9
+    kinds:
+    - coin8
+    name: coinstack8-9_inc
+    pigment: coinstack8-9
+  - jstest: parseInt(observation(n, 'Coins', t)) <= 1
+    kinds:
+    - coin9
+    name: coinstack9-1_inc
+    pigment: coinstack9-1
+  - jstest: parseInt(observation(n, 'Coins', t)) == 10
+    kinds:
+    - coin9
+    name: coinstack9-10_inc
+    pigment: coinstack9-10
+  - jstest: parseInt(observation(n, 'Coins', t)) == 2
+    kinds:
+    - coin9
+    name: coinstack9-2_inc
+    pigment: coinstack9-2
+  - jstest: parseInt(observation(n, 'Coins', t)) == 3
+    kinds:
+    - coin9
+    name: coinstack9-3_inc
+    pigment: coinstack9-3
+  - jstest: parseInt(observation(n, 'Coins', t)) == 4
+    kinds:
+    - coin9
+    name: coinstack9-4_inc
+    pigment: coinstack9-4
+  - jstest: parseInt(observation(n, 'Coins', t)) == 5
+    kinds:
+    - coin9
+    name: coinstack9-5_inc
+    pigment: coinstack9-5
+  - jstest: parseInt(observation(n, 'Coins', t)) == 6
+    kinds:
+    - coin9
+    name: coinstack9-6_inc
+    pigment: coinstack9-6
+  - jstest: parseInt(observation(n, 'Coins', t)) == 7
+    kinds:
+    - coin9
+    name: coinstack9-7_inc
+    pigment: coinstack9-7
+  - jstest: parseInt(observation(n, 'Coins', t)) == 8
+    kinds:
+    - coin9
+    name: coinstack9-8_inc
+    pigment: coinstack9-8
+  - jstest: parseInt(observation(n, 'Coins', t)) == 9
+    kinds:
+    - coin9
+    name: coinstack9-9_inc
+    pigment: coinstack9-9
+  - jstest: parseInt(observation(n, 'Coins', t)) <= 1
+    kinds:
+    - coin1
+    name: coinstack1-1_inc
+    pigment: coinstack1-1
+  - jstest: parseInt(observation(n, 'Coins', t)) == 10
+    kinds:
+    - coin1
+    name: coinstack1-10_inc
+    pigment: coinstack1-10
+  - jstest: parseInt(observation(n, 'Coins', t)) == 2
+    kinds:
+    - coin1
+    name: coinstack1-2_inc
+    pigment: coinstack1-2
+  - jstest: parseInt(observation(n, 'Coins', t)) == 3
+    kinds:
+    - coin1
+    name: coinstack1-3_inc
+    pigment: coinstack1-3
+  - jstest: parseInt(observation(n, 'Coins', t)) == 4
+    kinds:
+    - coin1
+    name: coinstack1-4_inc
+    pigment: coinstack1-4
+  - jstest: parseInt(observation(n, 'Coins', t)) == 5
+    kinds:
+    - coin1
+    name: coinstack1-5_inc
+    pigment: coinstack1-5
+  - jstest: parseInt(observation(n, 'Coins', t)) == 6
+    kinds:
+    - coin1
+    name: coinstack1-6_inc
+    pigment: coinstack1-6
+  - jstest: parseInt(observation(n, 'Coins', t)) == 7
+    kinds:
+    - coin1
+    name: coinstack1-7_inc
+    pigment: coinstack1-7
+  - jstest: parseInt(observation(n, 'Coins', t)) == 8
+    kinds:
+    - coin1
+    name: coinstack1-8_inc
+    pigment: coinstack1-8
+  - jstest: parseInt(observation(n, 'Coins', t)) == 9
+    kinds:
+    - coin1
+    name: coinstack1-9_inc
+    pigment: coinstack1-9
+  - jstest: parseInt(observation(n, 'Coins', t)) <= 1
+    kinds:
+    - coin2
+    name: coinstack2-1_inc
+    pigment: coinstack2-1
+  - jstest: parseInt(observation(n, 'Coins', t)) == 10
+    kinds:
+    - coin2
+    name: coinstack2-10_inc
+    pigment: coinstack2-10
+  - jstest: parseInt(observation(n, 'Coins', t)) == 2
+    kinds:
+    - coin2
+    name: coinstack2-2_inc
+    pigment: coinstack2-2
+  - jstest: parseInt(observation(n, 'Coins', t)) == 3
+    kinds:
+    - coin2
+    name: coinstack2-3_inc
+    pigment: coinstack2-3
+  - jstest: parseInt(observation(n, 'Coins', t)) == 4
+    kinds:
+    - coin2
+    name: coinstack2-4_inc
+    pigment: coinstack2-4
+  - jstest: parseInt(observation(n, 'Coins', t)) == 5
+    kinds:
+    - coin2
+    name: coinstack2-5_inc
+    pigment: coinstack2-5
+  - jstest: parseInt(observation(n, 'Coins', t)) == 6
+    kinds:
+    - coin2
+    name: coinstack2-6_inc
+    pigment: coinstack2-6
+  - jstest: parseInt(observation(n, 'Coins', t)) == 7
+    kinds:
+    - coin2
+    name: coinstack2-7_inc
+    pigment: coinstack2-7
+  - jstest: parseInt(observation(n, 'Coins', t)) == 8
+    kinds:
+    - coin2
+    name: coinstack2-8_inc
+    pigment: coinstack2-8
+  - jstest: parseInt(observation(n, 'Coins', t)) == 9
+    kinds:
+    - coin2
+    name: coinstack2-9_inc
+    pigment: coinstack2-9
+  - jstest: parseInt(observation(n, 'Coins', t)) <= 1
+    kinds:
+    - coin3
+    name: coinstack3-1_inc
+    pigment: coinstack3-1
+  - jstest: parseInt(observation(n, 'Coins', t)) == 10
+    kinds:
+    - coin3
+    name: coinstack3-10_inc
+    pigment: coinstack3-10
+  - jstest: parseInt(observation(n, 'Coins', t)) == 2
+    kinds:
+    - coin3
+    name: coinstack3-2_inc
+    pigment: coinstack3-2
+  - jstest: parseInt(observation(n, 'Coins', t)) == 3
+    kinds:
+    - coin3
+    name: coinstack3-3_inc
+    pigment: coinstack3-3
+  - jstest: parseInt(observation(n, 'Coins', t)) == 4
+    kinds:
+    - coin3
+    name: coinstack3-4_inc
+    pigment: coinstack3-4
+  - jstest: parseInt(observation(n, 'Coins', t)) == 5
+    kinds:
+    - coin3
+    name: coinstack3-5_inc
+    pigment: coinstack3-5
+  - jstest: parseInt(observation(n, 'Coins', t)) == 6
+    kinds:
+    - coin3
+    name: coinstack3-6_inc
+    pigment: coinstack3-6
+  - jstest: parseInt(observation(n, 'Coins', t)) == 7
+    kinds:
+    - coin3
+    name: coinstack3-7_inc
+    pigment: coinstack3-7
+  - jstest: parseInt(observation(n, 'Coins', t)) == 8
+    kinds:
+    - coin3
+    name: coinstack3-8_inc
+    pigment: coinstack3-8
+  - jstest: parseInt(observation(n, 'Coins', t)) == 9
+    kinds:
+    - coin3
+    name: coinstack3-9_inc
+    pigment: coinstack3-9
+  - jstest: parseInt(observation(n, 'Coins', t)) <= 1
+    kinds:
+    - coin4
+    name: coinstack4-1_inc
+    pigment: coinstack4-1
+  - jstest: parseInt(observation(n, 'Coins', t)) == 10
+    kinds:
+    - coin4
+    name: coinstack4-10_inc
+    pigment: coinstack4-10
+  - jstest: parseInt(observation(n, 'Coins', t)) == 2
+    kinds:
+    - coin4
+    name: coinstack4-2_inc
+    pigment: coinstack4-2
+  - jstest: parseInt(observation(n, 'Coins', t)) == 3
+    kinds:
+    - coin4
+    name: coinstack4-3_inc
+    pigment: coinstack4-3
+  - jstest: parseInt(observation(n, 'Coins', t)) == 4
+    kinds:
+    - coin4
+    name: coinstack4-4_inc
+    pigment: coinstack4-4
+  - jstest: parseInt(observation(n, 'Coins', t)) == 5
+    kinds:
+    - coin4
+    name: coinstack4-5_inc
+    pigment: coinstack4-5
+  - jstest: parseInt(observation(n, 'Coins', t)) == 6
+    kinds:
+    - coin4
+    name: coinstack4-6_inc
+    pigment: coinstack4-6
+  - jstest: parseInt(observation(n, 'Coins', t)) == 7
+    kinds:
+    - coin4
+    name: coinstack4-7_inc
+    pigment: coinstack4-7
+  - jstest: parseInt(observation(n, 'Coins', t)) == 8
+    kinds:
+    - coin4
+    name: coinstack4-8_inc
+    pigment: coinstack4-8
+  - jstest: parseInt(observation(n, 'Coins', t)) == 9
+    kinds:
+    - coin4
+    name: coinstack4-9_inc
+    pigment: coinstack4-9
+  - jstest: parseInt(observation(n, 'Coins', t)) <= 1
+    kinds:
+    - coin5
+    name: coinstack5-1_inc
+    pigment: coinstack5-1
+  - jstest: parseInt(observation(n, 'Coins', t)) == 10
+    kinds:
+    - coin5
+    name: coinstack5-10_inc
+    pigment: coinstack5-10
+  - jstest: parseInt(observation(n, 'Coins', t)) == 2
+    kinds:
+    - coin5
+    name: coinstack5-2_inc
+    pigment: coinstack5-2
+  - jstest: parseInt(observation(n, 'Coins', t)) == 3
+    kinds:
+    - coin5
+    name: coinstack5-3_inc
+    pigment: coinstack5-3
+  - jstest: parseInt(observation(n, 'Coins', t)) == 4
+    kinds:
+    - coin5
+    name: coinstack5-4_inc
+    pigment: coinstack5-4
+  - jstest: parseInt(observation(n, 'Coins', t)) == 5
+    kinds:
+    - coin5
+    name: coinstack5-5_inc
+    pigment: coinstack5-5
+  - jstest: parseInt(observation(n, 'Coins', t)) == 6
+    kinds:
+    - coin5
+    name: coinstack5-6_inc
+    pigment: coinstack5-6
+  - jstest: parseInt(observation(n, 'Coins', t)) == 7
+    kinds:
+    - coin5
+    name: coinstack5-7_inc
+    pigment: coinstack5-7
+  - jstest: parseInt(observation(n, 'Coins', t)) == 8
+    kinds:
+    - coin5
+    name: coinstack5-8_inc
+    pigment: coinstack5-8
+  - jstest: parseInt(observation(n, 'Coins', t)) == 9
+    kinds:
+    - coin5
+    name: coinstack5-9_inc
+    pigment: coinstack5-9
+  - jstest: parseInt(observation(n, 'Coins', t)) <= 1
+    kinds:
+    - coin6
+    name: coinstack6-1_inc
+    pigment: coinstack6-1
+  - jstest: parseInt(observation(n, 'Coins', t)) == 10
+    kinds:
+    - coin6
+    name: coinstack6-10_inc
+    pigment: coinstack6-10
+  - jstest: parseInt(observation(n, 'Coins', t)) == 2
+    kinds:
+    - coin6
+    name: coinstack6-2_inc
+    pigment: coinstack6-2
+  - jstest: parseInt(observation(n, 'Coins', t)) == 3
+    kinds:
+    - coin6
+    name: coinstack6-3_inc
+    pigment: coinstack6-3
+  - jstest: parseInt(observation(n, 'Coins', t)) == 4
+    kinds:
+    - coin6
+    name: coinstack6-4_inc
+    pigment: coinstack6-4
+  - jstest: parseInt(observation(n, 'Coins', t)) == 5
+    kinds:
+    - coin6
+    name: coinstack6-5_inc
+    pigment: coinstack6-5
+  - jstest: parseInt(observation(n, 'Coins', t)) == 6
+    kinds:
+    - coin6
+    name: coinstack6-6_inc
+    pigment: coinstack6-6
+  - jstest: parseInt(observation(n, 'Coins', t)) == 7
+    kinds:
+    - coin6
+    name: coinstack6-7_inc
+    pigment: coinstack6-7
+  - jstest: parseInt(observation(n, 'Coins', t)) == 8
+    kinds:
+    - coin6
+    name: coinstack6-8_inc
+    pigment: coinstack6-8
+  - jstest: parseInt(observation(n, 'Coins', t)) == 9
+    kinds:
+    - coin6
+    name: coinstack6-9_inc
+    pigment: coinstack6-9
+  - jstest: parseInt(observation(n, 'Coins', t)) <= 1
+    kinds:
+    - coin7
+    name: coinstack7-1_inc
+    pigment: coinstack7-1
+  - jstest: parseInt(observation(n, 'Coins', t)) == 10
+    kinds:
+    - coin7
+    name: coinstack7-10_inc
+    pigment: coinstack7-10
+  - jstest: parseInt(observation(n, 'Coins', t)) == 2
+    kinds:
+    - coin7
+    name: coinstack7-2_inc
+    pigment: coinstack7-2
+  - jstest: parseInt(observation(n, 'Coins', t)) == 3
+    kinds:
+    - coin7
+    name: coinstack7-3_inc
+    pigment: coinstack7-3
+  - jstest: parseInt(observation(n, 'Coins', t)) == 4
+    kinds:
+    - coin7
+    name: coinstack7-4_inc
+    pigment: coinstack7-4
+  - jstest: parseInt(observation(n, 'Coins', t)) == 5
+    kinds:
+    - coin7
+    name: coinstack7-5_inc
+    pigment: coinstack7-5
+  - jstest: parseInt(observation(n, 'Coins', t)) == 6
+    kinds:
+    - coin7
+    name: coinstack7-6_inc
+    pigment: coinstack7-6
+  - jstest: parseInt(observation(n, 'Coins', t)) == 7
+    kinds:
+    - coin7
+    name: coinstack7-7_inc
+    pigment: coinstack7-7
+  - jstest: parseInt(observation(n, 'Coins', t)) == 8
+    kinds:
+    - coin7
+    name: coinstack7-8_inc
+    pigment: coinstack7-8
+  - jstest: parseInt(observation(n, 'Coins', t)) == 9
+    kinds:
+    - coin7
+    name: coinstack7-9_inc
+    pigment: coinstack7-9
+  - jstest: parseInt(observation(n, 'Coins', t)) <= 1
+    kinds:
+    - coin10
+    name: coinstack10-1_inc
+    pigment: coinstack10-1
+  - jstest: parseInt(observation(n, 'Coins', t)) == 10
+    kinds:
+    - coin10
+    name: coinstack10-10_inc
+    pigment: coinstack10-10
+  - jstest: parseInt(observation(n, 'Coins', t)) == 2
+    kinds:
+    - coin10
+    name: coinstack10-2_inc
+    pigment: coinstack10-2
+  - jstest: parseInt(observation(n, 'Coins', t)) == 3
+    kinds:
+    - coin10
+    name: coinstack10-3_inc
+    pigment: coinstack10-3
+  - jstest: parseInt(observation(n, 'Coins', t)) == 4
+    kinds:
+    - coin10
+    name: coinstack10-4_inc
+    pigment: coinstack10-4
+  - jstest: parseInt(observation(n, 'Coins', t)) == 5
+    kinds:
+    - coin10
+    name: coinstack10-5_inc
+    pigment: coinstack10-5
+  - jstest: parseInt(observation(n, 'Coins', t)) == 6
+    kinds:
+    - coin10
+    name: coinstack10-6_inc
+    pigment: coinstack10-6
+  - jstest: parseInt(observation(n, 'Coins', t)) == 7
+    kinds:
+    - coin10
+    name: coinstack10-7_inc
+    pigment: coinstack10-7
+  - jstest: parseInt(observation(n, 'Coins', t)) == 8
+    kinds:
+    - coin10
+    name: coinstack10-8_inc
+    pigment: coinstack10-8
+  - jstest: parseInt(observation(n, 'Coins', t)) == 9
+    kinds:
+    - coin10
+    name: coinstack10-9_inc
+    pigment: coinstack10-9

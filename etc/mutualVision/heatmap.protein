@@ -1,0 +1,135 @@
+%YAML 1.1
+%TAG ! tag:oblong.com,2009:slaw/
+--- !protein
+descrips:
+- sluice
+- prot-spec v1.0
+- request
+- new-fluoro-template
+ingests:
+  name: Heatmap
+  display-text: "Rates Heatmap"
+  icon: mutualVision/images/ratesicon.png
+  type: texture
+  daemon: Analysis
+  include-data: true
+  disable-notifications: true
+  attributes:
+  - name: opacity
+    selection-type: exclusive
+    contents:
+    - name: '0.25'
+      display-text: 25%
+      selected: 0
+    - name: '0.50'
+      display-text: 50%
+      selected: 0
+    - name: '0.75'
+      display-text: 75%
+      selected: 0
+    - name: '0.85'
+      display-text: 85%
+      selected: 1
+    - name: '1.00'
+      display-text: 100%
+      selected: 0
+  - name: dotwidth
+    selection-type: exclusive
+    contents:
+    - name: '8'
+      display-text: '8'
+      selected: 0
+    - name: '16'
+      display-text: '16'
+      selected: 0
+    - name: '32'
+      display-text: '32'
+      selected: 0
+    - name: '64'
+      display-text: '64'
+      selected: 1
+    - name: '128'
+      display-text: '128'
+      selected: 0
+    - name: '256'
+      display-text: '256'
+      selected: 0
+  - name: style
+    selection-type: exclusive
+    contents:
+    - name: mutualVision/heatmap/red.png
+      display-text: red
+      selected: 0
+    - name: mutualVision/heatmap/green.png
+      display-text: green
+      selected: 0
+    - name: mutualVision/heatmap/blue.png
+      display-text: blue
+      selected: 0
+    - name: mutualVision/heatmap/indigo-blue.png
+      display-text: indigo-blue
+      selected: 0
+    - name: mutualVision/heatmap/red-yellow.png
+      display-text: red-yellow
+      selected: 0
+    - name: mutualVision/heatmap/yellow-green.png
+      display-text: yellow-green
+      selected: 0
+    - name: mutualVision/heatmap/colors.png
+      display-text: colors
+      selected: 1
+    - name: mutualVision/heatmap/greyscale.png
+      display-text: greyscale
+      selected: 0
+  - name: entity-kinds
+    selection-type: inclusive
+    contents:
+    - name: coin1
+      display-text: Loan Banding 1
+      selected: 1
+    - name: coin2
+      display-text: Loan Banding 2
+      selected: 1
+    - name: coin3
+      display-text: Loan Banding 3
+      selected: 1
+    - name: coin4
+      display-text: Loan Banding 4
+      selected: 1
+    - name: coin5
+      display-text: Loan Banding 5
+      selected: 1
+    - name: coin6
+      display-text: Loan Banding 6
+      selected: 1
+    - name: coin7
+      display-text: Loan Banding 7
+      selected: 1
+    - name: coin8
+      display-text: Loan Banding 8
+      selected: 1
+    - name: coin9
+      display-text: Loan Banding 9
+      selected: 1
+    - name: coin10
+      display-text: Loan Banding 10
+      selected: 1
+  - name: entity-attributes
+    selection-type: exclusive
+    contents:
+    - name: 'Rate'
+      display-text: 'Rate'
+      selected: 1
+  - name: texture-wait
+    selection-type: exclusive
+    contents:
+    - name: '5.0'
+      display-text: '5.0'
+      selected: 0
+    - name: '10.0'
+      display-text: '10.0'
+      selected: 1
+    - name: '20.0'
+      display-text: '20.0'
+      selected: 0
+...

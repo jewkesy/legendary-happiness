@@ -1,0 +1,60 @@
+{   "id": "mutualVision",
+    "name": "MUTUALVISION",
+    "etc": "etc",
+    "share": "share",
+    "settings": "mutualVision/sluice-settings.protein",
+    "jsplasma-apps": {
+        "launchpad": {
+            "path": "web/modules/showrunner/server.py",
+            "app": "runner"
+        }
+    },
+    "sluice-tabs": {
+        "Mutual Vision": {
+            "path": "mutualvision"
+        }
+    },
+    "daemons": {
+        "mvClick": {
+            "name": "MV Click",
+            "default": true,
+            "script": "mutualVision/mvClick.sh"
+        },
+        "mvLoad": {
+            "name": "MV Load",
+            "default": true,
+            "script": "mutualVision/mvDataLoad.sh"
+        },
+        "heatmap": {
+            "name": "Heatmap",
+            "default": true,
+            "script": "heatmapd"
+        },
+        "zippy": {
+            "name": "Zippy",
+            "default": true,
+            "script": "zippyd"
+        },
+        "zoomTo": {
+            "name": "Zoom To",
+            "default": true,
+            "script": "mutualVision/zoomTo.sh"
+        },
+        "showIntro": {
+            "name": "Show Introduction",
+            "default": true,
+            "script": "mutualVision/showIntro.sh"
+        }
+    },
+    "menuDetails": {
+    		"id": "mutualVision",
+        "navIcon": "",
+        "mainTitle": "MUTUALVISION",
+        "switcherUrl": "http://192.168.25.13:4567/?treatment=",
+        "treatmentLocation": "~/home/demo/mutualvision",
+        "article": {
+          "headerImage": "./img/branch.png",
+          "summary": "Mutualvision demo"
+        }
+    }
+}

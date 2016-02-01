@@ -1,0 +1,27 @@
+# Assuming that you are running from the root project folder, use the node application after import to rebuild lat/lon data..
+mongoimport -h localhost -d mutualVision -c branches --type csv --file share/mutualVision/data/BRANCH.csv --headerline --ignoreBlanks --drop
+mongoimport -h localhost -d mutualVision -c introducers --type csv --file share/mutualVision/data/INTRODUCER.csv --headerline --ignoreBlanks --drop
+# mongoimport -h localhost -d mutualVision -c customers --type csv --file share/mutualVision/data/CUSTOMERS.csv --headerline --ignoreBlanks --drop
+mongoimport -h localhost -d mutualVision -c savers --type csv --file share/mutualVision/data/SAVERS.csv --headerline --ignoreBlanks --drop
+mongoimport -h localhost -d mutualVision -c loans --type csv --file share/mutualVision/data/LOANS.csv --headerline --ignoreBlanks --drop
+
+# new customer data with transaction count for ratings
+mongoimport -h localhost -d mutualVision -c customers --type csv --file share/mutualVision/data/cust-ratings.csv --headerline --ignoreBlanks --drop
+
+# Extra data 
+mongoimport -h localhost -d mutualVision -c bs --type csv --file ../../../share/mutualVision/data/bs_league_2015.csv --headerline --ignoreBlanks --drop
+
+mongodump -h localhost -d mutualVision --out  ~/Documents/conduce/treatments/mutualVision/share/mutualVision/data/mutualVision.dmp
+mongorestore ~/Documents/conduce/treatments/mutualVision/share/mutualVision/data/mutualVision.dmp/ --drop
+
+
+db.branches.createIndex({ "LAT" : 1 }, {sparse: true})
+db.customers.createIndex({ "LAT" : 1 }, {sparse: true})
+db.loans.createIndex({ "LAT" : 1 }, {sparse: true})
+db.introducers.createIndex({ "LAT" : 1 }, {sparse: true})
+db.savers.createIndex({ "LAT" : 1 }, {sparse: true})
+
+# mongo 3.0 can use tiger storage
+mongod --storageEngine wiredTiger --dbpath /data/tiger/
+
+# mongorestore as above

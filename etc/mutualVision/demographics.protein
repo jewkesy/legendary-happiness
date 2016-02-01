@@ -1,0 +1,40 @@
+%YAML 1.1
+%TAG ! tag:oblong.com,2009:slaw/
+--- !protein
+descrips:
+- sluice
+- prot-spec v1.0
+- request
+- new-fluoro-template
+ingests:
+  name: Demographics
+  display-text: "{ Counties }"
+  icon: mutualVision/icons/demographics.png
+  type: texture
+  daemon: Financials
+  attributes:
+  - name: opacity
+    selection-type: exclusive
+    contents:
+    - name: '0.25'
+      display-text: 25%
+      selected: 0
+    - name: '0.50'
+      display-text: 50%
+      selected: 0
+    - name: '0.75'
+      display-text: 75%
+      selected: 0
+    - name: '1.00'
+      display-text: 100%
+      selected: 1
+  - name: style
+    selection-type: exclusive
+    contents:
+    - name: mutualVision/zippy/uk-county-pops
+      display-text: County Populations
+      selected: 0
+    - name: mutualVision/zippy/British_postcode_areas_map
+      display-text: Postcode Areas
+      selected: 1
+...

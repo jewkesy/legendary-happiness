@@ -1,0 +1,61 @@
+%YAML 1.1
+%TAG ! tag:oblong.com,2009:slaw/
+--- !protein
+descrips:
+- tiled
+- config
+ingests:
+  fetch-threads: 32
+  cache-threads: 32
+  cache-base: "~/tmp/cache"
+  request-pool: "tcp://localhost/tiles-req"
+  tile-policies:
+    - mapid: "mapquest"
+      type: "standard"
+      url: "http://otile1.mqcdn.com/tiles/1.0.0/osm/$Z/$X/$Y.jpg"
+      cache: "$BASE/$MAPID/$Z/$X/$Z_$X_$Y.jpg"
+      max-z: 18
+    - mapid: "gray"
+      type: "forward"
+      pool: "petrichor"
+    - mapid: "watercolor"
+      type: "standard"
+      url: "http://b.tile.stamen.com/watercolor/$Z/$X/$Y.jpg"
+      cache: "$BASE/$MAPID/$Z/$X/$Z_$X_$Y.jpg"
+    - mapid: "terrain"
+      type: "standard"
+      url: "http://b.tile.stamen.com/terrain/$Z/$X/$Y.jpg"
+      cache: "$BASE/$MAPID/$Z/$X/$Z_$X_$Y.jpg"
+    - mapid: "toner"
+      type: "standard"
+      url: "http://b.tile.stamen.com/toner/$Z/$X/$Y.png"
+      cache: "$BASE/$MAPID/$Z/$X/$Y.jpg"
+      image-format: "png"
+    - mapid: "toner-lines"
+      image-format: "png"
+      type: "standard"
+      url: "http://tile.stamen.com/toner-lines/$Z/$X/$Y.png"
+      cache: "$BASE/$MAPID/$Z/$X/$Y.png"
+    - mapid: "MQ Open Aerial"
+      type: "standard"
+      image-format: "jpg"
+      url: "http://otile1.mqcdn.com/tiles/1.0.0/sat/$Z/$X/$Y.jpg"
+      cache: "$BASE/$MAPID/$Z/$X/$Y.jpg"
+    - mapid: "OpenStreetMap"
+      type: "standard"
+      image-format: "png"
+      url: "http://b.tile.openstreetmap.org/$Z/$X/$Y.png"
+      cache: "$BASE/$MAPID/$Z/$X/$Y.png"
+    - mapid: "OpenTransportMap"
+      type: "standard"
+      image-format: "png"
+      url: "http://b.tile2.opencyclemap.org/transport/$Z/$X/$Y.png"
+      cache: "$BASE/$MAPID/$Z/$X/$Y.png"
+    - mapid: "Landscape"
+      type: "standard"
+      image-format: "png"
+      url: "http://b.tile.thunderforest.com/landscape/$Z/$X/$Y.png"
+      cache: "$BASE/$MAPID/$Z/$X/$Y.png"
+
+
+

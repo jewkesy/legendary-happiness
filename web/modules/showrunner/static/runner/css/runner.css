@@ -1,0 +1,230 @@
+body {
+    width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+    background: #313131;
+    color: #000;
+    font-family: "Trebuchet MS", Helvetica, sans-serif;
+}
+
+#MCTlaunch {
+  background-image: url('MCTparts/conduce_demo_launchpad.png');
+  width: 812px;
+  height: 56px;
+  vertical-align:middle;
+  display: inline-block;
+  margin-right: 12em;
+  margin-left: 6em;
+}
+
+#fzout {
+    background-image: url('MCTparts/Zoom Out/zoom_out_static.png');
+    width: 290px;
+    height: 82px;
+    border-radius: 10px;
+    margin-top: 1em;
+}
+
+/*#fzout:hover {
+    background-image: url('MCTparts/Zoom Out/zoom_out_hover.png');
+}*/
+
+#fzout:active {
+    background-image: url('MCTparts/Zoom Out/zoom_out_hover.png');
+}
+
+#fzin {
+    background-image: url('MCTparts/Zoom In/zoom_in_static.png');
+    width: 290px;
+    height: 82px;
+    border-radius: 10px;
+    margin-top: 1em;
+}
+
+/*#fzin:hover {
+    background-image: url('MCTparts/Zoom In/zoom_in_hover.png');
+}*/
+
+#fzin:active {
+    background-image: url('MCTparts/Zoom In/zoom_in_hover.png');
+}
+
+/*#playall {
+    background-image: url('MCTparts/Play All/play_all_static.png');
+    width: 290px;
+    height: 82px;
+    border-radius: 10px;
+    margin-top: 1em;
+}
+
+#playall:hover {
+    background-image: url('MCTparts/Play All/play_all_hover.png');
+}
+
+#playall:active {
+    background-image: url('MCTparts/Play All/play_all_press.png');
+}*/
+
+a.button div.num {
+    margin-top:10%;
+}
+
+a.button {
+    text-align: center;
+    vertical-align: middle;
+    display: inline-block;
+    text-decoration: none;
+    color: white;
+    font-size: 1.1em;
+    margin: 0.1em;
+}
+
+a.ebutton {
+    background-image: url('MCTparts/dark_box.jpg');
+    width: 100px;
+    height: 100px;
+    text-align: center;
+    vertical-align: middle;
+    display: inline-block;
+    margin: 0.1em;
+}
+
+.act a.button {
+    background-image: url('MCTparts/bluebox_static.jpg');
+    width: 200px;
+    height: 100px;
+    font-size: 1em;
+}
+
+.act a.button div {
+   margin-top:22%;
+}
+
+.act a.button:hover {
+   background: #27408B;
+}
+
+.act a.button:active {
+   background: #2B4F81;
+}
+
+.scene a.button {
+/*    background-image: url('MCTparts/Green Box/greenbox_static.jpg');*/
+  background-color: #33CC33;
+  width: 100px;
+  height: 100px;
+}
+
+.scene a.button:hover {
+  background-color: #009933;
+}
+
+.scene a.button:active {
+    background-image: url('MCTparts/Green Box/greenbox_press.jpg');
+}
+
+.scene a.button::selection {
+    background-image: url('MCTparts/Green Box/greenbox_selected.jpg');
+}
+
+.scene a.button div.num {
+    font-size:1em;
+}
+
+#timetitle {
+  background-image: url('MCTparts/timeline_title.png');
+  width: 223px;
+  height: 20px;
+  margin-left: 10em;
+  margin-top: 1em;
+}
+
+input[type="range"] {
+    margin-left: 1em;
+    margin-right: 1em;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    background-color: #212121;
+    width:900px;
+    height:38px;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+     -webkit-appearance: none;
+    background:none;
+    background-image:url('MCTparts/Scrubber Bar/scrubber_thumb_static.png');
+    width: 136px;
+    height: 72px;
+}
+input[type="range"]::-moz-range-thumb {
+    -moz-appearance: none;
+    background:none;
+    background-image:url('MCTparts/Scrubber Bar/scrubber_thumb_static.png');
+    width: 136px;
+    height: 72px;
+}
+
+/*input[type="range"]::-webkit-slider-thumb:hover {
+   background-image:url('MCTparts/Scrubber Bar/scruber_thumb_hoverpress.png');
+}*/
+input[type="range"]::-moz-range-thumb:active {
+   background-image:url('MCTparts/Scrubber Bar/scruber_thumb_hoverpress.png');
+}
+input[type="range"]::-webkit-slider-thumb:active {
+   background-image:url('MCTparts/Scrubber Bar/scruber_thumb_hoverpress.png');
+}
+
+#timestate {
+    color: white;
+    display: inline-block;
+}
+
+#time-screen{
+   background-image: url('MCTparts/time_date_screen.png');
+   width: 270px;
+   height: 179px;
+   color:white;
+   text-align: center;
+   display: inline-block;
+   margin-left:10em;
+}
+
+#time-current{
+   color:green;
+   margin: 2em;
+}
+
+div.sliderleft {
+   background-image: url('MCTparts/Scrubber Bar/scrubbertrack_lft_endcap.png');
+   width: 25px;
+   height: 38px;
+   display:inline-block;
+   margin-right: -1.2em;
+}
+
+div.sliderright{
+   background-image: url('MCTparts/Scrubber Bar/scrubbertrack_rt_endcap.png');
+   width: 25px;
+   height: 38px;
+   display:inline-block;
+   margin-left: -1.2em;
+}
+
+table {
+   border-collapse: separate;
+   border-spacing: 10px 5px;
+}
+
+td.maxtime {
+    margin-right:10em;
+}
+
+table.play {
+    margin-left: 2em;
+    margin-top: 1em;
+}
+
+.makeRed {
+  background: red !important; 
+}

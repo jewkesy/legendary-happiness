@@ -1,0 +1,20 @@
+#!/bin/sh
+
+root=$(cd `dirname $0`/.. && echo  $PWD)
+
+export RUBYLIB="${RUBYLIB}:/Library/Ruby/Gems/2.0.0/gems/rmagick-2.13.2/lib"
+
+export RUBYLIB="${RUBYLIB}:/Library/Ruby/Gems/2.0.0/gems/mongo-1.12.0/lib/"
+export RUBYLIB="${RUBYLIB}:/Library/Ruby/Gems/2.0.0/gems/bson-1.12.0/lib/"
+export RUBYLIB="${RUBYLIB}:/Library/Ruby/Gems/2.0.0/gems/bson_ext-1.12.0/lib"
+
+export RUBYLIB="${RUBYLIB}:/var/lib/gems/1.8/gems/mongo-1.12.0/lib/"
+export RUBYLIB="${RUBYLIB}:/var/lib/gems/1.8/gems/bson-1.12.0/lib/"
+
+export RUBYLIB="${RUBYLIB}:${root}/lib/ruby"
+export RUBYLIB="${RUBYLIB}:/opt/mct/sluice/lib/ruby"
+export RUBYLIB="${RUBYLIB}:/opt/mct/sluice/deps/lib/ruby"
+export RUBYLIB="${RUBYLIB}:/opt/mct/sluice/bin"
+export RUBYLIB="${RUBYLIB}:/opt/oblong/g-speak3.14/lib/ruby"
+
+exec "$@"

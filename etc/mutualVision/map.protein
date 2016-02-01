@@ -1,0 +1,59 @@
+%YAML 1.1
+%TAG ! tag:oblong.com,2009:slaw/
+--- !protein
+descrips:
+- sluice
+- prot-spec v1.0
+- fluoroscope
+- config
+ingests:
+  name: Map
+  type: atlas
+  layers-path: "mutualVision/static_layers.protein"
+  attributes:
+  - name: alpha-per-second
+    selection-type: exclusive
+    contents:
+    - name: 1.0
+      display-text: "One second fade in"
+      selected: false
+    - name: 2.0
+      display-text: "Half second fade in"
+      selected: false
+    - name: 0.5
+      display-text: "Two second fade in"
+      selected: false
+    - name: 4.0
+      display-text: "Quarter second fade in"
+      selected: false
+    - name: 8.0
+      display-text: "Blitz"
+      selected: true
+  - name: layers
+    selection-type: inclusive
+    contents:
+    - name: us_terrain
+      display-text: US Terrain
+      selected: !i64 0
+    - name: sf_streets
+      display-text: San Francisco Streets
+      selected: !i64 0
+  - name: background
+    selection-type: exclusive
+    contents:
+    - name: mapquest
+      display-text: Mapquest
+      selected: 1
+    - name: toner
+      display-text: Toner
+      selected: 0
+    - name: sluice/mercator/world-mercator-4096-04.png
+      display-text: Matte dark
+      selected: 0
+    - name: sluice/mercator/world-mercator-4096-03.png
+      display-text: Shiny dark
+      selected: 0
+    - name: sluice/mercator/blue-marble.png
+      display-text: Blue Marble
+      selected: 0
+...

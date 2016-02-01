@@ -1,0 +1,32 @@
+%YAML 1.1
+%TAG ! tag:oblong.com,2009:slaw/
+--- !protein
+descrips:
+- app-settings
+- sluice
+ingests:
+  wands-pool: "tcp://localhost/wands"
+  map: "mutualVision/map.protein"
+  scopes:
+    - "mutualVision/buildsoc.protein"
+    - "mutualVision/branch.protein"
+    - "mutualVision/introducer.protein"
+    - "mutualVision/customer.protein"
+    - "mutualVision/business.protein"
+    - "mutualVision/loan.protein"
+    - "mutualVision/ratings.protein"
+    - "mutualVision/arrears.protein"
+    - "mutualVision/heatmap.protein"
+    - "mutualVision/ltv.protein"
+    - "mutualVision/blankCustomers.protein"
+    - "mutualVision/demographics.protein"
+  time-formats: # See strptime(3)
+    - "%Y-%m-%dT%H:%M:%SZ"
+    - "%Y-%m-%d %H:%M:%S"
+    - "%Y-%m-%d"
+    - "%Y%m%d"
+  windshield-max-items: 50
+  feldstream-path: /opt/oblong/sluice-64-2/bin/feldstream
+  data-definition:
+    inculcators: "mutualVision/inculcators.protein"
+...

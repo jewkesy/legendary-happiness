@@ -1,0 +1,109 @@
+body {
+	background-color:#3A3A40;
+	font-size: 1em;
+	margin: 0px auto;
+}
+
+h1, h2, h3 {
+	font-size: 1.6em;
+	margin: 0;
+	padding: 0;
+}
+
+.content {
+	width: 100%;
+	margin: 0px auto;
+	background-color: white;
+	padding: 5px;
+}
+
+.header {
+	margin: 0;
+	padding:0;
+}
+
+.header img {
+	height: 30px;
+}
+
+.padLeft {
+	padding-left: 0px;
+}
+
+.tiles img {
+	display: none;
+}
+
+#stats {
+	display: none;
+}
+
+.section {
+	float: left;
+	display: none;
+}
+
+#stats img {
+	width: 570px;
+}
+
+#growth img {
+	width: 570px;
+}
+
+#activity img {
+	display: none;
+}
+
+#daryl, #brassband, #council, #jubilee {
+	width: 230px;
+	padding-left:20px;
+}
+
+.header {
+	background-color: #666699;
+}
+
+.ital {
+	font-style: italic;
+}
+
+.white {
+	color: white;
+}
+
+.blue {
+	color: blue;
+}
+
+.green {
+	color: #85C285;
+}
+
+.grey {
+	color:#C2C2D6;
+}
+
+.thinBorder {
+/*	border: 1px solid red;
+	margin-top: 0px;*/
+}
+
+.tile {
+	display:none;
+	padding-bottom: 5px;
+	width: 24px;
+}
+
+.pushRight {
+	padding-left: 10px;
+}
+
+.footer {
+	text-align: left;
+	margin-top: 10px;
+	background-color: #666699;
+	padding-top: 5px;
+	padding-bottom: 5px;
+	color: white;
+}

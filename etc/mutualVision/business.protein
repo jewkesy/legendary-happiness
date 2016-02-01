@@ -1,0 +1,70 @@
+%YAML 1.1
+%TAG ! tag:oblong.com,2009:slaw/
+--- !protein
+descrips:
+- sluice
+- prot-spec v1.0
+- request
+- new-fluoro-template
+ingests:
+  name: Business
+  icon: mutualVision/images/businessicon.png
+  type: network
+  display-text: 'Businesses'
+  attributes:
+  - name: opacity
+    selection-type: exclusive
+    contents:
+    - name: '0.25'
+      display-text: 25%
+      selected: 0
+    - name: '0.50'
+      display-text: 50%
+      selected: 0
+    - name: '0.75'
+      display-text: 75%
+      selected: 0
+    - name: '0.95'
+      display-text: 95%
+      selected: 1
+    - name: '1.00'
+      display-text: 100%
+      selected: 0
+  - name: enable-menu
+    selection-type: exclusive
+    contents:
+    - name: true
+      display-text: Enable
+      selected: true
+    - name: false
+      display-text: Disable
+      selected: false
+  - name: enabled-kinds
+    display-text: 'Filter Options'
+    contents:
+    - name: customer_business
+      display-text: "Business Owner"
+      selected: true
+      icon: mutualVision/images/demographics/business.png
+    selection-type: inclusive
+  default_shaders:
+    path:
+      fragment: ribbons.frag
+      vertex: marching_ribbons.vert
+    point:
+      fragment: network.frag
+      vertex: network.vert
+  kinds:
+  - customer_business
+  pigments:
+  - name: customer_business
+    icon: mutualVision/images/demographics/business.png
+    size:
+      type: SoftFloat
+      value: 1
+    type: point
+  hover:
+    max-found: 256
+    min_zoom: 5000
+    glyph: "sluice/sharkmouth.png"
+...
