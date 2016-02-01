@@ -63,10 +63,14 @@ class Hearty < Metabolizer
     uniqueItems = Set.new
     arrItems = []
     progress = 0
-    filter = { }   #      {"twitter.coordinates.coordinates": {"$exists":true  } }   { 'LAT' => { '$exists' => true } }
+    # filter = { }   #      {"twitter.coordinates.coordinates": {"$exists":true  } }   { 'LAT' => { '$exists' => true } }
     filter =    { 'twitter.coordinates.coordinates'  => { '$exists' => true   } }
+    projection = {  'twitter.coordinates' => 1, 'twitter.id_str' => 1, 'twitter.text' => 1, 'twitter.user.id_str' => 1, 'twitter.user.name' => 1, 'twitter.user.screen_name' => 1, 'retweet_count' => 1, 'timestamp_ms' => 1  }    # { "twitter.coordinates":1, "twitter.id_str":1, "twitter.text":1, "twitter.user.id_str":1, "twitter.user.name" : 1 }
 
-    @db.collection("tweets").find(filter).each do |row|
+    projection = ['twitter.coordinates', 'twitter.id_str', 'twitter.text', 'twitter.user.id_str', 'twitter.user.name', 'twitter.user.screen_name', 'retweet_count', 'timestamp_ms']
+
+
+    @db.collection("tweets").find(filter , :fields => projection).each do |row|
 # puts row['twitter']
 
       
