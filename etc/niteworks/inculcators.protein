@@ -9,9 +9,9 @@ descrips:
 ingests:
   inculcators:
   - kinds:
-    - branch
-    name: branch
-    pigment: branch
+    - tweet
+    name: tweet
+    pigment: tweet
   - kinds:
     - buildsoc
     name: buildsoc

@@ -7,7 +7,7 @@ class Clicky < Metabolizer
   attr_accessor :verbose
   attr_accessor :outpool
 
-  @@webURl = "http://localhost:7787/sluice/mutualvision/"
+  @@webURl = "http://localhost:7787/sluice/niteworks/"
 
   def initialize(*hoses)
     puts "starting Clicky daemon" if @verbose
@@ -27,21 +27,15 @@ class Clicky < Metabolizer
       puts "Id is empty, node was not clicked" if @verbose
       return
     end
-
-    if ing['id'] == 'buildsoc_Vernon'
+# puts ing
+    if ing['kind'] == 'tweet'
 
         ingests = {'windshield' => [{
-          'name' => 'buildsoc',
-          'feld' => 'left',
-          'loc' => [0,-0.25],
-          'size' => [0.5, 1.0],
-          'url' => @@webURl + "buildsoc"
-        }, {
           'name' => 'dashboard',
           'feld' => 'left',
-          'loc' => [0,0.25],
-          'size' => [0.5, 1.0],
-          'url' => @@webURl + "dashboard"
+          'loc' => [0,0],
+          'size' => [1.0, 1.0],
+          'url' =>  'http://192.168.1.54:3000/?id=' + ing['attrs']['tweetId']
           }]}
 
         hose = Pool.participate @outpool

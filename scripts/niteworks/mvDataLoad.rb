@@ -3,6 +3,7 @@ require 'metabolizer'
 require 'thread'
 require 'mongo'
 require 'optparse'
+require 'date'
 
 include Plasma
 include Mongo
@@ -57,116 +58,51 @@ class Hearty < Metabolizer
     exit 1
   end
 
-  def LoadBranches()
-    uniqueItems = Set.new
-    kind = 'branch'
-    arrItems = []
-    @db.collection("branches").find({ 'LAT' => { '$exists' => true } }).each do |row|
-      uniqueId = kind + row['LAT'].to_s + row['LON'].to_s
-      if (uniqueItems.include?(uniqueId))
-        next
-      end
 
-      attrs = {
-        'name' => row['BRANCH_NAME'],
-        'Pipeline Offer' => row['PIPELINE_OFFER'].to_s
-      }
-
-      ing = BuildIngest(kind + '_' + row['BRANCH_CODE'].to_s, row['LAT'], row['LON'], kind, attrs);
-      
-      arrItems.push(ing)        
-      uniqueItems.add(uniqueId)
-    end
-    PokeProtein(Protein.new(['sluice', 'prot-spec v1.0', 'topology', 'add' ], { 'topology' => arrItems }))
-    puts kind + ' loaded: ' + uniqueItems.size.to_s
-  end
-
-  def LoadBuildingSocs()
-    uniqueItems = Set.new
-    kind = 'buildsoc'
-    arrItems = []
-    @db.collection("bs").find({ 'LAT' => { '$exists' => true } }).each do |row|
-      uniqueId = kind + row['LAT'].to_s + row['LON'].to_s
-      if (uniqueItems.include?(uniqueId))
-        next
-      end
-
-      attrs = {
-        'name' => row['Society'],
-        'Postcode' => row['Postcode'],
-        'Total Assets 2014' => row['Total Assets 2014'].to_s,
-        'Total Assets 2013' => row['Total Assets 2013'].to_s,
-        'Management Expenses 2014' => row['Management  Expenses 2014'].to_s,
-        'Management Expenses 2013' => row['Management  Expenses 2013'].to_s,
-        'Profit/Loss 2014' => row['Profit/Loss 2014'].to_s,
-        'Profit/Loss 2013' => row['Profit/Loss 2013'].to_s
-      }
-
-      ing = BuildIngest(kind + '_' + row['Society'].to_s, row['LAT'], row['LON'], kind, attrs);
-      arrItems.push(ing) 
-      uniqueItems.add(uniqueId)
-    end
-    PokeProtein(Protein.new(['sluice', 'prot-spec v1.0', 'topology', 'add' ], { 'topology' => arrItems }))
-    puts kind + ' loaded: ' + uniqueItems.size.to_s
-  end
-
-  def LoadIntroducers()
-    uniqueItems = Set.new
-    kind = 'introducer'
-    arrItems = []
-    @db.collection("introducers").find({ 'LAT' => { '$exists' => true } }).each do |row|
-      # puts row.inspect
-      uniqueId = kind + row['LAT'].to_s + row['LON'].to_s
-      if (uniqueItems.include?(uniqueId))
-        next
-      end
-
-      attrs = {
-        'name' => row['INTRO_NAME'],
-        'Pipeline Offer' => row['LOAN_BALANCE'].to_s
-      }
-
-      ing = BuildIngest(kind + '_' + row['INTRO_CODE'].to_s, row['LAT'], row['LON'], kind, attrs);
-      arrItems.push(ing) 
-      uniqueItems.add(uniqueId)
-    end
-    PokeProtein(Protein.new(['sluice', 'prot-spec v1.0', 'topology', 'add' ], { 'topology' => arrItems }))
-    puts kind + ' loaded: ' + uniqueItems.size.to_s
-  end
-
-  def LoadCustomers()
+  def LoadTweets()
     uniqueItems = Set.new
     arrItems = []
     progress = 0
-    @db.collection("customers").find({ 'LAT' => { '$exists' => true } }).each do |row|
-      if (row['GENDER'].downcase == 'n/a')
-        kind = 'customer_business'
-      else
-        if (row['AGE'].nil?)
-          next
-        end
-        kind = BuildKind('customer', row['GENDER'], row['AGE'])
-      end
+    # filter = { }   #      {"twitter.coordinates.coordinates": {"$exists":true  } }   { 'LAT' => { '$exists' => true } }
+    filter =    { 'twitter.coordinates.coordinates'  => { '$exists' => true   } }
+    projection = {  'twitter.coordinates' => 1, 'twitter.id_str' => 1, 'twitter.text' => 1, 'twitter.user.id_str' => 1, 'twitter.user.name' => 1, 'twitter.user.screen_name' => 1, 'retweet_count' => 1, 'timestamp_ms' => 1  }    # { "twitter.coordinates":1, "twitter.id_str":1, "twitter.text":1, "twitter.user.id_str":1, "twitter.user.name" : 1 }
 
-      uniqueId = kind + row['LAT'].to_s + row['LON'].to_s
+    projection = ['twitter.coordinates', 'twitter.id_str', 'twitter.text', 'twitter.user.id_str', 'twitter.user.name', 'twitter.user.screen_name', 'retweet_count', 'timestamp_ms']
+
+
+    @db.collection("tweets").find(filter , :fields => projection).each do |row|
+# puts row['twitter']
+
+      
+
+  
+      tweet = row['twitter']
+
+      if (tweet['coordinates'].nil?)
+# puts 'no geo, skipping'        
+        next
+      end  
+# puts row['_id'][0]
+# puts tweet
+      kind = 'tweet'
+# puts tweet['id_str']
+      uniqueId = kind + tweet['id_str']
       if (uniqueItems.include?(uniqueId))
         next
       end
       uniqueItems.add(uniqueId)
-      
-      formattedAddr = BuildAddr(row['ADDRESS_1'].to_s, row['ADDRESS_2'].to_s, row['ADDRESS_3'].to_s, row['POSTCODE'].to_s)
+# puts uniqueId
 
       attrs = {
-        'CustmerId' => row['CUST_ID'].to_s,
-        'Name' => row['Customer Name'].to_s,
-        'Age' => row['AGE'].to_s,
-        'Gender' => row['GENDER'].to_s,
-        'Address' => formattedAddr,
-        'Duration' => row['DURATION'].to_s,
-        'TransCount' => row['TRAN_COUNT'].to_s
+        'tweetId' => tweet['id_str'],
+        'Text' => tweet['text'].to_s,
+        'user' => tweet['user']['screen_name'].to_s,
+        'ReTweetCount' => tweet['retweet_count'],
+        'timestamp' => tweet['timestamp_ms'].to_i
       }
-
-      ing = BuildIngest(kind + '_' + row['CUST_ID'].to_s, row['LAT'], row['LON'], kind, attrs);
+# puts attrs
+      ing = BuildIngest(kind + '_' + tweet['id_str'], tweet['coordinates']['coordinates'][1], tweet['coordinates']['coordinates'][0], kind, attrs);
+# puts ing
       arrItems.push(ing) 
       progress += 1
       # puts progress.to_s + ' vs ' + @@chunks.to_s
@@ -179,90 +115,30 @@ class Hearty < Metabolizer
       end
     end
     PokeProtein(Protein.new(['sluice', 'prot-spec v1.0', 'topology', 'add' ], { 'topology' => arrItems }))
-    puts 'Customers loaded: ' + uniqueItems.size.to_s    
+    puts 'Tweets loaded: ' + uniqueItems.size.to_s        
   end
 
-  def LoadLoans()
-    uniqueItems = Set.new
-    kind = 'loan'
-    arrItems = []
-    progress = 0
-    @db.collection("loans").find({ 'LAT' => { '$exists' => true } }).each do |row|
-      uniqueId = kind + row['LAT'].to_s + row['LON'].to_s
-      if (uniqueItems.include?(uniqueId))
-        next
-      end
-      uniqueItems.add(uniqueId)
-      # Get unique property values. y = total loan amount
-      # x = outstanding value.
-      # number of coins to fill = Floor(10 * ((y-x)/y))
-
-      #jenks bins in 100k [0.0, 1.0, 2.0, 3.0, 4.0, 6.0, 8.0, 11.0, 15.0, 20.0, 29.0] 
-
-      y = row['PropertyValuation'].to_f
-      x = row['OutstandingBalance'].to_f
-
-      coins = (10 * ((y-x)/y)).floor
-
-      if (coins == 0) 
-        coins = 1
-      end 
-      
-      loanSize = (y / 1e5).ceil
-      if (loanSize < 1)
-        loanSize = 1
-      elsif(loanSize > 10)
-        loanSize = 10
-      end
-      kind = 'coin' + loanSize.to_s
-
-      attrs = {
-        'name' => row['Account Name'],
-        'Rate' => row['Rate'].to_s,
-        'Property Valuation' => y.to_s,
-        'Loan Date' => row['Loan Date'],
-        'Outstanding Balance' => x.to_s,
-        'Loan Size' => loanSize.to_s,
-        'Coins' => coins.to_s,
-        'Arrears' => row['Arrears'].to_s,
-        'LTV' => row['LTV'].to_s,
-        'LTV_40' => row['LTV_40'].to_s
-      }
-
-      ing = BuildIngest(uniqueId, row['LAT'], row['LON'], kind, attrs);
-      arrItems.push(ing)
-      progress += 1
-      # puts progress.to_s + ' vs ' + @@chunks.to_s
-      if (progress >= @@chunks.to_i)
-        # puts "1 - arrItems size: " + arrItems.size.to_s
-        PokeProtein(Protein.new(['sluice', 'prot-spec v1.0', 'topology', 'add' ], { 'topology' => arrItems }))
-        progress = 0
-        arrItems = []
-        # puts "2 - arrItems size: " + arrItems.size.to_s
-      end
-    end
-    # puts "3 - arrItems size: " + arrItems.size.to_s
-    PokeProtein(Protein.new(['sluice', 'prot-spec v1.0', 'topology', 'add' ], { 'topology' => arrItems }))
-    puts 'Loans loaded: ' + uniqueItems.size.to_s
-  end
 
   def LoadData()
     puts "Start time: " + Time.now.inspect
     @hose = Plasma::Pool.participate 'tcp://' + @@sluiceHost + '/topo-to-sluice'
   	mongo_client = MongoClient.new(@@mongoDB, 27017, :pool_size => 5)
-  	@db = mongo_client.db("mutualVision")
+  	@db = mongo_client.db("niteworks")
 
-    t1 = Thread.new{ LoadBranches() }
-    t2 = Thread.new{ LoadBuildingSocs() }
-    t3 = Thread.new{ LoadIntroducers() }
-    t4 = Thread.new{ LoadCustomers() }
-    t5 = Thread.new{ LoadLoans() }
+    # t1 = Thread.new{ LoadBranches() }
+    # t2 = Thread.new{ LoadBuildingSocs() }
+    # t3 = Thread.new{ LoadIntroducers() }
+    # t4 = Thread.new{ LoadCustomers() }
+    # t5 = Thread.new{ LoadLoans() }
 
-    t1.join
-    t2.join
-    t3.join
-    t4.join
-    t5.join
+    t6 = Thread.new{LoadTweets()}
+    t6.join
+
+    # t1.join
+    # t2.join
+    # t3.join
+    # t4.join
+    # t5.join
 
     @hose.withdraw()
     puts "End time: " + Time.now.inspect
@@ -300,12 +176,21 @@ class Hearty < Metabolizer
   end
 
   def BuildIngest(itemId, latitiude, longitude, kind, attributesContent)
+# puts attributesContent['time']
+
+# timestamp: 2008-04-03 18:26:07
+# 'time' => Time.at(tweet['timestamp_ms'].to_i / 1000).to_datetime
+
+  theTime = Time.at(attributesContent['timestamp'].to_i / 1000).to_datetime.to_s
+theTime.sub! 'T', ' '
+# puts theTime
 
     ingest = {
       'attrs' => attributesContent,
       'id' => itemId,
       'loc' => [latitiude.to_f, longitude.to_f, 0.0],
-      'kind' => kind
+      'kind' => kind,
+      'timestamp' => theTime 
     }
 
     return ingest

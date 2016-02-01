@@ -8,10 +8,10 @@ function load_runner_config(runner) {
     const rmf_s = 'remove-all-fluoro'
     const zom_s = 'zoom';
 
-    const gTr = [60.067292958450345, 17.301088335829764];
-    const gBl = [47.822789556634376, -20.543592289221198];
+    const gTr = [79.388589, 176.251545];
+    const gBl = [-66.886628, -176.586033];
 
-    const webUrl = 'http://localhost:7787/sluice/mutualvision';
+    const webUrl = ''; // http://localhost:7787/sluice/niteworks
 
     var timerInterval = null;
 
@@ -32,10 +32,9 @@ function load_runner_config(runner) {
 
     function open_webpage(url, name, loc, feld, size){
         if(url.length > 1 && url.substring(0,1) != '/') {
-            url = '/' + url;
+            //url = '/' + url;
         }
 
-        
         if (runner.fluoroAlreadyLoaded(name)) {
             console.log(name + ' already loaded')
             // open_webpage('/intro', 'intro', [0,0], 'left');
@@ -56,7 +55,7 @@ function load_runner_config(runner) {
         }
         else {
             // open_webpage('/intro', 'intro', [0,0], 'left', [1.0, 1.0]);
-            console.log(name + ' first load')
+            console.log(name + ' first load', url)
             runner.EdgeToSluiceDeposit({
                 descrips: [runner.slc_s, runner.prs_s, runner.req_s, 'web'],
                 ingests: {
@@ -144,7 +143,7 @@ function load_runner_config(runner) {
         open_webpage(url, 'los_angeles_store', [-0.25, -0.25], 'main', [0.25, 0.3]);
     }
 
-    function zoom_to_poi(zoom) {
+    function zoom_to_poi(zoom) { 20, 10
         runner.bookmark(53.4175147, -2.1490619, zoom);
     }
 
@@ -157,7 +156,7 @@ function load_runner_config(runner) {
         //runner.clear_fluoroscopes();
         // timeline.setTimeRangeMonthly();
         //runner.bookmark(38.58, -95.14, 6.0); // zoom to full US
-        runner.bookmark(54.711976144614532, -2.792778845872681, 20.5); //zoom to UK
+        runner.bookmark(48.9267902, 2.3308999, 10); //zoom to UK
         //runner.bookmark(52.7319666, -2.00421949, 30); //zoom to England
         //runner.clear_fluoroscopes();
     }
@@ -188,8 +187,8 @@ function load_runner_config(runner) {
         ltv();
     }
 
-    function buildsocs() {
-        runner.add_fluoroscopeWithBounds("BuildSoc", gTr, gBl);
+    function showTweets() {
+        runner.add_fluoroscopeWithBounds("Tweets", gTr, gBl);
     }
 
     function branches(){
@@ -222,28 +221,28 @@ function load_runner_config(runner) {
     function ltv(){
         runner.add_fluoroscopeWithBounds("LTV", gTr, gBl);
     }
-    function stockport(){
-        zoom_to_poi(600.0);
+    function stadeDeFrance(){
+        runner.bookmark(48.9244627,2.3579705, 30000)
     }
 
-    function withington(){
-         runner.bookmark(53.428140552555668, -2.217003716524284, 10000);
+    function lePetitCambodge(){
+         runner.bookmark(48.8716804,2.3659606, 10000);
     }
 
-    function vernon() {
-        runner.bookmark (53.410173,-2.157805, 20000, 2);
+    function rueDeLaFountaine() {
+        runner.bookmark (48.868166,2.3715372, 20000, 2);
     }
 
-    function alderleyEdge() {
-        runner.bookmark(53.3023126,-2.2430807, 5000);
+    function laBelleEquipe() {
+        runner.bookmark(48.8791313,2.3476176, 5000);
     }
 
-    function england() {
-        runner.bookmark(53.41413009, -1.28507016, 60);
+    function boulevardVoltaire() {
+        runner.bookmark(48.8713992,2.2599972, 15000);
     }
 
-    function newcastle() {
-        runner.bookmark(54.947322, -1.6046769, 930);
+    function bataclan() {
+        runner.bookmark(48.8630134,2.368421, 35000);
     }
 
     function burnage() {
@@ -285,8 +284,12 @@ function load_runner_config(runner) {
         showLtvLegend();
     }
 
-    function showArrearsLegend(){
-        open_webpage('/arrears', 'arrearsLegend', [0, 0.25], 'right', [0.25, 0.75]);
+    function showVideo(url, id){
+        console.log('showing video', url)
+
+        var theVid = 'https://www.youtube.com/embed/' + url + '?autoplay=1'
+
+        open_webpage(theVid, 'video', [0, 0], 'right', [0.25, 0.75]);
     }
     function showCustomersLegend(){
         open_webpage('/customers', 'customersLegend', [0, -0.25], 'right', [0.25, 0.75]);
@@ -318,95 +321,68 @@ function load_runner_config(runner) {
     }
     function scene01() {
         clear();
-        showOtherLegend();
-        buildsocs(); 
+        stadeDeFrance();
     }
     function scene02() {
-        vernonStory(false);
+        lePetitCambodge();
+        setTimeout(function () {
+            showVideo('Lsel-jck6BE', 'scene02')
+        })
     }
     function scene03() {
         clear();
-        england();
+        stadeDeFrance();
         setTimeout(function(){
-            introducers();
-            branches();
+           showVideo('3h0NYk8pweg', 'scene03')
         }, 500);        
-        showOtherLegend();
+
     }
     function scene04() {
-        newcastle();
+        rueDeLaFountaine();
         setTimeout(function(){
-            customers();
-            showCustomersLegend();
+           
         }, 1000);    
     }
     function scene05() {
-        resetScenerio()
+        laBelleEquipe()
         
         setTimeout(function(){
-            blankCustomers();
-            showCustomersLegend();
+
         }, 2000);
     }
     function scene06() {
         clear();
-        withington();
+        boulevardVoltaire();
         setTimeout(function(){
-            customers();
-            ratings();
+
         }, 500);
         
-        showRatingsLegend();
-        showCustomersLegend();
-        bringWebToFront();
     }
     function scene07() {
         clear();
-        burnage();
+        bataclan();
+
         setTimeout(function(){
-            loans();
+            showVideo('LSAFcnryoEw', 'scene07')
         }, 500);
-        showLoansLegend(); 
-        bringWebToFront();
+
     }
     function scene08() {
         clear();
-        stockport();
+        stadeDeFrance();
         setTimeout(function(){
-            loans();
-            arrears();
+
         }, 500);
-        showLoansLegend();
-        showArrearsLegend();  
-        bringWebToFront();  
     }
     function scene09() {
         clear();
-        national();
+        bataclan();
+
         setTimeout(function(){
-            rates();
+            showVideo('c0nP9xGJiYk', 'scene09')
         }, 500);   
     }
 
-
-    function scene10() {
-        clear();
-        m6_m64();
-        setTimeout(function(){
-            loans();
-            ltv();
-        }, 500);  
-        showLtvLegend();
-        showLoansLegend();
-        bringWebToFront();
-    }
-
-    function scene11() {
-
-    }
-    function scene12() {
-        
-    }
 
     function vernonStory(clearThings) {
         if (!clearThings) { if (clearThings != false) clear() };
@@ -420,41 +396,7 @@ function load_runner_config(runner) {
         }, 2200);
     }
 
-    function clusterStory() {
-        clear();
-        runner.bookmark(53.428461938553234, -2.2391374673299191, 5000, 2)
-        setTimeout(function(){
-            buildsocs();
-            branches();
-            introducers();
-            customers();
-            businesses();
-            loans();
-            arrears();
-            rates();
-        }, 2200);
-    }
 
-    function goodBadStory() {
-        clear();
-        runner.bookmark(53.380415079712478, -2.1141502833177306, 40000, 2)
-        setTimeout(function(){
-            customers();
-            ratings();
-            showRatingsLegend();
-        }, 2200);
-    }
-
-    function stressTest() {
-        clear();
-        withington();
-        setTimeout(function(){
-            loans();
-            ltv();
-            showLoansLegend();
-            showLtvLegend();
-        }, 2200);
-    }
 
     function clearVernonWebPanels() {
         open_webpage('', 'buildsoc', [-10, -10], 'left', [0.5, 1.0]);
@@ -676,66 +618,68 @@ function load_runner_config(runner) {
         showLegends();
     }
 
+
+
    //return methods to call
     runner_object = {
         'act0': ['Scenerios', resetScenerio],
-        'a0scene1': ['Clear > BuildSocs', scene01],
-        'a0scene2': ['Vernon', scene02],
-        'a0scene3': ['Clear > Intros, Branches', scene03],
-        'a0scene4': ['Newcastle > Customers', scene04],
-        'a0scene5': ['Clear > Build Customers', scene05],
-        'a0scene6': ['Clear > Withington > Ratings', scene06],
-        'a0scene7': ['Clear > Burnage > Loans', scene07],
-        'a0scene8': ['Clear > Stockport > Loans, Arrears', scene08],
-        'a0scene9': ['Clear > UK > Rates', scene09],
-        'a0scene10': ['Clear > LTV > M6/M64', scene10],
-        'a0scene11': ['', scene11],
-        'a0scene12': ['', scene12],
+        'a0scene1': ['9:20 p.m.', scene01],
+        'a0scene2': ['9:25 p.m.', scene02],
+        'a0scene3': ['9:30 p.m.', scene03],
+        'a0scene4': ['9:32 p.m.', scene04],
+        'a0scene5': ['9:36 p.m.', scene05],
+        'a0scene6': ['9:40 p.m.', scene06],
+        'a0scene7': ['9:40 p.m.', scene07],
+        'a0scene8': ['9:53 p.m.', scene08],
+        'a0scene9': ['12:20 a.m. ', scene09],
+        'a0scene10': ['', null],
+        'a0scene11': ['', null],
+        'a0scene12': ['', null],
 
         'act1': ['Zooms', national],
-        'a1scene1': ['Stockport', stockport],
-        'a1scene2': ['Withington', withington],
-        'a1scene3': ['Vernon', vernon],
-        'a1scene4': ['Alderley Edge', alderleyEdge],
-        'a1scene5': ['England', england],
-        'a1scene6': ['Newcastle', newcastle],
-        'a1scene7': ['Burnage', burnage],
-        'a1scene8': ['Lichfield', lichfield],
-        'a1scene9': ['Prestatyn', prestatyn],
-        'a1scene10': ['Hazel Grove', hazelGrove],
-        'a1scene11': ['M6 / M64', m6_m64],
+        'a1scene1': ['Stade de France', stadeDeFrance],
+        'a1scene2': ['Le Petit Cambodge', lePetitCambodge],
+        'a1scene3': ['Stade de France', stadeDeFrance],
+        'a1scene4': ['Rue de la Fountaine au Roi', rueDeLaFountaine],
+        'a1scene5': ['La Belle Equipe', laBelleEquipe],
+        'a1scene6': ['Boulevard Voltaire', boulevardVoltaire],
+        'a1scene7': ['Bataclan', bataclan],
+        'a1scene8': ['Stade de France', stadeDeFrance],
+        'a1scene9': ['French Police invade Bataclan', bataclan],
+        'a1scene10': ['', null],
+        'a1scene11': ['',null],
 
         'act2': ['Lenses', showAllLenses],
-        'a2scene1': ['Building Society HQs', buildsocs],
-        'a2scene2': ['Branches', branches],
-        'a2scene3': ['Introducers', introducers],
-        'a2scene4': ['Customers', customers],
-        'a2scene5': ['Businesses', businesses],
-        'a2scene6': ['Loans', loans],
-        'a2scene7': ['Arrears', arrears],
-        'a2scene8': ['Ratings', ratings],
-        'a2scene9': ['Loan to Value / Stress 40%', ltv],
-        'a2scene10': ['Customer Rates', rates],
-        'a2scene11': ['Counties', demographics],
-        'a2scene12': ['Blank Customers', blankCustomers],
+        'a2scene1': ['Twitter', showTweets],
+        'a2scene2': ['', null],
+        'a2scene3': ['', null],
+        'a2scene4': ['', null],
+        'a2scene5': ['', null],
+        'a2scene6': ['', null],
+        'a2scene7': ['', null],
+        'a2scene8': ['', null],
+        'a2scene9': ['', null],
+        'a2scene10': ['', null],
+        'a2scene11': ['', null],
+        'a2scene12': ['', null],
 
         'act3': ['POIs', clear],
-        'a3scene1': ['Vernon', vernonStory],
-        'a3scene2': ['Cluster', clusterStory],
-        'a3scene3': ['Good / Bad Customers', goodBadStory],
-        'a3scene4': ['Stress Test', stressTest],
+        'a3scene1': ['', null],
+        'a3scene2': ['', null],
+        'a3scene3': ['', null],
+        'a3scene4': ['', null],
         
         'act4': ['Web Panels', showAllWeb],
-        'a4scene1': ['Introduction', showIntro],
-        'a4scene2': ['Butler Guide', butler],
-        'a4scene3': ['Social Dashboard', social],
-        'a4scene4': ['Legends', showLegends],
+        'a4scene1': ['Social Dashboard', social],
+        'a4scene2': ['', null],
+        'a4scene3': ['', null],
+        'a4scene4': ['', null],
         
         'a4scene7': ['Bring To Front', bringWebToFront],
         'act5': ['CLEAR', clear],
         'a5scene1': ['Web Panels', clearWebPanels],
-        'a5scene2': ['Vernon', clearVernonWebPanels],
-        'a5scene4': ['Reset', reset],
+        'a5scene2': ['', null],
+        'a5scene4': ['', reset],
         'a5scene7': ['Start Auto', toggleAuto],
     }
 

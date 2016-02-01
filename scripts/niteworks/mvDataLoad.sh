@@ -2,4 +2,4 @@
 
 root=$(cd `dirname $0`/../..; echo $PWD)
 
-exec "${root}/scripts/rubydo" ruby ${root}/scripts/mutualVision/mvDataLoad.rb -v -s localhost -m localhost -c 100
+exec "${root}/scripts/rubydo" ruby ${root}/scripts/niteworks/mvDataLoad.rb -v -s localhost -m localhost -c 100
