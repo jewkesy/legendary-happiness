@@ -2,4 +2,4 @@
 
 root=$(cd `dirname $0`/../..; echo $PWD)
 
-exec "${root}/scripts/rubydo" ruby ${root}/scripts/mutualVision/zoomTo.rb
+exec "${root}/scripts/rubydo" ruby ${root}/scripts/niteworks/zoomTo.rb
