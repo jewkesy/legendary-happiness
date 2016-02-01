@@ -9,17 +9,13 @@ descrips:
 ingests:
   inculcators:
   - kinds:
-    - tweet
-    name: tweet
-    pigment: tweet
+    - tweet_blue
+    name: tweet_blue
+    pigment: tweet_blue
   - kinds:
-    - buildsoc
-    name: buildsoc
-    pigment: buildsoc
-  - kinds:
-    - introducer
-    name: introducer
-    pigment: introducer
+    - tweet_green
+    name: tweet_green
+    pigment: tweet_green
   - jstest: parseFloat(observation(n, 'Arrears', t)) > 0 && parseFloat(observation(n,
       'Arrears', t)) <= 1000
     kinds:

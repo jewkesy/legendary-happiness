@@ -58,40 +58,33 @@ class Hearty < Metabolizer
     exit 1
   end
 
+  def LoadTweetsGreen()
 
-  def LoadTweets()
+
+    #   {"twitter.coordinates.coordinates": {"$exists": false  }, "twitter.place.bounding_box.coordinates": { "$exists": true} }
     uniqueItems = Set.new
     arrItems = []
     progress = 0
-    # filter = { }   #      {"twitter.coordinates.coordinates": {"$exists":true  } }   { 'LAT' => { '$exists' => true } }
-    filter =    { 'twitter.coordinates.coordinates'  => { '$exists' => true   } }
-    projection = {  'twitter.coordinates' => 1, 'twitter.id_str' => 1, 'twitter.text' => 1, 'twitter.user.id_str' => 1, 'twitter.user.name' => 1, 'twitter.user.screen_name' => 1, 'retweet_count' => 1, 'timestamp_ms' => 1  }    # { "twitter.coordinates":1, "twitter.id_str":1, "twitter.text":1, "twitter.user.id_str":1, "twitter.user.name" : 1 }
+   
+    filter =    { 'twitter.coordinates.coordinates'  => { '$exists' => false   }, 'twitter.place.bounding_box.coordinates' => {  '$exists' => true } }
 
-    projection = ['twitter.coordinates', 'twitter.id_str', 'twitter.text', 'twitter.user.id_str', 'twitter.user.name', 'twitter.user.screen_name', 'twitter.retweet_count', 'twitter.timestamp_ms']
-
-
+    projection = ['twitter.coordinates', 'twitter.id_str', 'twitter.text', 'twitter.user.id_str', 'twitter.user.name', 'twitter.user.screen_name', 'twitter.retweet_count', 'twitter.timestamp_ms', 'twitter.place']
+puts 'getting green'
     @db.collection("tweets").find(filter , :fields => projection).each do |row|
-# puts row['twitter']
 
-      
-
-  
       tweet = row['twitter']
-
-      if (tweet['coordinates'].nil?)
-# puts 'no geo, skipping'        
-        next
-      end  
-# puts row['_id'][0]
 # puts tweet
-      kind = 'tweet'
-# puts tweet['id_str']
+      # if (tweet['coordinates'].nil?)      
+      #   next
+      # end  
+
+      kind = 'tweet_green'
+
       uniqueId = kind + tweet['id_str']
       if (uniqueItems.include?(uniqueId))
         next
       end
       uniqueItems.add(uniqueId)
-# puts uniqueId
 
       attrs = {
         'tweetId' => tweet['id_str'],
@@ -100,22 +93,73 @@ class Hearty < Metabolizer
         'ReTweetCount' => tweet['retweet_count'],
         'timestamp' => tweet['timestamp_ms'].to_i
       }
-# puts attrs
-      ing = BuildIngest(kind + '_' + tweet['id_str'], tweet['coordinates']['coordinates'][1], tweet['coordinates']['coordinates'][0], kind, attrs);
-# puts ing
+# puts tweet['place']['bounding_box']['coordinates'][0][0]
+      lon = tweet['place']['bounding_box']['coordinates'][0][0][1]
+      lat = tweet['place']['bounding_box']['coordinates'][0][0][0]
+
+      ing = BuildIngest(kind + '_' + tweet['id_str'], lon, lat, kind, attrs);
+
       arrItems.push(ing) 
       progress += 1
-      # puts progress.to_s + ' vs ' + @@chunks.to_s
+
       if (progress >= @@chunks.to_i)
-        # puts "1 - arrItems size: " + arrItems.size.to_s
         PokeProtein(Protein.new(['sluice', 'prot-spec v1.0', 'topology', 'add' ], { 'topology' => arrItems }))
         progress = 0
         arrItems = []
-        # puts "2 - arrItems size: " + arrItems.size.to_s
       end
     end
     PokeProtein(Protein.new(['sluice', 'prot-spec v1.0', 'topology', 'add' ], { 'topology' => arrItems }))
-    puts 'Tweets loaded: ' + uniqueItems.size.to_s        
+    puts 'Blue Tweets loaded: ' + uniqueItems.size.to_s  
+
+
+  end
+
+  def LoadTweetsBlue()
+    uniqueItems = Set.new
+    arrItems = []
+    progress = 0
+    # filter = { }   #      {"twitter.coordinates.coordinates": {"$exists":true  } }   { 'LAT' => { '$exists' => true } }
+    filter =    { 'twitter.coordinates.coordinates'  => { '$exists' => true   } }
+
+    projection = ['twitter.coordinates', 'twitter.id_str', 'twitter.text', 'twitter.user.id_str', 'twitter.user.name', 'twitter.user.screen_name', 'twitter.retweet_count', 'twitter.timestamp_ms']
+
+    @db.collection("tweets").find(filter , :fields => projection).each do |row|
+
+
+      tweet = row['twitter']
+
+      if (tweet['coordinates'].nil?)      
+        next
+      end  
+
+      kind = 'tweet_blue'
+
+      uniqueId = kind + tweet['id_str']
+      if (uniqueItems.include?(uniqueId))
+        next
+      end
+      uniqueItems.add(uniqueId)
+
+      attrs = {
+        'tweetId' => tweet['id_str'],
+        'Text' => tweet['text'].to_s,
+        'user' => tweet['user']['screen_name'].to_s,
+        'ReTweetCount' => tweet['retweet_count'],
+        'timestamp' => tweet['timestamp_ms'].to_i
+      }
+      ing = BuildIngest(kind + '_' + tweet['id_str'], tweet['coordinates']['coordinates'][1], tweet['coordinates']['coordinates'][0], kind, attrs);
+
+      arrItems.push(ing) 
+      progress += 1
+
+      if (progress >= @@chunks.to_i)
+        PokeProtein(Protein.new(['sluice', 'prot-spec v1.0', 'topology', 'add' ], { 'topology' => arrItems }))
+        progress = 0
+        arrItems = []
+      end
+    end
+    PokeProtein(Protein.new(['sluice', 'prot-spec v1.0', 'topology', 'add' ], { 'topology' => arrItems }))
+    puts 'Blue Tweets loaded: ' + uniqueItems.size.to_s        
   end
 
 
@@ -130,9 +174,10 @@ class Hearty < Metabolizer
     # t3 = Thread.new{ LoadIntroducers() }
     # t4 = Thread.new{ LoadCustomers() }
     # t5 = Thread.new{ LoadLoans() }
-
-    t6 = Thread.new{LoadTweets()}
+    t5 = Thread.new{LoadTweetsGreen()}
+    t6 = Thread.new{LoadTweetsBlue()}
     t6.join
+    t5.join
 
     # t1.join
     # t2.join

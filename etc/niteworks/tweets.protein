@@ -24,10 +24,14 @@ ingests:
   - name: enabled-kinds
     display-text: 'Filter Options'
     contents:
-    - name: tweet
-      display-text: "Tweets"
+    - name: tweet_blue
+      display-text: "Tweets GeoTagged"
       selected: true
-      icon: tweet.png
+      icon: tweet_blue.png
+    - name: tweet_green
+      display-text: "User GeoTagged"
+      selected: true
+      icon: tweet_green.png
     selection-type: inclusive
   default_shaders:
     path:
@@ -37,10 +41,17 @@ ingests:
       fragment: network.frag
       vertex: network.vert
   kinds:
-  - tweet
+  - tweet_blue
+  - tweet_green
   pigments:
-  - name: tweet
-    icon: niteworks/images/twitter.png
+  - name: tweet_blue
+    icon: niteworks/images/twitter_blue.png
+    size:
+      type: SoftFloat
+      value: 1.5
+    type: point
+  - name: tweet_green
+    icon: niteworks/images/twitter_green.png
     size:
       type: SoftFloat
       value: 1.5
