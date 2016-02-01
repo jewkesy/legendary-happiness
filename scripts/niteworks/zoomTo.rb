@@ -26,7 +26,10 @@ class Hearty < Metabolizer
 
     # zoomTo(51.279121, -0.769756, 22000)  #Farnborough
     # zoomTo(54.711976144614532, -2.792778845872681, 20.5, 10)  #UK
-    zoomTo(48.9267902, 2.3308999, 20, 10) # Paris Attacks
+#    zoomTo(48.9267902, 2.3308999, 20, 10) # Paris Attacks
+    #
+    zoomTo(20.201122363199918, 23.704901015773963, 1.9486890091833518)
+
 
     puts "Zoom To applied, I'm outta here"
     exit 1
