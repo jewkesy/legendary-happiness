@@ -58,15 +58,14 @@ function populateNetwork(screenname)
       $.getJSON('/mongo/gettweetuser/' + tweetuserid, function(data2) {
         if(data2.length !=0)
         {
-
             s.graph.addNode({
               // Main attributes:
               id: 'n' + nodeCount,
-              label: data2[0].twitter.user.screen_name,
+              label: data2[0].twitter.user.screen_name + ' : ' + data2[0].twitter.user.followers_count,
               // Display attributes:
               x: Math.round(Math.random()*100) + 1,
               y: Math.round(Math.random()*100) + 1,
-              size: 2,
+              size: Math.log(data2[0].twitter.user.followers_count),
               color: '#f00'
             }).addEdge({
               id: 'e' + (nodeCount-1),
