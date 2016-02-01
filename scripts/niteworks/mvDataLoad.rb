@@ -3,6 +3,7 @@ require 'metabolizer'
 require 'thread'
 require 'mongo'
 require 'optparse'
+require 'date'
 
 include Plasma
 include Mongo
@@ -73,28 +74,30 @@ class Hearty < Metabolizer
       tweet = row['twitter']
 
       if (tweet['coordinates'].nil?)
-puts 'no geo, skipping'        
+# puts 'no geo, skipping'        
         next
       end  
-
+# puts row['_id'][0]
 # puts tweet
       kind = 'tweet'
-puts tweet['id_str']
+# puts tweet['id_str']
       uniqueId = kind + tweet['id_str']
       if (uniqueItems.include?(uniqueId))
         next
       end
       uniqueItems.add(uniqueId)
-puts uniqueId
+# puts uniqueId
+
       attrs = {
-        'tweetId' => tweet['id'].to_s,
+        'tweetId' => tweet['id_str'],
         'Text' => tweet['text'].to_s,
-        'MongoId' => tweet['_id'].to_s,
-        'user' => tweet['user']['screen_name'].to_s
+        'user' => tweet['user']['screen_name'].to_s,
+        'ReTweetCount' => tweet['retweet_count'],
+        'timestamp' => tweet['timestamp_ms'].to_i
       }
-puts attrs
+# puts attrs
       ing = BuildIngest(kind + '_' + tweet['id_str'], tweet['coordinates']['coordinates'][0], tweet['coordinates']['coordinates'][1], kind, attrs);
-puts ing
+# puts ing
       arrItems.push(ing) 
       progress += 1
       # puts progress.to_s + ' vs ' + @@chunks.to_s
@@ -356,12 +359,21 @@ puts ing
   end
 
   def BuildIngest(itemId, latitiude, longitude, kind, attributesContent)
+# puts attributesContent['time']
+
+# timestamp: 2008-04-03 18:26:07
+# 'time' => Time.at(tweet['timestamp_ms'].to_i / 1000).to_datetime
+
+  theTime = Time.at(attributesContent['timestamp'].to_i / 1000).to_datetime.to_s
+theTime.sub! 'T', ' '
+puts theTime
 
     ingest = {
       'attrs' => attributesContent,
       'id' => itemId,
       'loc' => [latitiude.to_f, longitude.to_f, 0.0],
-      'kind' => kind
+      'kind' => kind,
+      'timestamp' => theTime 
     }
 
     return ingest

@@ -47,6 +47,6 @@ ingests:
     type: point
   hover:
     max-found: 256
-    min-zoom: 5000
+    min-zoom: 10
     glyph: "sluice/sharkmouth.png"
 ...
