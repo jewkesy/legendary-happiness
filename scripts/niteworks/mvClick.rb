@@ -27,7 +27,7 @@ class Clicky < Metabolizer
       puts "Id is empty, node was not clicked" if @verbose
       return
     end
-puts ing
+# puts ing
     if ing['kind'] == 'tweet'
 
         ingests = {'windshield' => [{
@@ -35,7 +35,7 @@ puts ing
           'feld' => 'left',
           'loc' => [0,0.25],
           'size' => [0.5, 1.0],
-          'url' =>  'http://www.bbc.co.uk'    #    @@webURl + "dashboard?id=" + ing['attrs']['tweetId']
+          'url' =>  'http://192.168.1.54:3000/?id=' + ing['attrs']['tweetId']
           }]}
 
         hose = Pool.participate @outpool
