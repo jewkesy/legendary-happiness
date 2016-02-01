@@ -1,56 +1,8 @@
 var nodes = [];
+var s;
 
 $( document ).ready(function() {
-  var data = {
-    "nodes": [
-      {
-        "id": "n0",
-        "label": "A node",
-        "x": 0,
-        "y": 0,
-        "size": 3
-      },
-      {
-        "id": "n1",
-        "label": "Another node",
-        "x": 3,
-        "y": 1,
-        "size": 2
-      },
-      {
-        "id": "n2",
-        "label": "And a last one",
-        "x": 1,
-        "y": 3,
-        "size": 1
-      }
-    ],
-    "edges": [
-      {
-        "id": "e0",
-        "source": "n0",
-        "target": "n1"
-      },
-      {
-        "id": "e1",
-        "source": "n1",
-        "target": "n2"
-      },
-      {
-        "id": "e2",
-        "source": "n2",
-        "target": "n0"
-      }
-    ]
-  };
-
-  s = new sigma({
-    graph: data,
-    container: 'container',
-    settings: {
-      defaultNodeColor: '#ec5148'
-    }
-  });
+  s = new sigma('container');
 
   populateUserTable();
 });
@@ -60,7 +12,6 @@ function populateUserTable()
   var tableContent = ''
 
   $.getJSON('/mongo/gettweet/' + $('#tweetid').val(), function(data) {
-    console.log(data[0]);
 
     $('#profilebackground').css('background-color', '#' + data[0].twitter.user.profile_background_color)
     $('#userimage').attr("src", data[0].twitter.user.profile_image_url);
@@ -86,16 +37,49 @@ function populateUserTable()
 
 function populateNetwork(screenname)
 {
+
+  s.graph.addNode({
+    // Main attributes:
+    id: 'n0',
+    label: screenname,
+    // Display attributes:
+    x: 0,
+    y: 0,
+    size: 2,
+    color: '#f00'
+  })
+
   $.getJSON('/twitter/getuserfriends/' + screenname, function(data) {
-    console.log(data);
+
+    var nodeCount = 1;
 
     $.each(data.ids, function() {
       var tweetuserid = parseInt(this);
-      $.getJSON('/mongo/gettweetuser/' + tweetuserid, function(data) {
-        if(data.length !=0)
+      $.getJSON('/mongo/gettweetuser/' + tweetuserid, function(data2) {
+        if(data2.length !=0)
         {
-          console.log(data);
+
+            s.graph.addNode({
+              // Main attributes:
+              id: 'n' + nodeCount,
+              label: data2[0].twitter.user.screen_name,
+              // Display attributes:
+              x: Math.round(Math.random()*100) + 1,
+              y: Math.round(Math.random()*100) + 1,
+              size: 2,
+              color: '#f00'
+            }).addEdge({
+              id: 'e' + (nodeCount-1),
+              // Reference extremities:
+              source: 'n' + (nodeCount-1),
+              target: 'n' + nodeCount
+            });
+
+            nodeCount = nodeCount + 1;
+
+            s.refresh();
         }
+
       });
     });
 
