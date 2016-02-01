@@ -11,7 +11,7 @@ function load_runner_config(runner) {
     const gTr = [79.388589, 176.251545];
     const gBl = [-66.886628, -176.586033];
 
-    const webUrl = 'http://localhost:7787/sluice/niteworks';
+    const webUrl = ''; // http://localhost:7787/sluice/niteworks
 
     var timerInterval = null;
 
@@ -32,7 +32,7 @@ function load_runner_config(runner) {
 
     function open_webpage(url, name, loc, feld, size){
         if(url.length > 1 && url.substring(0,1) != '/') {
-            url = '/' + url;
+            //url = '/' + url;
         }
 
         if (runner.fluoroAlreadyLoaded(name)) {
@@ -55,7 +55,7 @@ function load_runner_config(runner) {
         }
         else {
             // open_webpage('/intro', 'intro', [0,0], 'left', [1.0, 1.0]);
-            console.log(name + ' first load')
+            console.log(name + ' first load', url)
             runner.EdgeToSluiceDeposit({
                 descrips: [runner.slc_s, runner.prs_s, runner.req_s, 'web'],
                 ingests: {
@@ -284,8 +284,9 @@ function load_runner_config(runner) {
         showLtvLegend();
     }
 
-    function showArrearsLegend(){
-        open_webpage('/arrears', 'arrearsLegend', [0, 0.25], 'right', [0.25, 0.75]);
+    function showVideo(url){
+        console.log('showing video', url)
+        open_webpage(url, 'video', [0, 0.25], 'right', [0.25, 0.75]);
     }
     function showCustomersLegend(){
         open_webpage('/customers', 'customersLegend', [0, -0.25], 'right', [0.25, 0.75]);
@@ -354,8 +355,9 @@ function load_runner_config(runner) {
     function scene07() {
         clear();
         bataclan();
-        setTimeout(function(){
 
+        setTimeout(function(){
+            showVideo('https://www.youtube.com/embed/LSAFcnryoEw?autoplay=1')
         }, 500);
 
     }
@@ -377,14 +379,8 @@ function load_runner_config(runner) {
 
     function scene10() {
         clear();
-        m6_m64();
-        setTimeout(function(){
-            loans();
-            ltv();
-        }, 500);  
-        showLtvLegend();
-        showLoansLegend();
-        bringWebToFront();
+       
+
     }
 
     function scene11() {
