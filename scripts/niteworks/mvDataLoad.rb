@@ -58,6 +58,10 @@ class Hearty < Metabolizer
     exit 1
   end
 
+  def LoadPOIs()
+
+  end
+
   def LoadTweetsGreen()
 
 
@@ -196,11 +200,12 @@ class Hearty < Metabolizer
     # t3 = Thread.new{ LoadIntroducers() }
     # t4 = Thread.new{ LoadCustomers() }
     # t5 = Thread.new{ LoadLoans() }
+    t4 = Thread.new{LoadPOIs}
     t5 = Thread.new{LoadTweetsGreen()}
     t6 = Thread.new{LoadTweetsBlue()}
     t6.join
     t5.join
-
+    t4.join
     # t1.join
     # t2.join
     # t3.join
