@@ -191,8 +191,8 @@ function load_runner_config(runner) {
         runner.add_fluoroscopeWithBounds("Tweets", gTr, gBl);
     }
 
-    function branches(){
-        runner.add_fluoroscopeWithBounds("Branch", gTr, gBl);
+    function showPOIs(){
+        runner.add_fluoroscopeWithBounds("POI", gTr, gBl);
     }
     function introducers(){
         runner.add_fluoroscopeWithBounds("Introducer", gTr, gBl);
@@ -651,7 +651,7 @@ function load_runner_config(runner) {
 
         'act2': ['Lenses', showAllLenses],
         'a2scene1': ['Twitter', showTweets],
-        'a2scene2': ['', null],
+        'a2scene2': ['POIs', showPOIs],
         'a2scene3': ['', null],
         'a2scene4': ['', null],
         'a2scene5': ['', null],
