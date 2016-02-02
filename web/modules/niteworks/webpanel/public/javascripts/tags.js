@@ -1,12 +1,6 @@
-var words = [
-  {text: "Lorem", weight: 13},
-  {text: "Ipsum", weight: 10.5},
-  {text: "Dolor", weight: 9.4},
-  {text: "Sit", weight: 8},
-  {text: "Amet", weight: 6.2},
-  {text: "Consectetur", weight: 5},
-  {text: "Adipiscing", weight: 5}
-];
+var words = [];
+
+var keywordswords = [];
 
 $( document ).ready(function() {
 
@@ -23,6 +17,20 @@ $( document ).ready(function() {
 		});
 
 		$('#keywords').jQCloud(words);
-		$('#keywords2').jQCloud(words);
+ 	});
+
+ 	$.getJSON('/mongo/getkeywordcounts', function(data) {
+		//populateUserTable();
+		console.log(data);
+		$.each(data, function() {
+			var tag = {
+				text: this.keyword, 
+				weight: this.count
+			}
+
+			keywordswords.push(tag);
+		});
+
+		$('#keywords2').jQCloud(keywordswords);
  	});
 });

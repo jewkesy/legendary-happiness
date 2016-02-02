@@ -38,6 +38,16 @@ router.get('/mongo/gettagcounts', function(req, res) {
 	});
 });
 
+router.get('/mongo/getkeywordcounts', function(req, res) {
+	var db = req.db;
+	
+
+	db.collection('keywords').find({}).toArray(function (err, items) {
+		if (err) console.log(err)
+		res.json(items);
+	});
+});
+
 router.get('/twitter/getuser/:screenname', function(req, res) {
 	var params = {screen_name: req.params.screenname};
 	var client = req.client;
