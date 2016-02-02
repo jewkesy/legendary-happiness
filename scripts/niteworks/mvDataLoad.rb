@@ -137,7 +137,7 @@ class Hearty < Metabolizer
         'Text' => tweet['text'].to_s,
         'user' => tweet['user']['screen_name'].to_s,
         'ReTweetCount' => tweet['retweet_count'].to_s,
-        'hashtagScore' => '3.0',
+        'hashtagScore' => BuildHashTagWeights(tweet['text'].downcase),
         'media' => imgUrl,
         'timestamp' => tweet['timestamp_ms'].to_i
       }
@@ -204,7 +204,7 @@ class Hearty < Metabolizer
         'user' => tweet['user']['screen_name'].to_s,
         'ReTweetCount' => tweet['retweet_count'].to_s,
         'media' => imgUrl,
-        'hashtagScore' => '6.0',
+        'hashtagScore' => BuildHashTagWeights(tweet['text'].downcase),
         'timestamp' => tweet['timestamp_ms'].to_i
       }
       ing = BuildIngest(kind + '_' + tweet['id_str'], tweet['coordinates']['coordinates'][1], tweet['coordinates']['coordinates'][0], kind, attrs);
@@ -280,6 +280,37 @@ class Hearty < Metabolizer
     retVal = prefix + '_' + g + '_' + a.to_s;
     return retVal;
   end
+
+
+  def BuildHashTagWeights(text)
+
+    #parisattacks
+    #prayforparis
+    #paris
+    #isis
+    #trump2016
+
+    retVal = 0
+
+    if text.include? "#parisattacks"
+       retVal += 5
+    end
+    if text.include? "#prayforparis"
+       retVal += 4
+    end
+    if text.include? "#paris"
+       retVal += 3
+    end
+    if text.include? "#isis"
+       retVal += 2
+    end
+    if text.include? "#trump2016"
+       retVal += 1
+    end
+
+    return retVal.round(1).to_s
+
+  end  
 
   def BuildIngest(itemId, latitiude, longitude, kind, attributesContent)
 # puts attributesContent['time']
