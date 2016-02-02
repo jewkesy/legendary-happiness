@@ -28,15 +28,42 @@ class Clicky < Metabolizer
       return
     end
 # puts ing
-    if ing['kind'] == 'tweet'
+    if ing['kind'] == 'tweet_blue' || ing['kind'] == 'tweet_green'
 
+      if (ing['attrs']['media'].length > 0)
         ingests = {'windshield' => [{
           'name' => 'dashboard',
           'feld' => 'left',
           'loc' => [0,0],
           'size' => [1.0, 1.0],
           'url' =>  'http://192.168.1.54:3000/?id=' + ing['attrs']['tweetId']
+          },  {
+          'name' => 'photos',
+          'feld' => 'right',
+          'loc' => [-0.25,-0.25],
+          'size' => [0.25, 0.25],
+          'url' => ing['attrs']['media']
           }]}
+
+
+
+      else  
+        ingests = {'windshield' => [{
+          'name' => 'dashboard',
+          'feld' => 'left',
+          'loc' => [0,0],
+          'size' => [1.0, 1.0],
+          'url' =>  'http://192.168.1.54:3000/?id=' + ing['attrs']['tweetId']
+          },  {
+          'name' => 'photos',
+          'feld' => 'right',
+          'loc' => [-2,-2],
+          'size' => [0.25, 0.25],
+          'url' => ''
+          }]}
+
+      end
+        
 
         hose = Pool.participate @outpool
         hose.deposit(Protein.new(@outdescrips, ingests))

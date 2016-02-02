@@ -68,8 +68,8 @@ class Hearty < Metabolizer
    
     filter =    { 'twitter.coordinates.coordinates'  => { '$exists' => false   }, 'twitter.place.bounding_box.coordinates' => {  '$exists' => true } }
 
-    projection = ['twitter.coordinates', 'twitter.id_str', 'twitter.text', 'twitter.user.id_str', 'twitter.user.name', 'twitter.user.screen_name', 'twitter.retweet_count', 'twitter.timestamp_ms', 'twitter.place']
-puts 'getting green'
+    projection = ['twitter.coordinates', 'twitter.id_str', 'twitter.text', 'twitter.user.id_str', 'twitter.user.name', 'twitter.user.screen_name', 'twitter.retweet_count', 'twitter.timestamp_ms', 'twitter.place', 'twitter.entities.media']
+# puts 'getting green'
     @db.collection("tweets").find(filter , :fields => projection).each do |row|
 
       tweet = row['twitter']
@@ -85,12 +85,23 @@ puts 'getting green'
         next
       end
       uniqueItems.add(uniqueId)
+      
+      if (tweet['entities']['media'].nil?)
+        imgUrl = ''
+      else
+        if (tweet['entities']['media'][0]['type'] == 'photo')        
+          imgUrl = tweet['entities']['media'][0]['media_url']
+        else
+          imgUrl =''
+        end
+      end
 
       attrs = {
         'tweetId' => tweet['id_str'],
         'Text' => tweet['text'].to_s,
         'user' => tweet['user']['screen_name'].to_s,
         'ReTweetCount' => tweet['retweet_count'],
+        'media' => imgUrl,
         'timestamp' => tweet['timestamp_ms'].to_i
       }
 # puts tweet['place']['bounding_box']['coordinates'][0][0]
@@ -121,7 +132,7 @@ puts 'getting green'
     # filter = { }   #      {"twitter.coordinates.coordinates": {"$exists":true  } }   { 'LAT' => { '$exists' => true } }
     filter =    { 'twitter.coordinates.coordinates'  => { '$exists' => true   } }
 
-    projection = ['twitter.coordinates', 'twitter.id_str', 'twitter.text', 'twitter.user.id_str', 'twitter.user.name', 'twitter.user.screen_name', 'twitter.retweet_count', 'twitter.timestamp_ms']
+    projection = ['twitter.coordinates', 'twitter.id_str', 'twitter.text', 'twitter.user.id_str', 'twitter.user.name', 'twitter.user.screen_name', 'twitter.retweet_count', 'twitter.timestamp_ms', 'twitter.entities.media']
 
     @db.collection("tweets").find(filter , :fields => projection).each do |row|
 
@@ -140,11 +151,22 @@ puts 'getting green'
       end
       uniqueItems.add(uniqueId)
 
+      if (tweet['entities']['media'].nil?)
+        imgUrl = ''
+      else
+        if (tweet['entities']['media'][0]['type'] == 'photo')        
+          imgUrl = tweet['entities']['media'][0]['media_url']
+        else
+          imgUrl =''
+        end
+      end
+        
       attrs = {
         'tweetId' => tweet['id_str'],
         'Text' => tweet['text'].to_s,
         'user' => tweet['user']['screen_name'].to_s,
         'ReTweetCount' => tweet['retweet_count'],
+        'media' => imgUrl,
         'timestamp' => tweet['timestamp_ms'].to_i
       }
       ing = BuildIngest(kind + '_' + tweet['id_str'], tweet['coordinates']['coordinates'][1], tweet['coordinates']['coordinates'][0], kind, attrs);
