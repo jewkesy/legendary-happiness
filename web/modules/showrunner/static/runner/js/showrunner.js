@@ -232,15 +232,15 @@ function load_runner_config(runner) {
         runner.add_fluoroscopeWithBounds("LTV", gTr, gBl);
     }
     function stadeDeFrance(){
-        runner.bookmark(48.9244627,2.3579705, 30000)
+        runner.bookmark(48.9244627,2.3579705, 8000)
     }
 
     function lePetitCambodge(){
-         runner.bookmark(48.8716804,2.3659606, 10000);
+         runner.bookmark(48.8716804,2.3659606, 8000);
     }
 
     function rueDeLaFountaine() {
-        runner.bookmark (48.868166,2.3715372, 20000, 2);
+        runner.bookmark (48.868166,2.3715372, 6000, 2);
     }
 
     function laBelleEquipe() {
@@ -248,29 +248,11 @@ function load_runner_config(runner) {
     }
 
     function boulevardVoltaire() {
-        runner.bookmark(48.8713992,2.2599972, 15000);
+        runner.bookmark(48.8713992,2.2599972, 8000);
     }
 
     function bataclan() {
-        runner.bookmark(48.8630134,2.368421, 35000);
-    }
-
-    function burnage() {
-        runner.bookmark(53.4307681,-2.2048089, 2500);
-    }
-
-    function lichfield() {
-        runner.bookmark(52.6805815,-1.8264718, 1000);
-    }
-
-    function prestatyn() {
-        runner.bookmark(53.3283773,-3.4152156, 2000);
-    }
-    function hazelGrove() {
-        runner.bookmark(53.411433,-2.2100591, 7000);
-    }
-    function m6_m64() {
-        runner.bookmark(53.393621983, -2.647538, 2670);
+        runner.bookmark(48.8630134,2.368421, 7000);
     }
 
     function showBombThreat() {
