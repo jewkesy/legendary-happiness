@@ -58,6 +58,46 @@ class Hearty < Metabolizer
     exit 1
   end
 
+  def LoadPOIs()
+    puts 'loading POIs'
+    uniqueItems = Set.new
+    arrItems = []
+    kind = 'poi'
+
+    uniqueId = kind + '_poi_1'
+    uniqueItems.add(uniqueId)
+    ing = BuildIngest(uniqueId, 48.9244627, 2.3579705, kind, { 'Text' => 'Stade De France', 'timestamp' => 1447449600000 }); # 9:20
+    arrItems.push(ing) 
+
+    uniqueId = kind + '_poi_2'
+    uniqueItems.add(uniqueId)
+    ing = BuildIngest(uniqueId, 48.8716804,2.3659606, kind, { 'Text' => 'Le Petit Cambodge', 'timestamp' => 1447449900000 }); # 9:25
+    arrItems.push(ing) 
+
+    uniqueId = kind + '_poi_3'
+    uniqueItems.add(uniqueId)
+    ing = BuildIngest(uniqueId, 48.868166,2.3715372, kind, { 'Text' => 'Rue de la Fountaine au Roi', 'timestamp' => 1447450320000 }); # 9:32
+    arrItems.push(ing) 
+
+    uniqueId = kind + '_poi_4'
+    uniqueItems.add(uniqueId)
+    ing = BuildIngest(uniqueId, 48.8791313,2.3476176, kind, { 'Text' => 'Le Belle Equipe', 'timestamp' => 1447450560000 }); # 9:36
+    arrItems.push(ing) 
+
+    uniqueId = kind + '_poi_5'
+    uniqueItems.add(uniqueId)
+    ing = BuildIngest(uniqueId, 48.8713992,2.2599972, kind, { 'Text' => 'Boulevard Voltaire', 'timestamp' => 1447450800000 }); # 9:40
+    arrItems.push(ing) 
+
+    uniqueId = kind + '_poi_6'
+    uniqueItems.add(uniqueId)
+    ing = BuildIngest(uniqueId, 48.8630134,2.368421, kind, { 'Text' => 'Bataclan', 'timestamp' => 1447450800000 }); # 9:40
+    arrItems.push(ing) 
+        
+    PokeProtein(Protein.new(['sluice', 'prot-spec v1.0', 'topology', 'add' ], { 'topology' => arrItems }))
+    puts 'POIs loaded: ' + uniqueItems.size.to_s  
+  end
+
   def LoadTweetsGreen()
 
 
@@ -69,14 +109,10 @@ class Hearty < Metabolizer
     filter =    { 'twitter.coordinates.coordinates'  => { '$exists' => false   }, 'twitter.place.bounding_box.coordinates' => {  '$exists' => true } }
 
     projection = ['twitter.coordinates', 'twitter.id_str', 'twitter.text', 'twitter.user.id_str', 'twitter.user.name', 'twitter.user.screen_name', 'twitter.retweet_count', 'twitter.timestamp_ms', 'twitter.place', 'twitter.entities.media']
-# puts 'getting green'
+
     @db.collection("tweets").find(filter , :fields => projection).each do |row|
 
       tweet = row['twitter']
-# puts tweet
-      # if (tweet['coordinates'].nil?)      
-      #   next
-      # end  
 
       kind = 'tweet_green'
 
@@ -100,11 +136,12 @@ class Hearty < Metabolizer
         'tweetId' => tweet['id_str'],
         'Text' => tweet['text'].to_s,
         'user' => tweet['user']['screen_name'].to_s,
-        'ReTweetCount' => tweet['retweet_count'],
+        'ReTweetCount' => tweet['retweet_count'].to_s,
+        'hashtagScore' => BuildHashTagWeights(tweet['text'].downcase),
         'media' => imgUrl,
         'timestamp' => tweet['timestamp_ms'].to_i
       }
-# puts tweet['place']['bounding_box']['coordinates'][0][0]
+
       lon = tweet['place']['bounding_box']['coordinates'][0][0][1]
       lat = tweet['place']['bounding_box']['coordinates'][0][0][0]
 
@@ -165,8 +202,9 @@ class Hearty < Metabolizer
         'tweetId' => tweet['id_str'],
         'Text' => tweet['text'].to_s,
         'user' => tweet['user']['screen_name'].to_s,
-        'ReTweetCount' => tweet['retweet_count'],
+        'ReTweetCount' => tweet['retweet_count'].to_s,
         'media' => imgUrl,
+        'hashtagScore' => BuildHashTagWeights(tweet['text'].downcase),
         'timestamp' => tweet['timestamp_ms'].to_i
       }
       ing = BuildIngest(kind + '_' + tweet['id_str'], tweet['coordinates']['coordinates'][1], tweet['coordinates']['coordinates'][0], kind, attrs);
@@ -196,11 +234,12 @@ class Hearty < Metabolizer
     # t3 = Thread.new{ LoadIntroducers() }
     # t4 = Thread.new{ LoadCustomers() }
     # t5 = Thread.new{ LoadLoans() }
+    t4 = Thread.new{LoadPOIs()}
     t5 = Thread.new{LoadTweetsGreen()}
     t6 = Thread.new{LoadTweetsBlue()}
     t6.join
     t5.join
-
+    t4.join
     # t1.join
     # t2.join
     # t3.join
@@ -241,6 +280,37 @@ class Hearty < Metabolizer
     retVal = prefix + '_' + g + '_' + a.to_s;
     return retVal;
   end
+
+
+  def BuildHashTagWeights(text)
+
+    #parisattacks
+    #prayforparis
+    #paris
+    #isis
+    #trump2016
+
+    retVal = 0
+
+    if text.include? "#parisattacks"
+       retVal += 5
+    end
+    if text.include? "#prayforparis"
+       retVal += 4
+    end
+    if text.include? "#paris"
+       retVal += 3
+    end
+    if text.include? "#isis"
+       retVal += 2
+    end
+    if text.include? "#trump2016"
+       retVal += 1
+    end
+
+    return retVal.round(1).to_s
+
+  end  
 
   def BuildIngest(itemId, latitiude, longitude, kind, attributesContent)
 # puts attributesContent['time']

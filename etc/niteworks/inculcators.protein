@@ -16,6 +16,10 @@ ingests:
     - tweet_green
     name: tweet_green
     pigment: tweet_green
+  - kinds:
+    - poi
+    name: poi
+    pigment: poi
   - jstest: parseFloat(observation(n, 'Arrears', t)) > 0 && parseFloat(observation(n,
       'Arrears', t)) <= 1000
     kinds:

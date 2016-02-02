@@ -8,7 +8,7 @@ descrips:
 - new-fluoro-template
 ingests:
   name: Heatmap
-  display-text: "Rates Heatmap"
+  display-text: "Hashtag Heatmap"
   icon: niteworks/images/ratesicon.png
   type: texture
   daemon: Analysis
@@ -84,41 +84,17 @@ ingests:
   - name: entity-kinds
     selection-type: inclusive
     contents:
-    - name: coin1
-      display-text: Loan Banding 1
+    - name: tweet_blue
+      display-text: tweet_blue
       selected: 1
-    - name: coin2
-      display-text: Loan Banding 2
-      selected: 1
-    - name: coin3
-      display-text: Loan Banding 3
-      selected: 1
-    - name: coin4
-      display-text: Loan Banding 4
-      selected: 1
-    - name: coin5
-      display-text: Loan Banding 5
-      selected: 1
-    - name: coin6
-      display-text: Loan Banding 6
-      selected: 1
-    - name: coin7
-      display-text: Loan Banding 7
-      selected: 1
-    - name: coin8
-      display-text: Loan Banding 8
-      selected: 1
-    - name: coin9
-      display-text: Loan Banding 9
-      selected: 1
-    - name: coin10
-      display-text: Loan Banding 10
+    - name: tweet_green
+      display-text: tweet_green
       selected: 1
   - name: entity-attributes
     selection-type: exclusive
     contents:
-    - name: 'Rate'
-      display-text: 'Rate'
+    - name: 'hashtagScore'
+      display-text: 'hashtagScore'
       selected: 1
   - name: texture-wait
     selection-type: exclusive
