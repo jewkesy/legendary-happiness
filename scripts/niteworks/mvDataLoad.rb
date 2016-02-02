@@ -65,11 +65,33 @@ class Hearty < Metabolizer
     kind = 'poi'
 
     uniqueId = kind + '_poi_1'
-    
     uniqueItems.add(uniqueId)
+    ing = BuildIngest(uniqueId, 48.9244627, 2.3579705, kind, { 'Text' => 'Stade De France', 'timestamp' => 1447449600000 }); # 9:20
+    arrItems.push(ing) 
 
-    ing = BuildIngest(uniqueId, 48.9244627, 2.3579705, kind, { 'Text' => 'Stade De France', 'timestamp' => 1447450200000 });
+    uniqueId = kind + '_poi_2'
+    uniqueItems.add(uniqueId)
+    ing = BuildIngest(uniqueId, 48.8716804,2.3659606, kind, { 'Text' => 'Le Petit Cambodge', 'timestamp' => 1447449900000 }); # 9:25
+    arrItems.push(ing) 
 
+    uniqueId = kind + '_poi_3'
+    uniqueItems.add(uniqueId)
+    ing = BuildIngest(uniqueId, 48.868166,2.3715372, kind, { 'Text' => 'Rue de la Fountaine au Roi', 'timestamp' => 1447450320000 }); # 9:32
+    arrItems.push(ing) 
+
+    uniqueId = kind + '_poi_4'
+    uniqueItems.add(uniqueId)
+    ing = BuildIngest(uniqueId, 48.8791313,2.3476176, kind, { 'Text' => 'Le Belle Equipe', 'timestamp' => 1447450560000 }); # 9:36
+    arrItems.push(ing) 
+
+    uniqueId = kind + '_poi_5'
+    uniqueItems.add(uniqueId)
+    ing = BuildIngest(uniqueId, 48.8713992,2.2599972, kind, { 'Text' => 'Boulevard Voltaire', 'timestamp' => 1447450800000 }); # 9:40
+    arrItems.push(ing) 
+
+    uniqueId = kind + '_poi_6'
+    uniqueItems.add(uniqueId)
+    ing = BuildIngest(uniqueId, 48.8630134,2.368421, kind, { 'Text' => 'Bataclan', 'timestamp' => 1447450800000 }); # 9:40
     arrItems.push(ing) 
         
     PokeProtein(Protein.new(['sluice', 'prot-spec v1.0', 'topology', 'add' ], { 'topology' => arrItems }))
@@ -211,10 +233,10 @@ class Hearty < Metabolizer
     # t4 = Thread.new{ LoadCustomers() }
     # t5 = Thread.new{ LoadLoans() }
     t4 = Thread.new{LoadPOIs()}
-    # t5 = Thread.new{LoadTweetsGreen()}
-    # t6 = Thread.new{LoadTweetsBlue()}
-    # t6.join
-    # t5.join
+    t5 = Thread.new{LoadTweetsGreen()}
+    t6 = Thread.new{LoadTweetsBlue()}
+    t6.join
+    t5.join
     t4.join
     # t1.join
     # t2.join
