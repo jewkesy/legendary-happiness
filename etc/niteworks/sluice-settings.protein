@@ -10,6 +10,7 @@ ingests:
   scopes:
     - "niteworks/tweets.protein"
     - "niteworks/poi.protein"
+    - "niteworks/heatmap.protein"
   time-formats: # See strptime(3)
     - "%Y-%m-%dT%H:%M:%SZ"
     - "%Y-%m-%d %H:%M:%S"

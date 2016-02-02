@@ -136,7 +136,8 @@ class Hearty < Metabolizer
         'tweetId' => tweet['id_str'],
         'Text' => tweet['text'].to_s,
         'user' => tweet['user']['screen_name'].to_s,
-        'ReTweetCount' => tweet['retweet_count'],
+        'ReTweetCount' => tweet['retweet_count'].to_s,
+        'hashtagScore' => '3.0',
         'media' => imgUrl,
         'timestamp' => tweet['timestamp_ms'].to_i
       }
@@ -201,8 +202,9 @@ class Hearty < Metabolizer
         'tweetId' => tweet['id_str'],
         'Text' => tweet['text'].to_s,
         'user' => tweet['user']['screen_name'].to_s,
-        'ReTweetCount' => tweet['retweet_count'],
+        'ReTweetCount' => tweet['retweet_count'].to_s,
         'media' => imgUrl,
+        'hashtagScore' => '6.0',
         'timestamp' => tweet['timestamp_ms'].to_i
       }
       ing = BuildIngest(kind + '_' + tweet['id_str'], tweet['coordinates']['coordinates'][1], tweet['coordinates']['coordinates'][0], kind, attrs);
