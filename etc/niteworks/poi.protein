@@ -17,25 +17,10 @@ ingests:
     contents:
     - name: true
       display-text: Enable
-      selected: false
+      selected: true
     - name: false
       display-text: Disable
-      selected: true
-  - name: opacity
-    selection-type: exclusive
-    contents:
-    - name: '0.25'
-      display-text: 25%
-      selected: 0
-    - name: '0.50'
-      display-text: 50%
-      selected: 0
-    - name: '0.75'
-      display-text: 75%
-      selected: 0
-    - name: '1.00'
-      display-text: 100%
-      selected: 1
+      selected: false
   - name: enabled-kinds
     display-text: 'Filter Options'
     contents:
@@ -55,20 +40,20 @@ ingests:
   - poi
   pigments:
   - name: poi
-    icon: sluice/symbols/ring.png
+    icon: sluice/symbols/circle.png
     size:
       type: SoftFloat
       value: 2.0
     color:
       type: SoftColor
       value:
-      - 0.4
       - 1.0
-      - 0.2
+      - 0.0
+      - 0.0
       - 1.0
     type: point
   hover:
     max-found: 256
-    min_zoom: 5000
+    min_zoom: 10
     glyph: "sluice/sharkmouth.png"
 ...

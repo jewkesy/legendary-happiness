@@ -59,7 +59,21 @@ class Hearty < Metabolizer
   end
 
   def LoadPOIs()
+    puts 'loading POIs'
+    uniqueItems = Set.new
+    arrItems = []
+    kind = 'poi'
 
+    uniqueId = kind + '_poi_1'
+    
+    uniqueItems.add(uniqueId)
+
+    ing = BuildIngest(uniqueId, 48.9244627, 2.3579705, kind, { 'Text' => 'Stade De France', 'timestamp' => 1447450200000 });
+
+    arrItems.push(ing) 
+        
+    PokeProtein(Protein.new(['sluice', 'prot-spec v1.0', 'topology', 'add' ], { 'topology' => arrItems }))
+    puts 'POIs loaded: ' + uniqueItems.size.to_s  
   end
 
   def LoadTweetsGreen()
@@ -73,14 +87,10 @@ class Hearty < Metabolizer
     filter =    { 'twitter.coordinates.coordinates'  => { '$exists' => false   }, 'twitter.place.bounding_box.coordinates' => {  '$exists' => true } }
 
     projection = ['twitter.coordinates', 'twitter.id_str', 'twitter.text', 'twitter.user.id_str', 'twitter.user.name', 'twitter.user.screen_name', 'twitter.retweet_count', 'twitter.timestamp_ms', 'twitter.place', 'twitter.entities.media']
-# puts 'getting green'
+
     @db.collection("tweets").find(filter , :fields => projection).each do |row|
 
       tweet = row['twitter']
-# puts tweet
-      # if (tweet['coordinates'].nil?)      
-      #   next
-      # end  
 
       kind = 'tweet_green'
 
@@ -108,7 +118,7 @@ class Hearty < Metabolizer
         'media' => imgUrl,
         'timestamp' => tweet['timestamp_ms'].to_i
       }
-# puts tweet['place']['bounding_box']['coordinates'][0][0]
+
       lon = tweet['place']['bounding_box']['coordinates'][0][0][1]
       lat = tweet['place']['bounding_box']['coordinates'][0][0][0]
 
@@ -200,11 +210,11 @@ class Hearty < Metabolizer
     # t3 = Thread.new{ LoadIntroducers() }
     # t4 = Thread.new{ LoadCustomers() }
     # t5 = Thread.new{ LoadLoans() }
-    t4 = Thread.new{LoadPOIs}
-    t5 = Thread.new{LoadTweetsGreen()}
-    t6 = Thread.new{LoadTweetsBlue()}
-    t6.join
-    t5.join
+    t4 = Thread.new{LoadPOIs()}
+    # t5 = Thread.new{LoadTweetsGreen()}
+    # t6 = Thread.new{LoadTweetsBlue()}
+    # t6.join
+    # t5.join
     t4.join
     # t1.join
     # t2.join
