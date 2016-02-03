@@ -1,31 +1,37 @@
 extends layout
-
+block headcontent
+	script(src="/javascripts/sigma.min.js")
+	script(src="/javascripts/sigma.parsers.json.min.js")
+	script(src="/javascripts/steganography.js")
+	script(src="/javascripts/user.js")
 block content
 	div.container-fluid
 		div.row
-			div.col-sm-12
+			div.col-sm-3
 				div.row
 					div.col-sm-12#profilebackground
-						div.col-sm-6
-							div.col-sm-3
+						div.row
+							div.col-sm-12
 								div.userimagecontainer
 									img#userimage
-							div.col-sm-9
+						div.row
+							div.col-sm-12
 								div#username
-						div.col-sm-6
-							div#screenname user
-							div#location location
-							div#description description
+						div.row
+							div.col-sm-12
+								div#screenname user
+								div#location location
 				div.row
-					div.col-sm-4.infocolleft
+					div.col-md-12.infocolleft
 						h3#tweets 53
 						h3.infotitle tweets
-					div.col-sm-4.infocolmiddle
+					div.col-md-12.infocolmiddle
 						h3#followers 53
 						h3.infotitle followers
-					div.col-sm-4.infocolright
+					div.col-md-12.infocolright
 						h3#following 53
 						h3.infotitle following
+			div.col-sm-9
 				div.row
 					div.col-sm-12.tweetcontainer
 						div.row
@@ -37,5 +43,6 @@ block content
 							div.col-sm-12#tweet This is the main twett
 				div.row
 					div.col-sm-12
+						h2 Friends by Contribution
 						div#container
 	input#tweetid(type='hidden', value=id)
