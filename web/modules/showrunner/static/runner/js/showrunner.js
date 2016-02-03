@@ -191,10 +191,10 @@ function load_runner_config(runner) {
 
 
         if (runner.fluoroAlreadyLoaded('tags')) {
-            open_webpage('http://192.168.1.54:3000/tags', 'tags', [0,0], 'right');
+            open_webpage('http://localhost:3000/tags', 'tags', [0,0], 'right');
         }
         else {
-            open_webpage('http://192.168.1.54:3000/tags', 'tags', [0,0], 'right', [1.0, 1.0]);
+            open_webpage('http://localhost:3000/tags', 'tags', [0,0], 'right', [1.0, 1.0]);
         }
 
 
@@ -210,9 +210,9 @@ function load_runner_config(runner) {
 
 
 
-open_webpage('https://www.youtube.com/embed/LSAFcnryoEw?autoplay=1', 'video1', [0.25, 0.25], 'right', [0.25, 0.55]);
-open_webpage('https://www.youtube.com/embed/c0nP9xGJiYk?autoplay=1', 'video2', [-0.25, -0.25], 'right', [0.25, 0.65]);
-open_webpage('https://www.youtube.com/embed/3h0NYk8pweg?autoplay=1', 'video4', [0, 0], 'right', [0.25, 0.75]);
+open_webpage('https://www.youtube.com/embed/LSAFcnryoEw?autoplay=1&loop=1', 'video1', [0.25, 0.25], 'right', [0.25, 0.55]);
+open_webpage('https://www.youtube.com/embed/c0nP9xGJiYk?autoplay=1&loop=1', 'video2', [-0.25, -0.25], 'right', [0.25, 0.65]);
+open_webpage('https://www.youtube.com/embed/3h0NYk8pweg?autoplay=1&loop=1', 'video4', [0, 0], 'right', [0.25, 0.75]);
 
 }
 

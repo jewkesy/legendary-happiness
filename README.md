@@ -33,6 +33,8 @@ Sluice has a web-based control/administration panel.  Navigate to [sluice] which
 ## Web Panel Indexes
 At the following index to the db to improve the performance
 
-db.tweets.createIndex( { twitter: 1 } )
-db.tweets.createIndex( { 'twitter.id': 1 } )
-db.tweets.createIndex( { 'twitter.user.id': 1 } )
+```
+> db.tweets.createIndex( { twitter: 1 } )  -????
+> db.tweets.createIndex( { 'twitter.id': 1 } )
+> db.tweets.createIndex( { 'twitter.user.id': 1 } )
+```
