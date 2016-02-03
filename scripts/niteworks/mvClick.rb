@@ -36,7 +36,7 @@ class Clicky < Metabolizer
           'feld' => 'left',
           'loc' => [0,0],
           'size' => [1.0, 1.0],
-          'url' =>  'http://192.168.1.54:3000/?id=' + ing['attrs']['tweetId']
+          'url' =>  'http://localhost:3000/?id=' + ing['attrs']['tweetId']
           },  {
           'name' => 'photos',
           'feld' => 'right',
@@ -53,7 +53,7 @@ class Clicky < Metabolizer
           'feld' => 'left',
           'loc' => [0,0],
           'size' => [1.0, 1.0],
-          'url' =>  'http://192.168.1.54:3000/?id=' + ing['attrs']['tweetId']
+          'url' =>  'http://localhost:3000/?id=' + ing['attrs']['tweetId']
           },  {
           'name' => 'photos',
           'feld' => 'right',
