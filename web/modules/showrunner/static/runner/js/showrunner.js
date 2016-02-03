@@ -143,7 +143,7 @@ function load_runner_config(runner) {
         open_webpage(url, 'los_angeles_store', [-0.25, -0.25], 'main', [0.25, 0.3]);
     }
 
-    function zoom_to_poi(zoom) { 20, 10
+    function zoom_to_poi(zoom) {
         runner.bookmark(53.4175147, -2.1490619, zoom);
     }
 
@@ -176,15 +176,7 @@ function load_runner_config(runner) {
     }
 
     function showAllLenses(){
-        buildsocs();
-        branches();
-        introducers();
-        customers();
-        businesses();
-        loans();
-        arrears(); 
-        ratings();
-        ltv();
+
     }
 
     function showTweets() {
@@ -207,9 +199,24 @@ function load_runner_config(runner) {
 
 
     }
-    function customers(){
-        runner.add_fluoroscopeWithBounds("Customer", gTr, gBl);
-    }
+    function showCCTV(){
+      // showVideo('LSAFcnryoEw', 'scene07')
+
+      //   showVideo('c0nP9xGJiYk', 'scene09')
+      //   showVideo('Lsel-jck6BE', 'scene02')
+      //  showVideo('3h0NYk8pweg', 'scene02')
+
+
+
+
+
+open_webpage('https://www.youtube.com/embed/LSAFcnryoEw?autoplay=1', 'video1', [0.25, 0.25], 'right', [0.25, 0.55]);
+open_webpage('https://www.youtube.com/embed/c0nP9xGJiYk?autoplay=1', 'video2', [-0.25, -0.25], 'right', [0.25, 0.65]);
+open_webpage('https://www.youtube.com/embed/3h0NYk8pweg?autoplay=1', 'video4', [0, 0], 'right', [0.25, 0.75]);
+
+}
+
+
     function blankCustomers(){
         runner.add_fluoroscopeWithBounds("BlankCustomer", gTr, gBl);
     }
@@ -253,6 +260,24 @@ function load_runner_config(runner) {
 
     function bataclan() {
         runner.bookmark(48.8630134,2.368421, 7000);
+    }
+
+    function burnage() {
+        runner.bookmark(53.4307681,-2.2048089, 2500);
+    }
+
+    function lichfield() {
+        runner.bookmark(52.6805815,-1.8264718, 1000);
+    }
+
+    function prestatyn() {
+        runner.bookmark(53.3283773,-3.4152156, 2000);
+    }
+    function hazelGrove() {
+        runner.bookmark(53.411433,-2.2100591, 7000);
+    }
+    function m6_m64() {
+        runner.bookmark(53.393621983, -2.647538, 2670);
     }
 
     function showBombThreat() {
@@ -318,7 +343,7 @@ function load_runner_config(runner) {
     function scene02() {
         lePetitCambodge();
         setTimeout(function () {
-            showVideo('Lsel-jck6BE', 'scene02')
+
         })
     }
     function scene03() {
@@ -645,7 +670,7 @@ function load_runner_config(runner) {
         'a2scene1': ['Twitter', showTweets],
         'a2scene2': ['POIs', showPOIs],
         'a2scene3': ['WordCloud', showWordCloud],
-        'a2scene4': ['', null],
+        'a2scene4': ['CCTV Video', showCCTV],
         'a2scene5': ['', null],
         'a2scene6': ['', null],
         'a2scene7': ['', null],
