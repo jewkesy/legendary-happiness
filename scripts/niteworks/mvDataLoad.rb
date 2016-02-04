@@ -283,6 +283,7 @@ class Hearty < Metabolizer
 
 
   def BuildHashTagWeights(text)
+    return '0.0'
     #parisattacks
     #prayforparis
     #paris
