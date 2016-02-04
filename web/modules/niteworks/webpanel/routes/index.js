@@ -10,9 +10,25 @@ router.get('/tags', function(req, res, next) {
   res.render('tags', { title: 'Tags'});
 });
 
+router.get('/autoload', function(req, res, next) {
+  res.render('autoload', { title: 'Auto Load'});
+});
+
+router.get('/alltweets', function(req, res, next) {
+  res.render('alltweets', { title: 'All Tweets'});
+});
+
 router.get('/mongo/gettweet/:id', function(req, res) {
 	var db = req.db;
 	db.collection('tweets').find({"twitter.id": parseInt(req.params.id)}).toArray(function (err, items) {
+		if (err) console.log(err)
+		res.json(items);
+	});
+});
+
+router.get('/mongo/getalltweets', function(req, res) {
+	var db = req.db;
+	db.collection('newtweets').find({}).toArray(function (err, items) {
 		if (err) console.log(err)
 		res.json(items);
 	});
@@ -48,6 +64,18 @@ router.get('/mongo/getkeywordcounts', function(req, res) {
 	});
 });
 
+router.post('/mongo/savetweet', function(req, res) {
+	var db = req.db;
+	
+
+	db.collection('newtweets').insert(req.body, function(err, result){
+		if (err) console.log(err)
+		res.send(
+			(err === null) ? { msg: '' } : { msg: err }
+		);
+	});
+});
+
 router.get('/twitter/getuser/:screenname', function(req, res) {
 	var params = {screen_name: req.params.screenname};
 	var client = req.client;
@@ -78,8 +106,8 @@ router.get('/twitter/getuserfriends/:screenname', function(req, res) {
 	});
 });
 
-router.get('/twitter/gettweets/', function(req, res) {
-	var params = {q: 'Paris since:2016-01-30 until:2016-02-01'};
+router.get('/twitter/gettweets/:maxid', function(req, res) {
+	var params = {geocode: '33.5000,36.3000,12000km', count:100, max_id:parseInt(req.params.maxid)};
 	var client = req.client;
 	client.get('search/tweets', params, function(error, tweets, response){
 	  if (!error) {

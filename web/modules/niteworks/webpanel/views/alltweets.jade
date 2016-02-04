@@ -1,0 +1,11 @@
+extends layout
+block headcontent
+	script(src="/javascripts/alltweets.js")
+block content
+	div.container-fluid
+		div.row
+			div.col-md-12
+				h2.tagsheader All Tweets
+				div.col-md-12
+					table#allTweets
+						tbody

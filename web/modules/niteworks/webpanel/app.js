@@ -12,8 +12,8 @@ var db = mongo.db("mongodb://localhost:27017/niteworks", {native_parser:true});
 var client = new Twitter({
   consumer_key: '66buihKNfPXGUjFqauGZ5Wd5P',
   consumer_secret: 'mvitd1XwoRM7Nl2GYm9avvtTnK8MKUfUhXsNyA7T9U8zJfSHyf',
-  access_token_key: '',
-  access_token_secret: ''
+  access_token_key: '138364610-fc9m1hS0xrQndIH8u0mURjDQaIW3gzbWI2pE9c6O',
+  access_token_secret: '16WYWjdHU1BWt9P0qUCYC3QRWPMw9B2nVIKnNHxIcuQZ1'
 });
 
 var routes = require('./routes/index');

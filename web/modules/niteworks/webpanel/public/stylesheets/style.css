@@ -169,3 +169,13 @@ body h2
     border: 1px solid #bbb;
     padding: 10px;
 }
+
+#allTweets td
+{
+	padding:5px;
+}
+
+#allTweets tr
+{
+	border-bottom: 1px solid black;
+}
